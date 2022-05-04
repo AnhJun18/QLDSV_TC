@@ -1,2 +1,2 @@
-# QLDSV_TC
-ĐỒ ÁN QUẢN LÝ ĐIỂM SINH VIÊN - TÍN CHỈ
+# Đồ Án Môn Cơ Sở Dữ Liệu Phân Tán - ASP .NET
+ QUẢN LÝ ĐIỂM SINH VIÊN - TÍN CHỈ
