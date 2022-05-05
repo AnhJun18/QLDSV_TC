@@ -18,24 +18,35 @@ namespace QLDSV_TC.views
             InitializeComponent();
         }
 
-        private void ribbon_Click(object sender, EventArgs e)
+        private Form CheckExists(Type ftype)
         {
-
+            foreach (Form f in this.MdiChildren)
+            {
+                if (f.GetType() == ftype)
+                {
+                    return f;
+                }
+            }
+            return null;
         }
+
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
 
-        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        private void barButtonClass_ItemClick(object sender, ItemClickEventArgs e)
         {
+            Form frm = CheckExists(typeof(views.frmClass));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmClass = new frmClass();
+                Program.frmClass.MdiParent = this;
+                Program.frmClass.Show();
 
-        }
-
-        private void toolStripStatusLabel1_Click(object sender, EventArgs e)
-        {
-
+            }
         }
     }
 }
