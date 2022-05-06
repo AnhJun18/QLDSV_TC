@@ -21,8 +21,8 @@ namespace QLDSV_TC.views
        
         private void frmClass_Load(object sender, EventArgs e)
         {
-            
 
+            qLDSV_TCDataSet.EnforceConstraints = false;
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTableAdapter.Fill(this.qLDSV_TCDataSet.LOP);
             

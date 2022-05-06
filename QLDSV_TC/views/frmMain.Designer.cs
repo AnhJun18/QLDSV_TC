@@ -86,7 +86,7 @@ namespace QLDSV_TC.views
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage5});
-            this.ribbon.Size = new System.Drawing.Size(753, 177);
+            this.ribbon.Size = new System.Drawing.Size(878, 209);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -152,7 +152,7 @@ namespace QLDSV_TC.views
             // 
             this.barButtonMH.Caption = "Môn Học";
             this.barButtonMH.Id = 10;
-            this.barButtonMH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem4.ImageOptions.SvgImage")));
+            this.barButtonMH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonMH.ImageOptions.SvgImage")));
             this.barButtonMH.Name = "barButtonMH";
             this.barButtonMH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonMH_ItemClick);
             // 
@@ -219,11 +219,11 @@ namespace QLDSV_TC.views
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 384);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 472);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(753, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(878, 30);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -241,36 +241,35 @@ namespace QLDSV_TC.views
             this.statusMa,
             this.statusTen,
             this.statusKhoa});
-            this.statusBar.Location = new System.Drawing.Point(0, 362);
+            this.statusBar.Location = new System.Drawing.Point(0, 446);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
-            this.statusBar.Size = new System.Drawing.Size(753, 22);
+            this.statusBar.Size = new System.Drawing.Size(878, 26);
             this.statusBar.TabIndex = 3;
             this.statusBar.Text = "statusStrip1";
             // 
             // statusMa
             // 
             this.statusMa.Name = "statusMa";
-            this.statusMa.Size = new System.Drawing.Size(24, 17);
+            this.statusMa.Size = new System.Drawing.Size(30, 20);
             this.statusMa.Text = "Ma";
             // 
             // statusTen
             // 
             this.statusTen.Name = "statusTen";
-            this.statusTen.Size = new System.Drawing.Size(31, 17);
+            this.statusTen.Size = new System.Drawing.Size(39, 20);
             this.statusTen.Text = "Tên: ";
             // 
             // statusKhoa
             // 
             this.statusKhoa.Name = "statusKhoa";
-            this.statusKhoa.Size = new System.Drawing.Size(40, 17);
+            this.statusKhoa.Size = new System.Drawing.Size(50, 20);
             this.statusKhoa.Text = "Khoa: ";
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 408);
+            this.ClientSize = new System.Drawing.Size(878, 502);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
@@ -281,6 +280,7 @@ namespace QLDSV_TC.views
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.StatusBar = this.ribbonStatusBar;
             this.Text = "QUẢN LÝ ĐIỂM SINH VIÊN";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
