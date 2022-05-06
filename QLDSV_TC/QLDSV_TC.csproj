@@ -81,11 +81,23 @@
     <Compile Include="views\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\frmLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmLTC.Designer.cs">
+      <DependentUpon>frmLTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="views\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmMH.Designer.cs">
+      <DependentUpon>frmMH.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -103,8 +115,14 @@
     <EmbeddedResource Include="views\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="views\frmLTC.resx">
+      <DependentUpon>frmLTC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmMH.resx">
+      <DependentUpon>frmMH.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

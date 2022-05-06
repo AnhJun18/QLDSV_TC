@@ -39,12 +39,13 @@ namespace QLDSV_TC
         public static views.frmLogin frmLogin;
         public static views.frmMain frmChinh;
         public static views.frmClass frmClass;
-       /* public static formClassRegistration frmRegister;
-        public static formScores frmScores;
-        public static formManagerSubject frmSubject;*/
+        public static views.frmMH frmMH;
+        /* public static formClassRegistration frmRegister;
+         public static formScores frmScores;
+         public static formManagerSubject frmSubject;*/
 
         public static int chiPhi = 480000;  //tiền học/1 tín
-        
+
 
         public static int KetNoi(Boolean isShow = true)
         {
