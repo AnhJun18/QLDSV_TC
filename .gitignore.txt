@@ -1,0 +1,2 @@
+QLDSV_TC/bin/Debug
+QLDSV_TC/obj/Debug
