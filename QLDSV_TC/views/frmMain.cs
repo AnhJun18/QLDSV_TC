@@ -48,5 +48,18 @@ namespace QLDSV_TC.views
 
             }
         }
+
+        private void barButtonMH_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmMH));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmMH = new frmMH();
+                Program.frmMH.MdiParent = this;
+                Program.frmMH.Show();
+
+            }
+        }
     }
 }
