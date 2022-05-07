@@ -13,7 +13,7 @@ namespace QLDSV_TC.views
 {
     public partial class frmStudent : DevExpress.XtraEditors.XtraForm
     {
-        private string saveMode;
+      
         public frmStudent()
         {
             InitializeComponent();
@@ -66,7 +66,8 @@ namespace QLDSV_TC.views
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
             btnGhi.Enabled = true;
             sINHVIENGridControl.Enabled = false;
-            saveMode = "THEM";
+         
+          
         }
 
 

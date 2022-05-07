@@ -128,8 +128,6 @@ namespace QLDSV_TC
         public static int CheckDataHelper(String query)
         {
             SqlDataReader dataReader = Program.ExecSqlDataReader(query);
-
-            // nếu null thì thoát luôn  ==> lỗi kết nối
             if (dataReader == null)
             {
                 MessageBox.Show("Server bị lỗi");

@@ -1,4 +1,4 @@
-
+﻿
 
 CREATE PROC [dbo].[SP_CHECK_DANGNHAP]
 @TENLOGIN NVARCHAR (50)
@@ -34,5 +34,48 @@ BEGIN
 							WHERE NAME=@TENUSER)))
 	END
 END
+
+
+CREATE PROCEDURE [dbo].[SP_GETMAKHOA]
+AS
+BEGIN 
+    select MaKhoa from Khoa
+END
+
+
+CREATE proc [dbo].[SP_CHECKID]
+@ID NCHAR(10),
+@Type NCHAR(20)
+AS
+BEGIN 
+    
+	-- LOP
+	IF(@Type = 'MALOP')
+	BEGIN
+		IF EXISTS(SELECT * FROM dbo.LOP WHERE dbo.LOP.MALOP = @ID)
+				RETURN 1;--Mã LOP tồn tại ở phân hiện tại
+		 IF EXISTS(SELECT * FROM LINK1.QLDSV_TC.dbo.LOP AS LOP WHERE LOP.MALOP = @ID)
+			RETURN 2; --Mã Lớp tồn tại ở phân mãnh khác
+	END
+
+	 --MON HOC
+	IF(@Type = 'MAMONHOC')
+	BEGIN
+		IF EXISTS(SELECT * FROM dbo.MONHOC AS MH WHERE MH.MAMH = @ID)
+		RETURN 1;
+	END
+
+	 --SINH VIEN
+	IF(@Type = 'MASV')
+	BEGIN
+	 IF EXISTS(SELECT * FROM dbo.SINHVIEN WHERE dbo.SINHVIEN.MASV = @ID)
+			RETURN 1; -- Mã tồn tại ở phân mãnh hiện tại
+	 IF EXISTS(SELECT * FROM LINK1.QLDSV_TC.dbo.SINHVIEN AS SV WHERE SV.MASV = @ID)
+		RETURN 2; --Mã tồn tại ở phân mãnh khác
+	END
+
+	 RETURN 0 --Không bị trùng được thêm
+END
+
 
 
