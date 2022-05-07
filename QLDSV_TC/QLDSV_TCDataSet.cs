@@ -3,6 +3,5 @@
 
 
     partial class QLDSV_TCDataSet
-    {
-    }
+    { }
 }

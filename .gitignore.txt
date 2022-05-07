@@ -1,2 +1,3 @@
 QLDSV_TC/bin/Debug
 QLDSV_TC/obj/Debug
+.vs/QLDSV_TC/v16/.suo

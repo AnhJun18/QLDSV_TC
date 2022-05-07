@@ -33,8 +33,8 @@ namespace QLDSV_TC.views
             System.Windows.Forms.Label sOTIET_THLabel;
             System.Windows.Forms.Label tENMHLabel;
             System.Windows.Forms.Label mAMHLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMH));
             System.Windows.Forms.Label sOTIET_LTLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMH));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -61,11 +61,11 @@ namespace QLDSV_TC.views
             this.colSOTIET_LT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTIET_TH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
+            this.sOTIET_LTSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.label2 = new System.Windows.Forms.Label();
             this.sOTIET_THSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             this.tENMHTextEdit = new DevExpress.XtraEditors.TextEdit();
             this.mAMHTextEdit = new DevExpress.XtraEditors.TextEdit();
-            this.sOTIET_LTSpinEdit = new DevExpress.XtraEditors.SpinEdit();
             sOTIET_THLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
             mAMHLabel = new System.Windows.Forms.Label();
@@ -79,10 +79,10 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sOTIET_LTSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sOTIET_THSpinEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tENMHTextEdit.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sOTIET_LTSpinEdit.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // sOTIET_THLabel
@@ -114,6 +114,16 @@ namespace QLDSV_TC.views
             mAMHLabel.Size = new System.Drawing.Size(59, 17);
             mAMHLabel.TabIndex = 8;
             mAMHLabel.Text = "MAMH:";
+            // 
+            // sOTIET_LTLabel
+            // 
+            sOTIET_LTLabel.AutoSize = true;
+            sOTIET_LTLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            sOTIET_LTLabel.Location = new System.Drawing.Point(380, 81);
+            sOTIET_LTLabel.Name = "sOTIET_LTLabel";
+            sOTIET_LTLabel.Size = new System.Drawing.Size(82, 17);
+            sOTIET_LTLabel.TabIndex = 16;
+            sOTIET_LTLabel.Text = "SOTIET LT:";
             // 
             // barManager1
             // 
@@ -359,6 +369,24 @@ namespace QLDSV_TC.views
             this.panelControl2.Size = new System.Drawing.Size(956, 122);
             this.panelControl2.TabIndex = 7;
             // 
+            // sOTIET_LTSpinEdit
+            // 
+            this.sOTIET_LTSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.mONHOCBindingSource, "SOTIET_LT", true));
+            this.sOTIET_LTSpinEdit.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.sOTIET_LTSpinEdit.Location = new System.Drawing.Point(478, 80);
+            this.sOTIET_LTSpinEdit.MenuManager = this.barManager1;
+            this.sOTIET_LTSpinEdit.Name = "sOTIET_LTSpinEdit";
+            this.sOTIET_LTSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sOTIET_LTSpinEdit.Properties.Appearance.Options.UseFont = true;
+            this.sOTIET_LTSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.sOTIET_LTSpinEdit.Size = new System.Drawing.Size(195, 24);
+            this.sOTIET_LTSpinEdit.TabIndex = 17;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -410,34 +438,6 @@ namespace QLDSV_TC.views
             this.mAMHTextEdit.Size = new System.Drawing.Size(205, 24);
             this.mAMHTextEdit.TabIndex = 9;
             // 
-            // sOTIET_LTLabel
-            // 
-            sOTIET_LTLabel.AutoSize = true;
-            sOTIET_LTLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sOTIET_LTLabel.Location = new System.Drawing.Point(380, 81);
-            sOTIET_LTLabel.Name = "sOTIET_LTLabel";
-            sOTIET_LTLabel.Size = new System.Drawing.Size(82, 17);
-            sOTIET_LTLabel.TabIndex = 16;
-            sOTIET_LTLabel.Text = "SOTIET LT:";
-            // 
-            // sOTIET_LTSpinEdit
-            // 
-            this.sOTIET_LTSpinEdit.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.mONHOCBindingSource, "SOTIET_LT", true));
-            this.sOTIET_LTSpinEdit.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.sOTIET_LTSpinEdit.Location = new System.Drawing.Point(478, 80);
-            this.sOTIET_LTSpinEdit.MenuManager = this.barManager1;
-            this.sOTIET_LTSpinEdit.Name = "sOTIET_LTSpinEdit";
-            this.sOTIET_LTSpinEdit.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sOTIET_LTSpinEdit.Properties.Appearance.Options.UseFont = true;
-            this.sOTIET_LTSpinEdit.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.sOTIET_LTSpinEdit.Size = new System.Drawing.Size(195, 24);
-            this.sOTIET_LTSpinEdit.TabIndex = 17;
-            // 
             // frmMH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,7 +451,7 @@ namespace QLDSV_TC.views
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmMH";
-            this.Text = "frmMH";
+            this.Text = "Môn Học";
             this.Load += new System.EventHandler(this.frmMH_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
@@ -464,10 +464,10 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sOTIET_LTSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sOTIET_THSpinEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tENMHTextEdit.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mAMHTextEdit.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sOTIET_LTSpinEdit.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

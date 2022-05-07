@@ -61,5 +61,24 @@ namespace QLDSV_TC.views
 
             }
         }
+
+
+        private void barButtonLTC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmLTC = new frmLTC();
+                Program.frmLTC.MdiParent = this;
+                Program.frmLTC.Show();
+
+            }
+        }
+
+        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
     }
 }
