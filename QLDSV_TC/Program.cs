@@ -27,7 +27,7 @@ namespace QLDSV_TC
 
         public static String database = "QLDSV_TC";
         public static String remoteLogin = "HTKN"; //kết nối site khác
-        public static String remotePass = "123"; //kết nối site khác
+        public static String remotePass = "18"; //kết nối site khác
         public static String mloginDN = ""; //loginname hiện tại
         public static String passDN = "";//pass hiện tại
         public static String mGroup = ""; //khoa-pgv-pkt
@@ -41,6 +41,7 @@ namespace QLDSV_TC
         public static views.frmClass frmClass;
         public static views.frmMH frmMH;
         public static views.frmLTC frmLTC;
+        public static views.frmStudent frmSinhVien;
         /* public static formClassRegistration frmRegister;
          public static formScores frmScores;
          public static formManagerSubject frmSubject;*/
