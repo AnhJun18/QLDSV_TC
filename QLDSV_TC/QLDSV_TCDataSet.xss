@@ -7,11 +7,11 @@
 <DiagramLayout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ex:showrelationlabel="False" ViewPortX="-10" ViewPortY="-47" xmlns:ex="urn:schemas-microsoft-com:xml-msdatasource-layout-extended" xmlns="urn:schemas-microsoft-com:xml-msdatasource-layout">
   <Shapes>
     <Shape ID="DesignTable:DANGKY" ZOrder="15" X="387" Y="70" Height="227" Width="230" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="168" />
-    <Shape ID="DesignTable:GIANGVIEN" ZOrder="14" X="387" Y="733" Height="273" Width="251" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
-    <Shape ID="DesignTable:KHOA" ZOrder="13" X="387" Y="459" Height="158" Width="209" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="99" />
-    <Shape ID="DesignTable:LOP" ZOrder="12" X="666" Y="459" Height="204" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
+    <Shape ID="DesignTable:GIANGVIEN" ZOrder="14" X="387" Y="733" Height="250" Width="251" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="191" />
+    <Shape ID="DesignTable:KHOA" ZOrder="13" X="387" Y="459" Height="135" Width="209" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="76" />
+    <Shape ID="DesignTable:LOP" ZOrder="12" X="666" Y="459" Height="181" Width="194" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:LOPTINCHI" ZOrder="11" X="70" Y="70" Height="296" Width="247" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="237" />
-    <Shape ID="DesignTable:MONHOC" ZOrder="10" X="387" Y="1076" Height="204" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="145" />
+    <Shape ID="DesignTable:MONHOC" ZOrder="10" X="387" Y="1076" Height="181" Width="237" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="122" />
     <Shape ID="DesignTable:SINHVIEN" ZOrder="9" X="687" Y="70" Height="273" Width="238" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="214" />
   </Shapes>
   <Connectors>
@@ -42,8 +42,8 @@
     <Connector ID="DesignRelation:FK_GIANGVIEN_KHOA" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>491</X>
-          <Y>617</Y>
+          <X>292</X>
+          <Y>750</Y>
         </Point>
         <Point>
           <X>491</X>
@@ -82,12 +82,12 @@
     <Connector ID="DesignRelation:FK_LOPTINCHI_GIANGVIEN" ZOrder="7" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>387</X>
-          <Y>750</Y>
+          <X>491</X>
+          <Y>617</Y>
         </Point>
         <Point>
-          <X>292</X>
-          <Y>750</Y>
+          <X>491</X>
+          <Y>733</Y>
         </Point>
         <Point>
           <X>292</X>
