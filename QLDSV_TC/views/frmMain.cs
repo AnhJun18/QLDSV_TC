@@ -80,5 +80,18 @@ namespace QLDSV_TC.views
         {
 
         }
+
+        private void btnSInhVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmStudent));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmSinhVien = new frmStudent();
+                Program.frmSinhVien.MdiParent = this;
+                Program.frmSinhVien.Show();
+
+            }
+        }
     }
 }
