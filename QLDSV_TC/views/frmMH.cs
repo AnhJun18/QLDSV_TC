@@ -19,24 +19,27 @@ namespace QLDSV_TC.views
         }
          private void frmMH_Load(object sender, EventArgs e)
                 {
-                    // TODO: This line of code loads data into the 'qLDSV_TCDataSet.MONHOC' table. You can move, or remove it, as needed.
-                    this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-                    this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
+
+            DS.EnforceConstraints = false;
+                this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.MONHOCTableAdapter.Fill(this.DS.MONHOC);
+            this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lOPTINCHITableAdapter.Fill(this.DS.LOPTINCHI);
+
 
                 }
 
-        private void mONHOCBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.mONHOCBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLDSV_TCDataSet);
-
-        }
-
        
-        private void barLargeButtonItem1_ItemClick(object sender, ItemClickEventArgs e)
-        {
 
+        private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            
+            panelNhapLieu.Enabled = true;
+            bdsMonHoc.AddNew();
+
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
+            btnGhi.Enabled = true;
+            mONHOCGridControl.Enabled = false;
         }
     }
 }

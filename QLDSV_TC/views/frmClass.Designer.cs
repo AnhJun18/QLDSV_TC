@@ -92,9 +92,9 @@ namespace QLDSV_TC.views
             // 
             mALOPLabel.AutoSize = true;
             mALOPLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mALOPLabel.Location = new System.Drawing.Point(23, 34);
+            mALOPLabel.Location = new System.Drawing.Point(27, 42);
             mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(64, 17);
+            mALOPLabel.Size = new System.Drawing.Size(79, 21);
             mALOPLabel.TabIndex = 1;
             mALOPLabel.Text = "MALOP:";
             // 
@@ -102,9 +102,9 @@ namespace QLDSV_TC.views
             // 
             tENLOPLabel.AutoSize = true;
             tENLOPLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tENLOPLabel.Location = new System.Drawing.Point(378, 30);
+            tENLOPLabel.Location = new System.Drawing.Point(441, 37);
             tENLOPLabel.Name = "tENLOPLabel";
-            tENLOPLabel.Size = new System.Drawing.Size(69, 17);
+            tENLOPLabel.Size = new System.Drawing.Size(86, 21);
             tENLOPLabel.TabIndex = 3;
             tENLOPLabel.Text = "TENLOP:";
             // 
@@ -112,9 +112,9 @@ namespace QLDSV_TC.views
             // 
             kHOAHOCLabel.AutoSize = true;
             kHOAHOCLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            kHOAHOCLabel.Location = new System.Drawing.Point(23, 72);
+            kHOAHOCLabel.Location = new System.Drawing.Point(27, 89);
             kHOAHOCLabel.Name = "kHOAHOCLabel";
-            kHOAHOCLabel.Size = new System.Drawing.Size(87, 17);
+            kHOAHOCLabel.Size = new System.Drawing.Size(107, 21);
             kHOAHOCLabel.TabIndex = 5;
             kHOAHOCLabel.Text = "KHOAHOC:";
             // 
@@ -122,9 +122,9 @@ namespace QLDSV_TC.views
             // 
             mAKHOALabel.AutoSize = true;
             mAKHOALabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAKHOALabel.Location = new System.Drawing.Point(379, 72);
+            mAKHOALabel.Location = new System.Drawing.Point(442, 89);
             mAKHOALabel.Name = "mAKHOALabel";
-            mAKHOALabel.Size = new System.Drawing.Size(79, 17);
+            mAKHOALabel.Size = new System.Drawing.Size(96, 21);
             mAKHOALabel.TabIndex = 7;
             mAKHOALabel.Text = "MAKHOA:";
             // 
@@ -242,34 +242,38 @@ namespace QLDSV_TC.views
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1018, 40);
+            this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlTop.Size = new System.Drawing.Size(1188, 50);
             this.barDockControlTop.Click += new System.EventHandler(this.barDockControlTop_Click);
             // 
             // barDockControlBottom
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 756);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 930);
             this.barDockControlBottom.Manager = this.barManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1018, 0);
+            this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1188, 0);
             this.barDockControlBottom.Click += new System.EventHandler(this.barDockControlBottom_Click);
             // 
             // barDockControlLeft
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 716);
+            this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 880);
             this.barDockControlLeft.Click += new System.EventHandler(this.barDockControlLeft_Click);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1018, 40);
+            this.barDockControlRight.Location = new System.Drawing.Point(1188, 50);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 716);
+            this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 880);
             this.barDockControlRight.Click += new System.EventHandler(this.barDockControlRight_Click);
             // 
             // panelControl1
@@ -277,18 +281,20 @@ namespace QLDSV_TC.views
             this.panelControl1.Controls.Add(this.cbKhoa);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 40);
+            this.panelControl1.Location = new System.Drawing.Point(0, 50);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1018, 29);
+            this.panelControl1.Size = new System.Drawing.Size(1188, 36);
             this.panelControl1.TabIndex = 25;
             // 
             // cbKhoa
             // 
             this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(261, 1);
+            this.cbKhoa.Location = new System.Drawing.Point(304, 1);
+            this.cbKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(337, 25);
+            this.cbKhoa.Size = new System.Drawing.Size(392, 29);
             this.cbKhoa.TabIndex = 1;
             this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
             // 
@@ -296,9 +302,9 @@ namespace QLDSV_TC.views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(203, 4);
+            this.label1.Location = new System.Drawing.Point(237, 5);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
+            this.label1.Size = new System.Drawing.Size(63, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "KHOA";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -315,9 +321,10 @@ namespace QLDSV_TC.views
             this.panelControl2.Controls.Add(this.teMALOP);
             this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelControl2.Location = new System.Drawing.Point(0, 620);
+            this.panelControl2.Location = new System.Drawing.Point(0, 763);
+            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1018, 136);
+            this.panelControl2.Size = new System.Drawing.Size(1188, 167);
             this.panelControl2.TabIndex = 30;
             this.panelControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
             // 
@@ -325,54 +332,58 @@ namespace QLDSV_TC.views
             // 
             this.teMAKHOA.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MAKHOA", true));
             this.teMAKHOA.Enabled = false;
-            this.teMAKHOA.Location = new System.Drawing.Point(463, 69);
+            this.teMAKHOA.Location = new System.Drawing.Point(540, 85);
+            this.teMAKHOA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.teMAKHOA.MenuManager = this.barManager1;
             this.teMAKHOA.Name = "teMAKHOA";
             this.teMAKHOA.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teMAKHOA.Properties.Appearance.Options.UseFont = true;
-            this.teMAKHOA.Size = new System.Drawing.Size(247, 24);
+            this.teMAKHOA.Size = new System.Drawing.Size(288, 28);
             this.teMAKHOA.TabIndex = 8;
             // 
             // tekHOAHOC
             // 
             this.tekHOAHOC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "KHOAHOC", true));
-            this.tekHOAHOC.Location = new System.Drawing.Point(116, 69);
+            this.tekHOAHOC.Location = new System.Drawing.Point(135, 85);
+            this.tekHOAHOC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tekHOAHOC.MenuManager = this.barManager1;
             this.tekHOAHOC.Name = "tekHOAHOC";
             this.tekHOAHOC.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tekHOAHOC.Properties.Appearance.Options.UseFont = true;
-            this.tekHOAHOC.Size = new System.Drawing.Size(224, 24);
+            this.tekHOAHOC.Size = new System.Drawing.Size(261, 28);
             this.tekHOAHOC.TabIndex = 6;
             // 
             // teTENLOP
             // 
             this.teTENLOP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "TENLOP", true));
-            this.teTENLOP.Location = new System.Drawing.Point(463, 27);
+            this.teTENLOP.Location = new System.Drawing.Point(540, 33);
+            this.teTENLOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.teTENLOP.MenuManager = this.barManager1;
             this.teTENLOP.Name = "teTENLOP";
             this.teTENLOP.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teTENLOP.Properties.Appearance.Options.UseFont = true;
-            this.teTENLOP.Size = new System.Drawing.Size(247, 24);
+            this.teTENLOP.Size = new System.Drawing.Size(288, 28);
             this.teTENLOP.TabIndex = 4;
             // 
             // teMALOP
             // 
             this.teMALOP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MALOP", true));
-            this.teMALOP.Location = new System.Drawing.Point(116, 27);
+            this.teMALOP.Location = new System.Drawing.Point(135, 33);
+            this.teMALOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.teMALOP.MenuManager = this.barManager1;
             this.teMALOP.Name = "teMALOP";
             this.teMALOP.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teMALOP.Properties.Appearance.Options.UseFont = true;
-            this.teMALOP.Size = new System.Drawing.Size(224, 24);
+            this.teMALOP.Size = new System.Drawing.Size(261, 28);
             this.teMALOP.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(56, 0);
+            this.label2.Location = new System.Drawing.Point(65, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 19);
+            this.label2.Size = new System.Drawing.Size(165, 22);
             this.label2.TabIndex = 1;
             this.label2.Text = "Thông Tin Lớp Học";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -398,11 +409,13 @@ namespace QLDSV_TC.views
             // 
             this.lOPGridControl.DataSource = this.bdsLOP;
             this.lOPGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lOPGridControl.Location = new System.Drawing.Point(0, 69);
+            this.lOPGridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.lOPGridControl.Location = new System.Drawing.Point(0, 86);
             this.lOPGridControl.MainView = this.gridView1;
+            this.lOPGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lOPGridControl.MenuManager = this.barManager1;
             this.lOPGridControl.Name = "lOPGridControl";
-            this.lOPGridControl.Size = new System.Drawing.Size(1018, 551);
+            this.lOPGridControl.Size = new System.Drawing.Size(1188, 677);
             this.lOPGridControl.TabIndex = 34;
             this.lOPGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -414,36 +427,45 @@ namespace QLDSV_TC.views
             this.colTENLOP,
             this.colKHOAHOC,
             this.colMAKHOA});
+            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.lOPGridControl;
             this.gridView1.Name = "gridView1";
             // 
             // colMALOP
             // 
             this.colMALOP.FieldName = "MALOP";
+            this.colMALOP.MinWidth = 23;
             this.colMALOP.Name = "colMALOP";
             this.colMALOP.Visible = true;
             this.colMALOP.VisibleIndex = 0;
+            this.colMALOP.Width = 87;
             // 
             // colTENLOP
             // 
             this.colTENLOP.FieldName = "TENLOP";
+            this.colTENLOP.MinWidth = 23;
             this.colTENLOP.Name = "colTENLOP";
             this.colTENLOP.Visible = true;
             this.colTENLOP.VisibleIndex = 1;
+            this.colTENLOP.Width = 87;
             // 
             // colKHOAHOC
             // 
             this.colKHOAHOC.FieldName = "KHOAHOC";
+            this.colKHOAHOC.MinWidth = 23;
             this.colKHOAHOC.Name = "colKHOAHOC";
             this.colKHOAHOC.Visible = true;
             this.colKHOAHOC.VisibleIndex = 2;
+            this.colKHOAHOC.Width = 87;
             // 
             // colMAKHOA
             // 
             this.colMAKHOA.FieldName = "MAKHOA";
+            this.colMAKHOA.MinWidth = 23;
             this.colMAKHOA.Name = "colMAKHOA";
             this.colMAKHOA.Visible = true;
             this.colMAKHOA.VisibleIndex = 3;
+            this.colMAKHOA.Width = 87;
             // 
             // frmClass
             // 
@@ -451,10 +473,10 @@ namespace QLDSV_TC.views
             this.Appearance.ForeColor = System.Drawing.Color.White;
             this.Appearance.Options.UseBackColor = true;
             this.Appearance.Options.UseForeColor = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1018, 756);
+            this.ClientSize = new System.Drawing.Size(1188, 930);
             this.Controls.Add(this.lOPGridControl);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
@@ -462,8 +484,9 @@ namespace QLDSV_TC.views
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmClass";
-            this.Text = "Lớp Học";
+            this.Text = "Quản Lý Lớp Học";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmClass_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet)).EndInit();

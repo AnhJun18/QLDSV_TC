@@ -32,6 +32,7 @@ namespace QLDSV_TC.views
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;        
             this.sINHVIENTableAdapter.Fill(this.qLDSV_TCDataSet.SINHVIEN);
 
+            this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANGKYTableAdapter.Fill(this.qLDSV_TCDataSet.DANGKY);
 
             Program.bdsDSPM.Filter = "TENPHONG NOT LIKE 'KẾ TOÁN'";
@@ -51,18 +52,22 @@ namespace QLDSV_TC.views
            
             panelControlNhapLieu.Enabled = true;
             bdsSV.AddNew();
+            
+            cbMaLop.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMaLop.DataSource = qLDSV_TCDataSet.LOP;
             cbMaLop.DisplayMember = "MALOP";
             cbMaLop.ValueMember = "MALOP";
-
+            cbMaLop.SelectedIndex = -1;
+           
             checkEdPhai.Checked = false;
             checkEdStatus.Checked = false;
+
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
             btnGhi.Enabled = true;
             sINHVIENGridControl.Enabled = false;
-            saveMode = "THEM";
-            cbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 
+            saveMode = "THEM";
+            txtMaSV.Enabled = true;
 
         }
 
@@ -94,9 +99,9 @@ namespace QLDSV_TC.views
                 txtDiaChi.Focus();
                 return false;
             }
-            if (cbMaLop.Text.Trim() == "")
+            if (cbMaLop.SelectedValue is null)
             {
-                MessageBox.Show("Mã lớp không được thiếu!", "", MessageBoxButtons.OK);
+                MessageBox.Show("Vui Long Chon Ma Lop!", "", MessageBoxButtons.OK);
                 cbMaLop.Focus();
                 return false;
             }
@@ -137,7 +142,7 @@ namespace QLDSV_TC.views
             if(checkSV()  == true) { 
             try
             {
-                bdsSV.EndEdit();
+                    bdsSV.EndEdit();
                 bdsSV.ResetCurrentItem();
                 this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.sINHVIENTableAdapter.Update(this.qLDSV_TCDataSet.SINHVIEN);
@@ -147,12 +152,14 @@ namespace QLDSV_TC.views
                 MessageBox.Show("Lỗi ghi sinh viên: " + ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
+
+            cbMaLop.DropDownStyle = ComboBoxStyle.DropDown;
             sINHVIENGridControl.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
             btnGhi.Enabled = false;
             panelControlNhapLieu.Enabled = false;
             saveMode = "";
-            cbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+           
             }
         }
 
@@ -227,7 +234,18 @@ namespace QLDSV_TC.views
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            cbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+           panelControlNhapLieu.Enabled = true;
+
+            cbMaLop.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbMaLop.DataSource = qLDSV_TCDataSet.LOP;
+            cbMaLop.DisplayMember = "MALOP";
+            cbMaLop.ValueMember = "MALOP";
+
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
+            btnGhi.Enabled = true;
+            sINHVIENGridControl.Enabled = false;
+            txtMaSV.Enabled = false;
+            saveMode = "SUA";
 
         }
     }
