@@ -124,6 +124,24 @@ namespace QLDSV_TC
                 return ex.State;
             }
         }
+
+        public static int CheckDataHelper(String query)
+        {
+            SqlDataReader dataReader = Program.ExecSqlDataReader(query);
+
+            // nếu null thì thoát luôn  ==> lỗi kết nối
+            if (dataReader == null)
+            {
+                MessageBox.Show("Server bị lỗi");
+                dataReader.Close();
+                return -1;
+            }
+            dataReader.Read();
+            int result = dataReader.GetInt32(0);
+            dataReader.Close();
+            return result;
+        }
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
