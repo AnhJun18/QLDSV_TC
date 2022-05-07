@@ -42,6 +42,9 @@ namespace QLDSV_TC.views
             this.barButtonClass = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonMH = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonLTC = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -58,9 +61,7 @@ namespace QLDSV_TC.views
             this.statusMa = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusKhoa = new System.Windows.Forms.ToolStripStatusLabel();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusBar.SuspendLayout();
@@ -84,17 +85,18 @@ namespace QLDSV_TC.views
             this.barButtonLTC,
             this.barButtonItem4,
             this.barButtonItem8,
-            this.barButtonItem9});
+            this.barButtonItem9,
+            this.btnSinhVien});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 15;
+            this.ribbon.MaxItemId = 16;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage4,
             this.ribbonPage1,
             this.ribbonPage2,
             this.ribbonPage5});
-            this.ribbon.Size = new System.Drawing.Size(753, 177);
+            this.ribbon.Size = new System.Drawing.Size(878, 209);
             this.ribbon.StatusBar = this.ribbonStatusBar;
             // 
             // barButtonItem1
@@ -173,6 +175,29 @@ namespace QLDSV_TC.views
             this.barButtonLTC.Name = "barButtonLTC";
             this.barButtonLTC.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonLTC_ItemClick);
             // 
+            // barButtonItem4
+            // 
+            this.barButtonItem4.Caption = "Danh Sách Lớp Tín Chỉ";
+            this.barButtonItem4.Id = 12;
+            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
+            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
+            this.barButtonItem4.Name = "barButtonItem4";
+            // 
+            // barButtonItem8
+            // 
+            this.barButtonItem8.Caption = "Danh Sách Sinh Viên Theo Lớp Tín Chỉ";
+            this.barButtonItem8.Id = 13;
+            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
+            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
+            this.barButtonItem8.Name = "barButtonItem8";
+            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
+            // 
+            // barButtonItem9
+            // 
+            this.barButtonItem9.Caption = "barButtonItem9";
+            this.barButtonItem9.Id = 14;
+            this.barButtonItem9.Name = "barButtonItem9";
+            // 
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -186,6 +211,7 @@ namespace QLDSV_TC.views
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonClass);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonMH);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonLTC);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnSinhVien);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPage1
@@ -238,11 +264,11 @@ namespace QLDSV_TC.views
             // 
             // ribbonStatusBar
             // 
-            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 384);
+            this.ribbonStatusBar.Location = new System.Drawing.Point(0, 472);
             this.ribbonStatusBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ribbonStatusBar.Name = "ribbonStatusBar";
             this.ribbonStatusBar.Ribbon = this.ribbon;
-            this.ribbonStatusBar.Size = new System.Drawing.Size(753, 24);
+            this.ribbonStatusBar.Size = new System.Drawing.Size(878, 30);
             // 
             // xtraTabbedMdiManager1
             // 
@@ -260,59 +286,44 @@ namespace QLDSV_TC.views
             this.statusMa,
             this.statusTen,
             this.statusKhoa});
-            this.statusBar.Location = new System.Drawing.Point(0, 362);
+            this.statusBar.Location = new System.Drawing.Point(0, 446);
             this.statusBar.Name = "statusBar";
-            this.statusBar.Padding = new System.Windows.Forms.Padding(1, 0, 12, 0);
-            this.statusBar.Size = new System.Drawing.Size(753, 22);
+            this.statusBar.Size = new System.Drawing.Size(878, 26);
             this.statusBar.TabIndex = 3;
             this.statusBar.Text = "statusStrip1";
             // 
             // statusMa
             // 
             this.statusMa.Name = "statusMa";
-            this.statusMa.Size = new System.Drawing.Size(24, 17);
+            this.statusMa.Size = new System.Drawing.Size(30, 20);
             this.statusMa.Text = "Ma";
             // 
             // statusTen
             // 
             this.statusTen.Name = "statusTen";
-            this.statusTen.Size = new System.Drawing.Size(31, 17);
+            this.statusTen.Size = new System.Drawing.Size(39, 20);
             this.statusTen.Text = "Tên: ";
             // 
             // statusKhoa
             // 
             this.statusKhoa.Name = "statusKhoa";
-            this.statusKhoa.Size = new System.Drawing.Size(40, 17);
+            this.statusKhoa.Size = new System.Drawing.Size(50, 20);
             this.statusKhoa.Text = "Khoa: ";
             // 
-            // barButtonItem4
+            // btnSinhVien
             // 
-            this.barButtonItem4.Caption = "Danh Sách Lớp Tín Chỉ";
-            this.barButtonItem4.Id = 12;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
-            // 
-            // barButtonItem8
-            // 
-            this.barButtonItem8.Caption = "Danh Sách Sinh Viên Theo Lớp Tín Chỉ";
-            this.barButtonItem8.Id = 13;
-            this.barButtonItem8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.Image")));
-            this.barButtonItem8.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem8.ImageOptions.LargeImage")));
-            this.barButtonItem8.Name = "barButtonItem8";
-            this.barButtonItem8.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem8_ItemClick);
-            // 
-            // barButtonItem9
-            // 
-            this.barButtonItem9.Caption = "barButtonItem9";
-            this.barButtonItem9.Id = 14;
-            this.barButtonItem9.Name = "barButtonItem9";
+            this.btnSinhVien.Caption = "SinhVien";
+            this.btnSinhVien.Id = 15;
+            this.btnSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.btnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.btnSinhVien.Name = "btnSinhVien";
+            this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSInhVien_ItemClick);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(753, 408);
+            this.ClientSize = new System.Drawing.Size(878, 502);
             this.Controls.Add(this.statusBar);
             this.Controls.Add(this.ribbonStatusBar);
             this.Controls.Add(this.ribbon);
@@ -366,5 +377,6 @@ namespace QLDSV_TC.views
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
+        private DevExpress.XtraBars.BarButtonItem btnSinhVien;
     }
 }
