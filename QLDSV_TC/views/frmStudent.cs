@@ -13,18 +13,12 @@ namespace QLDSV_TC.views
 {
     public partial class frmStudent : DevExpress.XtraEditors.XtraForm
     {
+
+        private String saveMode="";
       
         public frmStudent()
         {
             InitializeComponent();
-        }
-
-        private void sINHVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.bdsSV.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLDSV_TCDataSet);
-
         }
 
         private void frmStudent_Load(object sender, EventArgs e)
@@ -55,7 +49,7 @@ namespace QLDSV_TC.views
         private void btnThem_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
            
-            panelControl2.Enabled = true;
+            panelControlNhapLieu.Enabled = true;
             bdsSV.AddNew();
             cbMaLop.DataSource = qLDSV_TCDataSet.LOP;
             cbMaLop.DisplayMember = "MALOP";
@@ -66,8 +60,10 @@ namespace QLDSV_TC.views
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
             btnGhi.Enabled = true;
             sINHVIENGridControl.Enabled = false;
-         
-          
+            saveMode = "THEM";
+            cbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
+
         }
 
 
@@ -104,32 +100,34 @@ namespace QLDSV_TC.views
                 cbMaLop.Focus();
                 return false;
             }
-
-            string query = " DECLARE @return_value INT " +
-
-                           " EXEC @return_value = [dbo].[SP_CHECKID] " +
-
-                           " @ID = N'" + txtMaSV.Text.Trim() + "',  " +
-
-                           " @Type = N'MASV' " +
-
-                           " SELECT  'Return Value' = @return_value ";
-
-            int resultMa = Program.CheckDataHelper(query);
-            if (resultMa == -1)
+            if (saveMode.Equals("THEM"))
             {
-                XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
-                return false;
-            }
-            if (resultMa == 1)
-            {
-                XtraMessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (resultMa == 2)
-            {
-                XtraMessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
+                string query = " DECLARE @return_value INT " +
+
+                               " EXEC @return_value = [dbo].[SP_CHECKID] " +
+
+                               " @ID = N'" + txtMaSV.Text.Trim() + "',  " +
+
+                               " @Type = N'MASV' " +
+
+                               " SELECT  'Return Value' = @return_value ";
+
+                int resultMa = Program.CheckDataHelper(query);
+                if (resultMa == -1)
+                {
+                    XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (resultMa == 1)
+                {
+                    XtraMessageBox.Show("Mã Sinh Viên đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                if (resultMa == 2)
+                {
+                    XtraMessageBox.Show("Mã Sinh Viên đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
             }
             return true;
         }
@@ -152,9 +150,10 @@ namespace QLDSV_TC.views
             sINHVIENGridControl.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
             btnGhi.Enabled = false;
-            panelControl2.Enabled = false;
+            panelControlNhapLieu.Enabled = false;
+            saveMode = "";
+            cbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             }
-
         }
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -214,6 +213,22 @@ namespace QLDSV_TC.views
                 }
             }
             if (bdsSV.Count == 0) btnXoa.Enabled = false;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            cbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+
         }
     }
 }
