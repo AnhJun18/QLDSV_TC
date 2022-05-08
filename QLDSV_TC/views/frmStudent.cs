@@ -120,7 +120,7 @@ namespace QLDSV_TC.views
                 int resultMa = Program.CheckDataHelper(query);
                 if (resultMa == -1)
                 {
-                    XtraMessageBox.Show("Lỗi kết nối với database. Mời bạn xem lại", "", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Lỗi kết nối với database. Vui long thử lại sau!", "", MessageBoxButtons.OK);
                     return false;
                 }
                 if (resultMa == 1)

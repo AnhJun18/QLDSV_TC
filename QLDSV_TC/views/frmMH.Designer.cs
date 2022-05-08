@@ -65,7 +65,7 @@ namespace QLDSV_TC.views
             this.colTENMH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTIET_LT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSOTIET_TH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.lOPTINCHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsLTC = new System.Windows.Forms.BindingSource(this.components);
             this.lOPTINCHITableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.LOPTINCHITableAdapter();
             mAMHLabel = new System.Windows.Forms.Label();
             tENMHLabel = new System.Windows.Forms.Label();
@@ -82,7 +82,7 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPTINCHIBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLTC)).BeginInit();
             this.SuspendLayout();
             // 
             // mAMHLabel
@@ -164,7 +164,7 @@ namespace QLDSV_TC.views
             this.panelNhapLieu.Controls.Add(this.label2);
             this.panelNhapLieu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelNhapLieu.Enabled = false;
-            this.panelNhapLieu.Location = new System.Drawing.Point(0, 225);
+            this.panelNhapLieu.Location = new System.Drawing.Point(0, 461);
             this.panelNhapLieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelNhapLieu.Name = "panelNhapLieu";
             this.panelNhapLieu.Size = new System.Drawing.Size(1152, 236);
@@ -313,6 +313,7 @@ namespace QLDSV_TC.views
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnSua
             // 
@@ -321,6 +322,7 @@ namespace QLDSV_TC.views
             this.btnSua.Id = 2;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
+            this.btnSua.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSua_ItemClick);
             // 
             // btnPH
             // 
@@ -338,6 +340,7 @@ namespace QLDSV_TC.views
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
             this.btnGhi.Name = "btnGhi";
+            this.btnGhi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGhi_ItemClick);
             // 
             // btnThoat
             // 
@@ -360,7 +363,7 @@ namespace QLDSV_TC.views
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 461);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 697);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1152, 0);
@@ -372,7 +375,7 @@ namespace QLDSV_TC.views
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 411);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 647);
             // 
             // barDockControlRight
             // 
@@ -381,7 +384,7 @@ namespace QLDSV_TC.views
             this.barDockControlRight.Location = new System.Drawing.Point(1152, 50);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 411);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 647);
             // 
             // mONHOCGridControl
             // 
@@ -391,7 +394,7 @@ namespace QLDSV_TC.views
             this.mONHOCGridControl.MainView = this.gridView1;
             this.mONHOCGridControl.MenuManager = this.barManager1;
             this.mONHOCGridControl.Name = "mONHOCGridControl";
-            this.mONHOCGridControl.Size = new System.Drawing.Size(1152, 175);
+            this.mONHOCGridControl.Size = new System.Drawing.Size(1152, 411);
             this.mONHOCGridControl.TabIndex = 11;
             this.mONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -442,10 +445,10 @@ namespace QLDSV_TC.views
             this.colSOTIET_TH.VisibleIndex = 3;
             this.colSOTIET_TH.Width = 94;
             // 
-            // lOPTINCHIBindingSource
+            // bdsLTC
             // 
-            this.lOPTINCHIBindingSource.DataMember = "LOPTINCHI";
-            this.lOPTINCHIBindingSource.DataSource = this.DS;
+            this.bdsLTC.DataMember = "FK_LOPTINCHI_MONHOC";
+            this.bdsLTC.DataSource = this.bdsMonHoc;
             // 
             // lOPTINCHITableAdapter
             // 
@@ -455,7 +458,7 @@ namespace QLDSV_TC.views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 461);
+            this.ClientSize = new System.Drawing.Size(1152, 697);
             this.Controls.Add(this.mONHOCGridControl);
             this.Controls.Add(this.panelNhapLieu);
             this.Controls.Add(this.barDockControlLeft);
@@ -478,7 +481,7 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mONHOCGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lOPTINCHIBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsLTC)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -515,7 +518,7 @@ namespace QLDSV_TC.views
         private DevExpress.XtraGrid.Columns.GridColumn colTENMH;
         private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_LT;
         private DevExpress.XtraGrid.Columns.GridColumn colSOTIET_TH;
-        private System.Windows.Forms.BindingSource lOPTINCHIBindingSource;
+        private System.Windows.Forms.BindingSource bdsLTC;
         private QLDSV_TCDataSetTableAdapters.LOPTINCHITableAdapter lOPTINCHITableAdapter;
     }
 }
