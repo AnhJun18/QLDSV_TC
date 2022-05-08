@@ -60,7 +60,7 @@ namespace QLDSV_TC.views
             this.teTENLOP = new DevExpress.XtraEditors.TextEdit();
             this.teMALOP = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.sINHVIENBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bdsSV = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
             this.lOPGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -83,7 +83,7 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.tekHOAHOC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teTENLOP.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teMALOP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -200,6 +200,7 @@ namespace QLDSV_TC.views
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
+            this.btnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXoa_ItemClick);
             // 
             // btnSua
             // 
@@ -214,14 +215,17 @@ namespace QLDSV_TC.views
             // 
             this.btnPH.Caption = "Phục Hồi";
             this.btnPH.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.btnPH.Enabled = false;
             this.btnPH.Id = 3;
             this.btnPH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPH.ImageOptions.SvgImage")));
             this.btnPH.Name = "btnPH";
+            this.btnPH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPH_ItemClick);
             // 
             // btnGhi
             // 
             this.btnGhi.Caption = "Ghi";
             this.btnGhi.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.btnGhi.Enabled = false;
             this.btnGhi.Id = 4;
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
@@ -243,7 +247,6 @@ namespace QLDSV_TC.views
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Size = new System.Drawing.Size(1018, 40);
-            this.barDockControlTop.Click += new System.EventHandler(this.barDockControlTop_Click);
             // 
             // barDockControlBottom
             // 
@@ -252,7 +255,6 @@ namespace QLDSV_TC.views
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 756);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Size = new System.Drawing.Size(1018, 0);
-            this.barDockControlBottom.Click += new System.EventHandler(this.barDockControlBottom_Click);
             // 
             // barDockControlLeft
             // 
@@ -261,7 +263,6 @@ namespace QLDSV_TC.views
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 40);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Size = new System.Drawing.Size(0, 716);
-            this.barDockControlLeft.Click += new System.EventHandler(this.barDockControlLeft_Click);
             // 
             // barDockControlRight
             // 
@@ -270,7 +271,6 @@ namespace QLDSV_TC.views
             this.barDockControlRight.Location = new System.Drawing.Point(1018, 40);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Size = new System.Drawing.Size(0, 716);
-            this.barDockControlRight.Click += new System.EventHandler(this.barDockControlRight_Click);
             // 
             // panelControl1
             // 
@@ -315,11 +315,11 @@ namespace QLDSV_TC.views
             this.panelControl2.Controls.Add(this.teMALOP);
             this.panelControl2.Controls.Add(this.label2);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelControl2.Enabled = false;
             this.panelControl2.Location = new System.Drawing.Point(0, 620);
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(1018, 136);
             this.panelControl2.TabIndex = 30;
-            this.panelControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
             // 
             // teMAKHOA
             // 
@@ -377,10 +377,10 @@ namespace QLDSV_TC.views
             this.label2.Text = "Thông Tin Lớp Học";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // sINHVIENBindingSource1
+            // bdsSV
             // 
-            this.sINHVIENBindingSource1.DataMember = "FK_SINHVIEN_LOP";
-            this.sINHVIENBindingSource1.DataSource = this.bdsLOP;
+            this.bdsSV.DataMember = "FK_SINHVIEN_LOP";
+            this.bdsSV.DataSource = this.bdsLOP;
             // 
             // tableAdapterManager
             // 
@@ -479,7 +479,7 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.tekHOAHOC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teTENLOP.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teMALOP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sINHVIENBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsSV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lOPGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -512,7 +512,7 @@ namespace QLDSV_TC.views
         private DevExpress.XtraEditors.TextEdit teTENLOP;
         private DevExpress.XtraEditors.TextEdit teMALOP;
         private DevExpress.XtraEditors.TextEdit tekHOAHOC;
-        private System.Windows.Forms.BindingSource sINHVIENBindingSource1;
+        private System.Windows.Forms.BindingSource bdsSV;
         private DevExpress.XtraEditors.TextEdit teMAKHOA;
         private QLDSV_TCDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl lOPGridControl;

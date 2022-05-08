@@ -41,6 +41,10 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
+            if (Program.mGroup == "KHOA")
+            {
+                panelControl1.Enabled = false;
+            }
         }
 
         private void lOPBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -59,54 +63,21 @@ namespace QLDSV_TC.views
 
         }
 
-        private void lOPGridControl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControlTop_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControlBottom_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControlLeft_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void barDockControlRight_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
             vitri = bdsLOP.Position;
             bdsLOP.AddNew();
             panelControl2.Enabled = true;
-            teMALOP.Text = null;
-            tekHOAHOC.Text = null;
-            teTENLOP.Text = null;
-            teMAKHOA.Text = "CNTT";
+            cbKhoa.Enabled = false;
+            DataTable dt = Program.ExecSqlDataTable("EXEC SP_GetMaKhoa");
+            String makhoa = dt.Rows[0][0].ToString();
+            teMAKHOA.Text = makhoa;
             
             btnThem.Enabled = btnSua.Enabled  = btnXoa.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
+            lOPGridControl.Enabled = false;
         }
 
-        private void panelControl2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -132,8 +103,9 @@ namespace QLDSV_TC.views
             {
                 bdsLOP.EndEdit();
                 bdsLOP.ResetCurrentItem();
-                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.lOPTableAdapter.Update(this.qLDSV_TCDataSet.LOP);
+                lOPGridControl.Enabled = true;
+                
             }
             catch (Exception ex)
             {
@@ -141,9 +113,10 @@ namespace QLDSV_TC.views
                 return;
             }
             
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
-            btnGhi.Enabled = false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = true;
+            btnGhi.Enabled = btnPH.Enabled  = false;
             panelControl2.Enabled = false;
+            cbKhoa.Enabled = true;
         }
 
 
@@ -153,12 +126,83 @@ namespace QLDSV_TC.views
             panelControl2.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
+            cbKhoa.Enabled = false;
 
         }
-
+        
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
+                return;
+            Program.servername = cbKhoa.SelectedValue.ToString();
+            
+            if (cbKhoa.SelectedIndex != Program.mPhongBan)
+            {
+                Program.mlogin = Program.remoteLogin;
+                Program.pass = Program.remotePass;
+            }
+            else
+            {
+                Program.mlogin = Program.mloginDN;
+                Program.pass = Program.passDN;
+            }
+            if (Program.KetNoi() == 0)
+            {
+                MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
+            }
+            else
+            {
+                this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTableAdapter.Fill(this.qLDSV_TCDataSet.LOP);
 
+                this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.sINHVIENTableAdapter.Fill(this.qLDSV_TCDataSet.SINHVIEN);
+
+            }
+        }
+
+        private void btnPH_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            bdsLOP.CancelEdit();
+            this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.lOPTableAdapter.Fill(this.qLDSV_TCDataSet.LOP);
+
+            this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.sINHVIENTableAdapter.Fill(this.qLDSV_TCDataSet.SINHVIEN);
+            if (btnThem.Enabled == false) bdsLOP.Position = vitri;
+            lOPGridControl.Enabled = true;
+            panelControl2.Enabled = false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = true;
+            btnGhi.Enabled = btnPH.Enabled = false;
+            cbKhoa.Enabled = true;
+        }
+        
+        private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            if (bdsSV.Count > 0 )
+            {
+                MessageBox.Show("Không thể xóa lớp vì đã có sinh viên", "", MessageBoxButtons.OK);
+                return;
+            }  
+            if(MessageBox.Show("Bạn chắc chắn muốn xóa lớp học?", "Xác nhận", MessageBoxButtons.OKCancel ) == DialogResult.OK)
+            {
+                try
+                {
+                    /*malop = char.Parse(((DataRowView)bdsLOP[bdsLOP.Position])["MALOP"].ToString());*/
+                    bdsLOP.RemoveCurrent();
+                    this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.lOPTableAdapter.Update(this.qLDSV_TCDataSet.LOP);
+
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Lỗi xóa lớp, bạn hãy xóa lại" + ex.Message, "", MessageBoxButtons.OK);
+                    this.lOPTableAdapter.Fill(this.qLDSV_TCDataSet.LOP);
+                    /*bdsLOP.Position = bdsLOP.Find("MALOP", malop);*/
+                    return;
+                }
+            }    
         }
     }
+    
 }
