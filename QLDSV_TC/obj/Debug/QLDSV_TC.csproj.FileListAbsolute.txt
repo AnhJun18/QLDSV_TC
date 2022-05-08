@@ -191,3 +191,4 @@ D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmMH.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmLTC.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmMH.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmStudent.resources
+D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmStudent.resources
