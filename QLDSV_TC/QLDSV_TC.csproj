@@ -99,6 +99,12 @@
     <Compile Include="views\frmMH.Designer.cs">
       <DependentUpon>frmMH.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\frmNhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmNhapDiem.Designer.cs">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\frmStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmMH.resx">
       <DependentUpon>frmMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmNhapDiem.resx">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmStudent.resx">
       <DependentUpon>frmStudent.cs</DependentUpon>
