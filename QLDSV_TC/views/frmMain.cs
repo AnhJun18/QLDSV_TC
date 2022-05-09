@@ -16,6 +16,12 @@ namespace QLDSV_TC.views
         public frmMain()
         {
             InitializeComponent();
+            if (Program.mGroup.Equals("SV"))
+            {
+                ribbonPageSinhVien.Visible = true;
+                ribbonPageBaoCao.Visible = false;
+                ribbonPageQuanLy.Visible = false;
+            }
         }
 
         private Form CheckExists(Type ftype)
@@ -103,6 +109,19 @@ namespace QLDSV_TC.views
                 Program.frmNhapDiem = new frmNhapDiem();
                 Program.frmNhapDiem.MdiParent = this;
                 Program.frmNhapDiem.Show();
+
+            }
+        }
+
+        private void barSinhVien_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmDangKyLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmDangKyLTC frmDkLTC = new frmDangKyLTC();
+                frmDkLTC.MdiParent = this;
+                 frmDkLTC.Show();
 
             }
         }
