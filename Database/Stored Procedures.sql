@@ -77,7 +77,7 @@ BEGIN
 	 RETURN 0 --Không bị trùng được thêm
 END
 
-// frm nhập điểm 
+/* frm nhập điểm */
 ALTER PROCEDURE [dbo].[SP_DSDKMH] @NienKhoa nchar(9), @HocKy int, @Nhom int,@MonHoc nchar(10)
 as
 BEGIN
