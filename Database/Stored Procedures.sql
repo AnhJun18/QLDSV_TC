@@ -77,7 +77,7 @@ BEGIN
 	 RETURN 0 --Không bị trùng được thêm
 END
 
-
+// frm nhập điểm 
 ALTER PROCEDURE [dbo].[SP_DSDKMH] @NienKhoa nchar(9), @HocKy int, @Nhom int,@MonHoc nchar(10)
 as
 BEGIN
@@ -109,3 +109,15 @@ BEGIN
 	ELSE 
 	RAISERROR(N'THÔNG TIN ĐĂNG KÝ KHÔNG TỒN TẠI',16,1)
 END
+
+ALTER proc [dbo].[sp_get_Nhom] @NIENKHOA varchar(9), @HOCKI int, @MAMH nchar(10)
+as select NHOM FROM LOPTINCHI where @NIENKHOA = NIENKHOA AND HOCKY = @HOCKI AND MAMH = @MAMH group by NHOM
+
+ALTER proc [dbo].[sp_get_MonHoc] @NIENKHOA varchar(9), @HOCKI int
+as select MAMH FROM LOPTINCHI where @NIENKHOA = NIENKHOA AND HOCKY = @HOCKI  group by MAMH
+
+ALTER proc [dbo].[sp_get_HocKy] @NIENKHOA nchar(9)  as 
+select HOCKY from LOPTINCHI where NIENKHOA= @NIENKHOA group by HOCKY
+
+ALTER proc [dbo].[sp_get_NienKhoa] as 
+select NIENKHOA from LOPTINCHI group by NIENKHOA
