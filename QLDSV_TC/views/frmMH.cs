@@ -23,8 +23,8 @@ namespace QLDSV_TC.views
                 DS.EnforceConstraints = false;
                 this.MONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.MONHOCTableAdapter.Fill(this.DS.MONHOC);
-              this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
-              this.lOPTINCHITableAdapter.Fill(this.DS.LOPTINCHI);
+                this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
+                this.lOPTINCHITableAdapter.Fill(this.DS.LOPTINCHI);
 
 
                 }
