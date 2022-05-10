@@ -45,6 +45,7 @@ namespace QLDSV_TC.views
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -61,7 +62,7 @@ namespace QLDSV_TC.views
             this.statusMa = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusKhoa = new System.Windows.Forms.ToolStripStatusLabel();
-            this.btnSinhVien = new DevExpress.XtraBars.BarButtonItem();
+            this.btnNhapDiem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusBar.SuspendLayout();
@@ -86,10 +87,11 @@ namespace QLDSV_TC.views
             this.barButtonItem4,
             this.barButtonItem8,
             this.barButtonItem9,
-            this.btnSinhVien});
+            this.btnSinhVien,
+            this.btnNhapDiem});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 16;
+            this.ribbon.MaxItemId = 17;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage4,
@@ -198,6 +200,15 @@ namespace QLDSV_TC.views
             this.barButtonItem9.Id = 14;
             this.barButtonItem9.Name = "barButtonItem9";
             // 
+            // btnSinhVien
+            // 
+            this.btnSinhVien.Caption = "SinhVien";
+            this.btnSinhVien.Id = 15;
+            this.btnSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSinhVien.ImageOptions.Image")));
+            this.btnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnSinhVien.ImageOptions.LargeImage")));
+            this.btnSinhVien.Name = "btnSinhVien";
+            this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSInhVien_ItemClick);
+            // 
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -212,6 +223,7 @@ namespace QLDSV_TC.views
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonMH);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonLTC);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnSinhVien);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnNhapDiem);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPage1
@@ -310,14 +322,14 @@ namespace QLDSV_TC.views
             this.statusKhoa.Size = new System.Drawing.Size(50, 20);
             this.statusKhoa.Text = "Khoa: ";
             // 
-            // btnSinhVien
+            // btnNhapDiem
             // 
-            this.btnSinhVien.Caption = "SinhVien";
-            this.btnSinhVien.Id = 15;
-            this.btnSinhVien.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
-            this.btnSinhVien.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
-            this.btnSinhVien.Name = "btnSinhVien";
-            this.btnSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnSInhVien_ItemClick);
+            this.btnNhapDiem.Caption = "Nhập Điểm";
+            this.btnNhapDiem.Id = 16;
+            this.btnNhapDiem.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.btnNhapDiem.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.btnNhapDiem.Name = "btnNhapDiem";
+            this.btnNhapDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapDiem_ItemClick);
             // 
             // frmMain
             // 
@@ -378,5 +390,6 @@ namespace QLDSV_TC.views
         private DevExpress.XtraBars.BarButtonItem barButtonItem8;
         private DevExpress.XtraBars.BarButtonItem barButtonItem9;
         private DevExpress.XtraBars.BarButtonItem btnSinhVien;
+        private DevExpress.XtraBars.BarButtonItem btnNhapDiem;
     }
 }

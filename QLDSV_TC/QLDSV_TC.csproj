@@ -42,7 +42,9 @@
     <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -99,6 +101,12 @@
     <Compile Include="views\frmMH.Designer.cs">
       <DependentUpon>frmMH.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\frmNhapDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmNhapDiem.Designer.cs">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\frmStudent.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmMH.resx">
       <DependentUpon>frmMH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmNhapDiem.resx">
+      <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmStudent.resx">
       <DependentUpon>frmStudent.cs</DependentUpon>

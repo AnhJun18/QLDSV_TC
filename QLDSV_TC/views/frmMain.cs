@@ -93,5 +93,18 @@ namespace QLDSV_TC.views
 
             }
         }
+
+        private void btnNhapDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmNhapDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Program.frmNhapDiem = new frmNhapDiem();
+                Program.frmNhapDiem.MdiParent = this;
+                Program.frmNhapDiem.Show();
+
+            }
+        }
     }
 }
