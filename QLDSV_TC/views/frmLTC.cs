@@ -13,44 +13,74 @@ namespace QLDSV_TC.views
 {
     public partial class frmLTC : DevExpress.XtraEditors.XtraForm
     {
-        int vitri;
+        private int vitri;
+        private String makhoa = "";
         public frmLTC()
         {
             InitializeComponent();
         }
 
         private void frmLTC_Load(object sender, EventArgs e)
-        {  
+        {
+            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.GIANGVIEN' table. You can move, or remove it, as needed.
+
             qLDSV_TCDataSet.EnforceConstraints = false;
-           
+
             this.gIANGVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.gIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.GIANGVIEN);
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.MONHOC' table. You can move, or remove it, as needed.
+
+
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
-           
 
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.LOPTINCHI' table. You can move, or remove it, as needed.
+
             this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTINCHITableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
 
             this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANGKYTableAdapter.Fill(this.qLDSV_TCDataSet.DANGKY);
+
             Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Học Phí%'  ";
             cbKhoa.DataSource = Program.bdsDSPM;
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
+
             cbKhoa.SelectedIndex = Program.mPhongBan;
             if (Program.mGroup == "KHOA")
             {
                 panelControl1.Enabled = false;
             }
 
+            DataTable dt = Program.ExecSqlDataTable("EXEC SP_GetMaKhoa");
+            makhoa = dt.Rows[0][0].ToString();
+            ltcMaMH.DataSource = bdsMONHOC;
+            ltcMaMH.DisplayMember = "TENMH";
+            ltcMaMH.ValueMember = "MAMH";
+
+
+            DataTable dtc = new DataTable();
+            dtc.Columns.Add("FullName", typeof(String));
+            dtc.Columns.Add("MAGV", typeof(String));
+            for (int i=0;i< bdsGV.Count; i++)
+             {
+                 DataRow workRow = dtc.NewRow();
+                 workRow["FullName"] = ((DataRowView)bdsGV[i])["Ho"].ToString() + ' ' + ((DataRowView)bdsGV[i])["TEN"].ToString();
+                 workRow["MaGV"] = ((DataRowView)bdsGV[i])["MAGV"].ToString();
+                 dtc.Rows.Add(workRow);
+
+
+             }
+
+
+             ltcMAGV.DataSource = dtc;
+             ltcMAGV.DisplayMember = "FullName";
+            ltcMAGV.ValueMember = "MAGV";
+
 
         }
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
-    {
+        {
             if (cbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
             Program.servername = cbKhoa.SelectedValue.ToString();
@@ -81,22 +111,20 @@ namespace QLDSV_TC.views
         {
             vitri = bdslOPTINCHI.Position;
             bdslOPTINCHI.AddNew();
-            ltcMAGV.DataSource = qLDSV_TCDataSet.GIANGVIEN;
-            ltcMAGV.DisplayMember = "MAGV";
-            ltcMAGV.ValueMember = "MAGV";
-            ltcMAMH.DataSource = qLDSV_TCDataSet.MONHOC;
-            ltcMAMH.DisplayMember = "MAMH";
-            ltcMAMH.ValueMember = "MAMH";
+
             panelControl2.Enabled = true;
             ltcHUYLOP.Checked = false;
             cbKhoa.Enabled = false;
-            DataTable dt = Program.ExecSqlDataTable("EXEC SP_GetMaKhoa");
-            String makhoa = dt.Rows[0][0].ToString();
+
             ltcMAKHOA.Text = makhoa;
 
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
             lOPTINCHIGridControl.Enabled = false;
+            ltcMaMH.SelectedIndex = 0;
+            txtMaMH.Text = ltcMaMH.SelectedValue.ToString();
+            ltcMAGV.SelectedIndex = 0;
+            txtMAGV.Text = ltcMAGV.SelectedValue.ToString();
         }
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
@@ -113,10 +141,10 @@ namespace QLDSV_TC.views
                 ltcMAGV.Focus();
                 return;
             }
-            if (ltcMAMH.Text.Trim() == "")
+            if (ltcMaMH.Text.Trim() == "")
             {
                 MessageBox.Show("vui lòng chọn môn học!", "", MessageBoxButtons.OK);
-                ltcMAMH.Focus();
+                ltcMaMH.Focus();
                 return;
             }
             if (ltcNHOM.Text.Trim() == "")
@@ -137,6 +165,7 @@ namespace QLDSV_TC.views
                 ltcSOSVTOITHIEU.Focus();
                 return;
             }
+            MessageBox.Show(ltcMAGV.SelectedValue.ToString() + " _-" + ltcMaMH.SelectedValue.ToString() + " _-" + ltcMaMH.SelectedValue.ToString());
             try
             {
                 bdslOPTINCHI.EndEdit();
@@ -169,8 +198,6 @@ namespace QLDSV_TC.views
         private void btnPH_ItemClick(object sender, ItemClickEventArgs e)
         {
             bdslOPTINCHI.CancelEdit();
-            this.gIANGVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.gIANGVIENTableAdapter.Fill(this.qLDSV_TCDataSet.GIANGVIEN);
 
             this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
             this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
@@ -187,7 +214,7 @@ namespace QLDSV_TC.views
 
         private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
         {
-            
+
             if (bdsDANGKY.Count > 0)
             {
                 MessageBox.Show("Không thể xóa lớp tín chỉ vì đã có sinh viên đăng kí ", "", MessageBoxButtons.OK);
@@ -210,6 +237,49 @@ namespace QLDSV_TC.views
                     return;
                 }
             }
+        }
+
+        private void panelControl2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void ltcMaMH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ltcMaMH.SelectedValue != null)
+                txtMaMH.Text = ltcMaMH.SelectedValue.ToString();
+        }
+
+
+        private void txtMaMH_EditValueChanged_1(object sender, EventArgs e)
+        {
+
+                if (txtMaMH.Text !=  "System.Data.DataRowView" && txtMaMH.Text != null)
+                {
+                    ltcMaMH.SelectedValue = txtMaMH.Text;
+                }
+            
+
+        }
+
+        private void ltcMAGV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ltcMAGV.SelectedValue != null)
+                txtMAGV.Text = ltcMAGV.SelectedValue.ToString();
+        }
+
+        private void txtMAGV_EditValueChanged(object sender, EventArgs e)
+        {
+           if (txtMAGV.Text != "System.Data.DataRowView" && txtMAGV.Text != null)
+            {
+                ltcMAGV.SelectedValue = txtMAGV.Text;
+            }
+
+        }
+
+        private void lOPTINCHIGridControl_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

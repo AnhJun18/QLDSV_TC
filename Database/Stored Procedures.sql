@@ -77,5 +77,47 @@ BEGIN
 	 RETURN 0 --Không bị trùng được thêm
 END
 
+/* frm nhập điểm */
+ALTER PROCEDURE [dbo].[SP_DSDKMH] @NienKhoa nchar(9), @HocKy int, @Nhom int,@MonHoc nchar(10)
+as
+BEGIN
+	declare @LOPTINCHI int
+	select @LOPTINCHI= MALTC 
+	from LOPTINCHI JOIN MONHOC ON LOPTINCHI.MAMH = MONHOC.MAMH
+	where LOPTINCHI.NIENKHOA = @NienKhoa AND LOPTINCHI.HOCKY = @HocKy AND LOPTINCHI.NHOM = @Nhom AND MONHOC.MAMH = @MonHoc 
+
+	select @LOPTINCHI as LOPTC, SINHVIEN.MASV,HOTEN=HO+' '+TEN,DIEM_CC,DIEM_GK,DIEM_CK,DIEM_TK= DIEM_CC*0.1 + DIEM_GK*0.3 + DIEM_CK*0.6 
+	from DANGKY JOIN SINHVIEN ON  DANGKY.MASV = SINHVIEN.MASV
+	where DANGKY.MALTC = @LOPTINCHI AND HUYDANGKY = 0
+END
 
 
+ALTER PROC [dbo].[SP_Ghi_DIEM]
+@MSSV nchar(10),
+@MALTC int,
+@DIEM_CC float,
+@DIEM_GK float,
+@DIEM_CK float
+as 
+BEGIN
+	IF EXISTS (Select 1 From DANGKY where MASV = @MSSV AND MALTC = @MALTC)
+	BEGIN
+		UPDATE DANGKY
+		SET DIEM_CC = @DIEM_CC, DIEM_GK = @DIEM_GK, DIEM_CK = @DIEM_CK
+		WHERE MASV = @MSSV AND MALTC = @MALTC
+	END
+	ELSE 
+	RAISERROR(N'THÔNG TIN ĐĂNG KÝ KHÔNG TỒN TẠI',16,1)
+END
+
+ALTER proc [dbo].[sp_get_Nhom] @NIENKHOA varchar(9), @HOCKI int, @MAMH nchar(10)
+as select NHOM FROM LOPTINCHI where @NIENKHOA = NIENKHOA AND HOCKY = @HOCKI AND MAMH = @MAMH group by NHOM
+
+ALTER proc [dbo].[sp_get_MonHoc] @NIENKHOA varchar(9), @HOCKI int
+as select MAMH FROM LOPTINCHI where @NIENKHOA = NIENKHOA AND HOCKY = @HOCKI  group by MAMH
+
+ALTER proc [dbo].[sp_get_HocKy] @NIENKHOA nchar(9)  as 
+select HOCKY from LOPTINCHI where NIENKHOA= @NIENKHOA group by HOCKY
+
+ALTER proc [dbo].[sp_get_NienKhoa] as 
+select NIENKHOA from LOPTINCHI group by NIENKHOA
