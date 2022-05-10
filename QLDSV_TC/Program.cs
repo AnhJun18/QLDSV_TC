@@ -43,6 +43,7 @@ namespace QLDSV_TC
         public static views.frmLTC frmLTC;
         public static views.frmStudent frmSinhVien;
         public static views.frmNhapDiem frmNhapDiem;
+       
         /* public static formClassRegistration frmRegister;
          public static formScores frmScores;
          public static formManagerSubject frmSubject;*/

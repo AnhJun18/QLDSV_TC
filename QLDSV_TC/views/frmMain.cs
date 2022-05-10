@@ -125,5 +125,19 @@ namespace QLDSV_TC.views
 
             }
         }
+
+
+        private void barBtnXemDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmXemDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmXemDiem frmxemdiem = new frmXemDiem();
+                frmxemdiem.MdiParent = this;
+                frmxemdiem.Show();
+
+            }
+        }
     }
 }

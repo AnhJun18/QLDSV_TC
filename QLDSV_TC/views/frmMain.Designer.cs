@@ -36,7 +36,7 @@ namespace QLDSV_TC.views
             this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barSinhVien = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barBtnXemDiem = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem6 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem7 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonClass = new DevExpress.XtraBars.BarButtonItem();
@@ -78,7 +78,7 @@ namespace QLDSV_TC.views
             this.barButtonItem2,
             this.barButtonItem3,
             this.barSinhVien,
-            this.barButtonItem5,
+            this.barBtnXemDiem,
             this.barButtonItem6,
             this.barButtonItem7,
             this.barButtonClass,
@@ -131,12 +131,13 @@ namespace QLDSV_TC.views
             this.barSinhVien.Name = "barSinhVien";
             this.barSinhVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSinhVien_ItemClick);
             // 
-            // barButtonItem5
+            // barBtnXemDiem
             // 
-            this.barButtonItem5.Caption = "Xem Điểm";
-            this.barButtonItem5.Id = 5;
-            this.barButtonItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.barBtnXemDiem.Caption = "Xem Điểm";
+            this.barBtnXemDiem.Id = 5;
+            this.barBtnXemDiem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.barBtnXemDiem.Name = "barBtnXemDiem";
+            this.barBtnXemDiem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnXemDiem_ItemClick);
             // 
             // barButtonItem6
             // 
@@ -253,7 +254,7 @@ namespace QLDSV_TC.views
             // 
             // ribbonPageGroup5
             // 
-            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem5);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barBtnXemDiem);
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             // 
             // ribbonPageBaoCao
@@ -374,7 +375,7 @@ namespace QLDSV_TC.views
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPageQuanLy;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem barSinhVien;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
+        private DevExpress.XtraBars.BarButtonItem barBtnXemDiem;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
