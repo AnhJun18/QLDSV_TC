@@ -121,7 +121,7 @@ namespace QLDSV_TC.views
 
         private void btnHuyDK_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn có chắc chắn muốn hủy đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 string cmd = "EXEC [dbo].[SP_HUY_DKY_LTC] '" +txtMaLTC.Text + "' , '" + Program.username + "' ";
                 if (Program.ExecSqlNonQuery(cmd) == 0)
