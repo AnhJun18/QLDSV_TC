@@ -17,7 +17,7 @@ namespace QLDSV_TC
         public static String connstr;
         public static SqlCommand sqlcmd = new SqlCommand();
         //=======================================================================================================mode lấy tk của user window
-        public static String constr_publisher = "Data Source=ZIZI; Initial Catalog=QLDSV_TC; Integrated Security=true";
+        public static String constr_publisher = "Data Source=ANH-JUN; Initial Catalog=QLDSV_TC; Integrated Security=true";
 
         public static SqlDataReader myReader;
         public static String servername = "";
@@ -27,7 +27,7 @@ namespace QLDSV_TC
 
         public static String database = "QLDSV_TC";
         public static String remoteLogin = "HTKN"; //kết nối site khác
-        public static String remotePass = "0708"; //kết nối site khác
+        public static String remotePass = "18"; //kết nối site khác
         public static String mloginDN = ""; //loginname hiện tại
         public static String passDN = "";//pass hiện tại
         public static String mGroup = ""; //khoa-pgv-pkt
