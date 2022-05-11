@@ -24,6 +24,7 @@ namespace QLDSV_TC
         public static String username = ""; //thực sự là mã nhân viên: do ta gán username chính là mã nhân viên
         public static String mlogin = "";
         public static String pass = "";
+        public static String passSV = "";
 
         public static String database = "QLDSV_TC";
         public static String remoteLogin = "HTKN"; //kết nối site khác

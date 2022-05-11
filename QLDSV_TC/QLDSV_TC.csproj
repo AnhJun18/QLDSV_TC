@@ -85,10 +85,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSV_TCDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Report_DS_LopTinChi.cs">
+    <Compile Include="reports\Report_DS_LopTinChi.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Report_DS_LopTinChi.Designer.cs">
+    <Compile Include="reports\Report_DS_LopTinChi.Designer.cs">
       <DependentUpon>Report_DS_LopTinChi.cs</DependentUpon>
     </Compile>
     <Compile Include="views\frmChangePass.cs">
@@ -161,7 +161,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report_DS_LopTinChi.resx">
+    <EmbeddedResource Include="reports\Report_DS_LopTinChi.resx">
       <DependentUpon>Report_DS_LopTinChi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmChangePass.resx">
