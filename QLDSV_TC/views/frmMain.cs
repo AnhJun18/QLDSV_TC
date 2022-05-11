@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraBars;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -136,6 +137,32 @@ namespace QLDSV_TC.views
                 frmXemDiem frmxemdiem = new frmXemDiem();
                 frmxemdiem.MdiParent = this;
                 frmxemdiem.Show();
+
+            }
+        }
+
+        private void btnDX_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            DialogResult dialog = XtraMessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo!", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                Program.frmChinh.Visible = false;
+                Program.frmLogin.Visible = true;
+                Program.bdsDSPM.RemoveFilter();
+                Program.frmLogin.loadAgain();
+                
+            }
+        }
+
+        private void btnChangePass_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmChangePass));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmChangePass frmChangePass = new frmChangePass();
+                frmChangePass.MdiParent = this;
+                frmChangePass.Show();
 
             }
         }
