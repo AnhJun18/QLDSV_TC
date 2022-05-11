@@ -37,8 +37,8 @@ namespace QLDSV_TC.views
             System.Windows.Forms.Label nGAYSINHLabel;
             System.Windows.Forms.Label dANGHIHOCLabel;
             System.Windows.Forms.Label pHAILabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudent));
             System.Windows.Forms.Label mALOPLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmStudent));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -71,6 +71,7 @@ namespace QLDSV_TC.views
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
             this.lOPTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.LOPTableAdapter();
             this.panelControlNhapLieu = new DevExpress.XtraEditors.PanelControl();
+            this.cbMaLop = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.checkEdPhai = new DevExpress.XtraEditors.CheckEdit();
             this.checkEdStatus = new DevExpress.XtraEditors.CheckEdit();
@@ -82,7 +83,6 @@ namespace QLDSV_TC.views
             this.lOPBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bdsDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.dANGKYTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.DANGKYTableAdapter();
-            this.cbMaLop = new System.Windows.Forms.ComboBox();
             mASVLabel = new System.Windows.Forms.Label();
             hOLabel = new System.Windows.Forms.Label();
             tENLabel = new System.Windows.Forms.Label();
@@ -182,6 +182,15 @@ namespace QLDSV_TC.views
             pHAILabel.Size = new System.Drawing.Size(41, 21);
             pHAILabel.TabIndex = 15;
             pHAILabel.Text = "Phái";
+            // 
+            // mALOPLabel
+            // 
+            mALOPLabel.AutoSize = true;
+            mALOPLabel.Location = new System.Drawing.Point(846, 82);
+            mALOPLabel.Name = "mALOPLabel";
+            mALOPLabel.Size = new System.Drawing.Size(56, 17);
+            mALOPLabel.TabIndex = 17;
+            mALOPLabel.Text = "MALOP:";
             // 
             // barManager1
             // 
@@ -530,6 +539,15 @@ namespace QLDSV_TC.views
             this.panelControlNhapLieu.TabIndex = 7;
             this.panelControlNhapLieu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
             // 
+            // cbMaLop
+            // 
+            this.cbMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSV, "MALOP", true));
+            this.cbMaLop.FormattingEnabled = true;
+            this.cbMaLop.Location = new System.Drawing.Point(908, 79);
+            this.cbMaLop.Name = "cbMaLop";
+            this.cbMaLop.Size = new System.Drawing.Size(121, 24);
+            this.cbMaLop.TabIndex = 18;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
@@ -637,24 +655,6 @@ namespace QLDSV_TC.views
             // dANGKYTableAdapter
             // 
             this.dANGKYTableAdapter.ClearBeforeFill = true;
-            // 
-            // mALOPLabel
-            // 
-            mALOPLabel.AutoSize = true;
-            mALOPLabel.Location = new System.Drawing.Point(846, 82);
-            mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(56, 17);
-            mALOPLabel.TabIndex = 17;
-            mALOPLabel.Text = "MALOP:";
-            // 
-            // cbMaLop
-            // 
-            this.cbMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSV, "MALOP", true));
-            this.cbMaLop.FormattingEnabled = true;
-            this.cbMaLop.Location = new System.Drawing.Point(908, 79);
-            this.cbMaLop.Name = "cbMaLop";
-            this.cbMaLop.Size = new System.Drawing.Size(121, 24);
-            this.cbMaLop.TabIndex = 18;
             // 
             // frmStudent
             // 

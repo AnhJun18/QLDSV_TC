@@ -34,10 +34,8 @@ namespace QLDSV_TC.views
             System.Windows.Forms.Label nIENKHOALabel;
             System.Windows.Forms.Label hOCKYLabel;
             System.Windows.Forms.Label nHOMLabel;
-            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
-            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
-            this.DIEM_CC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DIEM_GK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DIEM_CC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lOPTINCHIBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.qLDSV_TCDataSet = new QLDSV_TC.QLDSV_TCDataSet();
             this.lOPTINCHITableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.LOPTINCHITableAdapter();
@@ -123,6 +121,20 @@ namespace QLDSV_TC.views
             nHOMLabel.TabIndex = 21;
             nHOMLabel.Text = "NHOM:";
             // 
+            // DIEM_GK
+            // 
+            this.DIEM_GK.AppearanceHeader.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.DIEM_GK.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
+            this.DIEM_GK.AppearanceHeader.Options.UseBackColor = true;
+            this.DIEM_GK.AppearanceHeader.Options.UseForeColor = true;
+            this.DIEM_GK.Caption = "Điểm giữa kì";
+            this.DIEM_GK.FieldName = "DIEM_GK";
+            this.DIEM_GK.MinWidth = 23;
+            this.DIEM_GK.Name = "DIEM_GK";
+            this.DIEM_GK.Visible = true;
+            this.DIEM_GK.VisibleIndex = 3;
+            this.DIEM_GK.Width = 87;
+            // 
             // DIEM_CC
             // 
             this.DIEM_CC.AppearanceHeader.BackColor = System.Drawing.Color.LightSkyBlue;
@@ -138,20 +150,6 @@ namespace QLDSV_TC.views
             this.DIEM_CC.Visible = true;
             this.DIEM_CC.VisibleIndex = 2;
             this.DIEM_CC.Width = 87;
-            // 
-            // DIEM_GK
-            // 
-            this.DIEM_GK.AppearanceHeader.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.DIEM_GK.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
-            this.DIEM_GK.AppearanceHeader.Options.UseBackColor = true;
-            this.DIEM_GK.AppearanceHeader.Options.UseForeColor = true;
-            this.DIEM_GK.Caption = "Điểm giữa kì";
-            this.DIEM_GK.FieldName = "DIEM_GK";
-            this.DIEM_GK.MinWidth = 23;
-            this.DIEM_GK.Name = "DIEM_GK";
-            this.DIEM_GK.Visible = true;
-            this.DIEM_GK.VisibleIndex = 3;
-            this.DIEM_GK.Width = 87;
             // 
             // lOPTINCHIBindingSource
             // 
@@ -433,14 +431,6 @@ namespace QLDSV_TC.views
             this.MASV,
             this.gridColumn4});
             this.gridView1.DetailHeight = 431;
-            gridFormatRule1.Column = this.DIEM_GK;
-            gridFormatRule1.ColumnApplyTo = this.DIEM_GK;
-            gridFormatRule1.Name = "Format1";
-            formatConditionRuleValue1.Expression = "ToInt([DIEM_GK]) < 10 And ToInt([DIEM_GK]) > 0";
-            formatConditionRuleValue1.PredefinedName = "Red Fill";
-            gridFormatRule1.Rule = formatConditionRuleValue1;
-            gridFormatRule1.StopIfTrue = true;
-            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
@@ -471,8 +461,6 @@ namespace QLDSV_TC.views
             this.DIEM_CK.FieldName = "DIEM_CK";
             this.DIEM_CK.MinWidth = 23;
             this.DIEM_CK.Name = "DIEM_CK";
-            this.DIEM_CK.UnboundExpression = "[DIEM_CC]+[DIEM_GK]";
-            this.DIEM_CK.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.DIEM_CK.Visible = true;
             this.DIEM_CK.VisibleIndex = 4;
             this.DIEM_CK.Width = 87;
@@ -489,7 +477,6 @@ namespace QLDSV_TC.views
             this.DIEM_TK.Name = "DIEM_TK";
             this.DIEM_TK.OptionsColumn.AllowEdit = false;
             this.DIEM_TK.OptionsColumn.ReadOnly = true;
-            this.DIEM_TK.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.DIEM_TK.Visible = true;
             this.DIEM_TK.VisibleIndex = 5;
             this.DIEM_TK.Width = 87;
