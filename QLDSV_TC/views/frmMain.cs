@@ -83,11 +83,6 @@ namespace QLDSV_TC.views
             }
         }
 
-        private void barButtonItem8_ItemClick(object sender, ItemClickEventArgs e)
-        {
-
-        }
-
         private void btnSInhVien_ItemClick(object sender, ItemClickEventArgs e)
         {
             Form frm = CheckExists(typeof(views.frmStudent));
@@ -163,6 +158,33 @@ namespace QLDSV_TC.views
                 frmChangePass frmChangePass = new frmChangePass();
                 frmChangePass.MdiParent = this;
                 frmChangePass.Show();
+
+            }
+        }
+
+        private void barButtonDSSV_LTC_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.XfrmDanhSachSinhVienDangKyLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                XfrmDanhSachSinhVienDangKyLTC frmDSSV_DK_LTC= new XfrmDanhSachSinhVienDangKyLTC();
+                frmDSSV_DK_LTC.MdiParent = this;
+                frmDSSV_DK_LTC.Show();
+
+            }
+
+        }
+
+        private void barButtonBangDiem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.XfrmBangDiemLopTinChi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                XfrmBangDiemLopTinChi frmbangdiem = new XfrmBangDiemLopTinChi();
+                frmbangdiem.MdiParent = this;
+                frmbangdiem.Show();
 
             }
         }

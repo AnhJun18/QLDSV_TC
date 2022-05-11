@@ -91,6 +91,18 @@
     <Compile Include="reports\Report_DS_LopTinChi.Designer.cs">
       <DependentUpon>Report_DS_LopTinChi.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports\Report_DS_SV_DangKy_LTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\Report_DS_SV_DangKy_LTC.Designer.cs">
+      <DependentUpon>Report_DS_SV_DangKy_LTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\Report_BangDiemLTC.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\Report_BangDiemLTC.Designer.cs">
+      <DependentUpon>Report_BangDiemLTC.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\frmChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +163,18 @@
     <Compile Include="views\frmXemDiem.Designer.cs">
       <DependentUpon>frmXemDiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\XfrmBangDiemLopTinChi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\XfrmBangDiemLopTinChi.Designer.cs">
+      <DependentUpon>XfrmBangDiemLopTinChi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\XfrmDanhSachSinhVienDangKyLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\XfrmDanhSachSinhVienDangKyLTC.Designer.cs">
+      <DependentUpon>XfrmDanhSachSinhVienDangKyLTC.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -163,6 +187,12 @@
     </Compile>
     <EmbeddedResource Include="reports\Report_DS_LopTinChi.resx">
       <DependentUpon>Report_DS_LopTinChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\Report_DS_SV_DangKy_LTC.resx">
+      <DependentUpon>Report_DS_SV_DangKy_LTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\Report_BangDiemLTC.resx">
+      <DependentUpon>Report_BangDiemLTC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmChangePass.resx">
       <DependentUpon>frmChangePass.cs</DependentUpon>
@@ -193,6 +223,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmXemDiem.resx">
       <DependentUpon>frmXemDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\XfrmBangDiemLopTinChi.resx">
+      <DependentUpon>XfrmBangDiemLopTinChi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\XfrmDanhSachSinhVienDangKyLTC.resx">
+      <DependentUpon>XfrmDanhSachSinhVienDangKyLTC.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

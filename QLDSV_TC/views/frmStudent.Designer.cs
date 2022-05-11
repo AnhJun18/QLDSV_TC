@@ -296,7 +296,7 @@ namespace QLDSV_TC.views
             // 
             this.barDockControlBottom.CausesValidation = false;
             this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 542);
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 656);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlBottom.Size = new System.Drawing.Size(1440, 0);
@@ -308,7 +308,7 @@ namespace QLDSV_TC.views
             this.barDockControlLeft.Location = new System.Drawing.Point(0, 50);
             this.barDockControlLeft.Manager = this.barManager1;
             this.barDockControlLeft.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 492);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 606);
             // 
             // barDockControlRight
             // 
@@ -317,7 +317,7 @@ namespace QLDSV_TC.views
             this.barDockControlRight.Location = new System.Drawing.Point(1440, 50);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 492);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 606);
             // 
             // panelControl1
             // 
@@ -533,7 +533,7 @@ namespace QLDSV_TC.views
             this.panelControlNhapLieu.Controls.Add(this.txtMaSV);
             this.panelControlNhapLieu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelControlNhapLieu.Enabled = false;
-            this.panelControlNhapLieu.Location = new System.Drawing.Point(0, 277);
+            this.panelControlNhapLieu.Location = new System.Drawing.Point(0, 391);
             this.panelControlNhapLieu.Name = "panelControlNhapLieu";
             this.panelControlNhapLieu.Size = new System.Drawing.Size(1440, 265);
             this.panelControlNhapLieu.TabIndex = 7;
@@ -542,11 +542,15 @@ namespace QLDSV_TC.views
             // cbMaLop
             // 
             this.cbMaLop.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdsSV, "MALOP", true));
+            this.cbMaLop.DataSource = this.lOPBindingSource;
+            this.cbMaLop.DisplayMember = "MALOP";
             this.cbMaLop.FormattingEnabled = true;
             this.cbMaLop.Location = new System.Drawing.Point(908, 79);
             this.cbMaLop.Name = "cbMaLop";
             this.cbMaLop.Size = new System.Drawing.Size(121, 24);
             this.cbMaLop.TabIndex = 18;
+            this.cbMaLop.ValueMember = "MALOP";
+            this.cbMaLop.SelectedIndexChanged += new System.EventHandler(this.cbMaLop_SelectedIndexChanged);
             // 
             // pictureBox1
             // 
@@ -660,7 +664,7 @@ namespace QLDSV_TC.views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1440, 542);
+            this.ClientSize = new System.Drawing.Size(1440, 656);
             this.Controls.Add(this.panelControlNhapLieu);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.barDockControlLeft);

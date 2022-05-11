@@ -53,29 +53,6 @@ namespace QLDSV_TC.views
 
             DataTable dt = Program.ExecSqlDataTable("EXEC SP_GetMaKhoa");
             makhoa = dt.Rows[0][0].ToString();
-            ltcMaMH.DataSource = bdsMONHOC;
-            ltcMaMH.DisplayMember = "TENMH";
-            ltcMaMH.ValueMember = "MAMH";
-
-
-            DataTable dtc = new DataTable();
-            dtc.Columns.Add("FullName", typeof(String));
-            dtc.Columns.Add("MAGV", typeof(String));
-            for (int i=0;i< bdsGV.Count; i++)
-             {
-                 DataRow workRow = dtc.NewRow();
-                 workRow["FullName"] = ((DataRowView)bdsGV[i])["Ho"].ToString() + ' ' + ((DataRowView)bdsGV[i])["TEN"].ToString();
-                 workRow["MaGV"] = ((DataRowView)bdsGV[i])["MAGV"].ToString();
-                 dtc.Rows.Add(workRow);
-
-
-             }
-
-
-             ltcMAGV.DataSource = dtc;
-             ltcMAGV.DisplayMember = "FullName";
-            ltcMAGV.ValueMember = "MAGV";
-
 
         }
 
@@ -121,10 +98,7 @@ namespace QLDSV_TC.views
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
             lOPTINCHIGridControl.Enabled = false;
-            ltcMaMH.SelectedIndex = 0;
-            txtMaMH.Text = ltcMaMH.SelectedValue.ToString();
-            ltcMAGV.SelectedIndex = 0;
-            txtMAGV.Text = ltcMAGV.SelectedValue.ToString();
+           
         }
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
@@ -135,10 +109,10 @@ namespace QLDSV_TC.views
                 ltcHOCKY.Focus();
                 return;
             }
-            if (ltcMAGV.Text.Trim() == "")
+            if (ltcMaGV.Text.Trim() == "")
             {
                 MessageBox.Show("vui lòng chọn giáo viên!", "", MessageBoxButtons.OK);
-                ltcMAGV.Focus();
+                ltcMaGV.Focus();
                 return;
             }
             if (ltcMaMH.Text.Trim() == "")
@@ -165,7 +139,7 @@ namespace QLDSV_TC.views
                 ltcSOSVTOITHIEU.Focus();
                 return;
             }
-            MessageBox.Show(ltcMAGV.SelectedValue.ToString() + " _-" + ltcMaMH.SelectedValue.ToString() + " _-" + ltcMaMH.SelectedValue.ToString());
+          
             try
             {
                 bdslOPTINCHI.EndEdit();
@@ -243,40 +217,6 @@ namespace QLDSV_TC.views
         {
 
         }
-
-        private void ltcMaMH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ltcMaMH.SelectedValue != null)
-                txtMaMH.Text = ltcMaMH.SelectedValue.ToString();
-        }
-
-
-        private void txtMaMH_EditValueChanged_1(object sender, EventArgs e)
-        {
-
-                if (txtMaMH.Text !=  "System.Data.DataRowView" && txtMaMH.Text != null)
-                {
-                    ltcMaMH.SelectedValue = txtMaMH.Text;
-                }
-            
-
-        }
-
-        private void ltcMAGV_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ltcMAGV.SelectedValue != null)
-                txtMAGV.Text = ltcMAGV.SelectedValue.ToString();
-        }
-
-        private void txtMAGV_EditValueChanged(object sender, EventArgs e)
-        {
-           if (txtMAGV.Text != "System.Data.DataRowView" && txtMAGV.Text != null)
-            {
-                ltcMAGV.SelectedValue = txtMAGV.Text;
-            }
-
-        }
-
         private void lOPTINCHIGridControl_Click(object sender, EventArgs e)
         {
 

@@ -53,11 +53,6 @@ namespace QLDSV_TC.views
             panelControlNhapLieu.Enabled = true;
             bdsSV.AddNew();
             
-            cbMaLop.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbMaLop.DataSource = qLDSV_TCDataSet.LOP;
-            cbMaLop.DisplayMember = "MALOP";
-            cbMaLop.ValueMember = "MALOP";
-            cbMaLop.SelectedIndex = -1;
            
             checkEdPhai.Checked = false;
             checkEdStatus.Checked = false;
@@ -99,7 +94,7 @@ namespace QLDSV_TC.views
                 txtDiaChi.Focus();
                 return false;
             }
-            if (cbMaLop.SelectedValue is null)
+            if (cbMaLop.SelectedIndex == -1)
             {
                 MessageBox.Show("Vui Long Chon Ma Lop!", "", MessageBoxButtons.OK);
                 cbMaLop.Focus();
@@ -153,7 +148,7 @@ namespace QLDSV_TC.views
                 return;
             }
 
-            cbMaLop.DropDownStyle = ComboBoxStyle.DropDown;
+          
             sINHVIENGridControl.Enabled = true;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = true;
             btnGhi.Enabled = false;
@@ -236,16 +231,16 @@ namespace QLDSV_TC.views
         {
            panelControlNhapLieu.Enabled = true;
 
-            cbMaLop.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbMaLop.DataSource = qLDSV_TCDataSet.LOP;
-            cbMaLop.DisplayMember = "MALOP";
-            cbMaLop.ValueMember = "MALOP";
-
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
             btnGhi.Enabled = true;
             sINHVIENGridControl.Enabled = false;
             txtMaSV.Enabled = false;
             saveMode = "SUA";
+
+        }
+
+        private void cbMaLop_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

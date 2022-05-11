@@ -192,56 +192,24 @@ namespace QLDSV_TC.views
             this.Close();
         }
 
-        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
+       
+        private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
-
-            if (e.Column.FieldName == "DIEM_CC")
+            try
             {
-                if (int.Parse(e.CellValue.ToString()) > 10)
+                int value = Convert.ToInt32(e.Value);
+                if (value > 10 || value < 0)
                 {
-                    MessageBox.Show("111");
+                    e.Valid = false;
+                    e.ErrorText="Điểm Không Hợp lệ: 0 < Điểm < 10";
                 }
 
             }
-        }
-
-        private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
-            var view = sender as GridView;
-            var value = Convert.ToInt32(e.Value);
-            if (value > 10 || value < 0)
-            {
-                MessageBox.Show("Vui lòng nhập điểm >0 và <10", "", MessageBoxButtons.OK);
-                gridView1.SetFocusedRowCellValue("DIEM_CC", e.Value);
-            }
-        }
-
-        private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-           
-        }
-
-        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
-        {
-            var value = Convert.ToInt32(e.Value);
-            if (value > 10 || value < 0)
-            {
-                gridView1.FocusedColumn=  e.Column;
-               gridView1.FocusedRowHandle= 0;
-                gridView1.ResetCursor();
-                MessageBox.Show("Vui lòng  abc nhập điểm >0 và <10", "", MessageBoxButtons.OK);
-                gridView1.ShowEditor();
-
-
-            }
-              
-
-        }
-
-        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        {
+            catch { }
             
         }
+
+        
     }
       
 

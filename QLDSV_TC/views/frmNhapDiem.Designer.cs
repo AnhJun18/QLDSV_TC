@@ -60,11 +60,10 @@ namespace QLDSV_TC.views
             this.label7 = new System.Windows.Forms.Label();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MASV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.HOTEN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DIEM_CK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.DIEM_TK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.MASV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DIEMTK = new DevExpress.XtraGrid.Columns.GridColumn();
             mAMHLabel = new System.Windows.Forms.Label();
             nIENKHOALabel = new System.Windows.Forms.Label();
             hOCKYLabel = new System.Windows.Forms.Label();
@@ -127,7 +126,7 @@ namespace QLDSV_TC.views
             this.DIEM_GK.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
             this.DIEM_GK.AppearanceHeader.Options.UseBackColor = true;
             this.DIEM_GK.AppearanceHeader.Options.UseForeColor = true;
-            this.DIEM_GK.Caption = "Điểm giữa kì";
+            this.DIEM_GK.Caption = "Điểm Giữa Kì";
             this.DIEM_GK.FieldName = "DIEM_GK";
             this.DIEM_GK.MinWidth = 23;
             this.DIEM_GK.Name = "DIEM_GK";
@@ -141,7 +140,7 @@ namespace QLDSV_TC.views
             this.DIEM_CC.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
             this.DIEM_CC.AppearanceHeader.Options.UseBackColor = true;
             this.DIEM_CC.AppearanceHeader.Options.UseForeColor = true;
-            this.DIEM_CC.Caption = "Điểm chuyên cần";
+            this.DIEM_CC.Caption = "Điểm Chuyên Cần";
             this.DIEM_CC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.DIEM_CC.FieldName = "DIEM_CC";
             this.DIEM_CC.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -423,17 +422,34 @@ namespace QLDSV_TC.views
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.MASV,
             this.HOTEN,
             this.DIEM_CC,
             this.DIEM_GK,
             this.DIEM_CK,
-            this.DIEM_TK,
-            this.MASV,
-            this.gridColumn4});
+            this.DIEMTK});
             this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            this.gridView1.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView1_ValidateRow);
+            this.gridView1.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView1_ValidatingEditor);
+            // 
+            // MASV
+            // 
+            this.MASV.AppearanceCell.BackColor = System.Drawing.Color.White;
+            this.MASV.AppearanceCell.Options.UseBackColor = true;
+            this.MASV.AppearanceHeader.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.MASV.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
+            this.MASV.AppearanceHeader.Options.UseBackColor = true;
+            this.MASV.AppearanceHeader.Options.UseForeColor = true;
+            this.MASV.Caption = "Mã Sinh Viên";
+            this.MASV.FieldName = "MASV";
+            this.MASV.MinWidth = 23;
+            this.MASV.Name = "MASV";
+            this.MASV.OptionsColumn.AllowEdit = false;
+            this.MASV.OptionsColumn.ReadOnly = true;
+            this.MASV.Visible = true;
+            this.MASV.VisibleIndex = 0;
+            this.MASV.Width = 87;
             // 
             // HOTEN
             // 
@@ -441,7 +457,7 @@ namespace QLDSV_TC.views
             this.HOTEN.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
             this.HOTEN.AppearanceHeader.Options.UseBackColor = true;
             this.HOTEN.AppearanceHeader.Options.UseForeColor = true;
-            this.HOTEN.Caption = "Họ tên sinh viên";
+            this.HOTEN.Caption = "Họ Tên Sinh Viên";
             this.HOTEN.FieldName = "HOTEN";
             this.HOTEN.MinWidth = 23;
             this.HOTEN.Name = "HOTEN";
@@ -457,7 +473,7 @@ namespace QLDSV_TC.views
             this.DIEM_CK.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
             this.DIEM_CK.AppearanceHeader.Options.UseBackColor = true;
             this.DIEM_CK.AppearanceHeader.Options.UseForeColor = true;
-            this.DIEM_CK.Caption = "Điểm cuối kì";
+            this.DIEM_CK.Caption = "Điểm Cuối Kì";
             this.DIEM_CK.FieldName = "DIEM_CK";
             this.DIEM_CK.MinWidth = 23;
             this.DIEM_CK.Name = "DIEM_CK";
@@ -465,51 +481,23 @@ namespace QLDSV_TC.views
             this.DIEM_CK.VisibleIndex = 4;
             this.DIEM_CK.Width = 87;
             // 
-            // DIEM_TK
+            // DIEMTK
             // 
-            this.DIEM_TK.AppearanceHeader.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.DIEM_TK.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
-            this.DIEM_TK.AppearanceHeader.Options.UseBackColor = true;
-            this.DIEM_TK.AppearanceHeader.Options.UseForeColor = true;
-            this.DIEM_TK.Caption = "Điểm tổng kết";
-            this.DIEM_TK.FieldName = "DIEM_TK";
-            this.DIEM_TK.MinWidth = 23;
-            this.DIEM_TK.Name = "DIEM_TK";
-            this.DIEM_TK.OptionsColumn.AllowEdit = false;
-            this.DIEM_TK.OptionsColumn.ReadOnly = true;
-            this.DIEM_TK.Visible = true;
-            this.DIEM_TK.VisibleIndex = 5;
-            this.DIEM_TK.Width = 87;
-            // 
-            // MASV
-            // 
-            this.MASV.AppearanceCell.BackColor = System.Drawing.Color.White;
-            this.MASV.AppearanceCell.Options.UseBackColor = true;
-            this.MASV.AppearanceHeader.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.MASV.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
-            this.MASV.AppearanceHeader.Options.UseBackColor = true;
-            this.MASV.AppearanceHeader.Options.UseForeColor = true;
-            this.MASV.Caption = "Mã sinh viên";
-            this.MASV.FieldName = "MASV";
-            this.MASV.MinWidth = 23;
-            this.MASV.Name = "MASV";
-            this.MASV.OptionsColumn.AllowEdit = false;
-            this.MASV.OptionsColumn.ReadOnly = true;
-            this.MASV.Visible = true;
-            this.MASV.VisibleIndex = 0;
-            this.MASV.Width = 87;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "c";
-            this.gridColumn4.FieldName = "gridColumn4";
-            this.gridColumn4.MinWidth = 25;
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.UnboundExpression = "Round([DIEM_CC] * 0.1 + [DIEM_GK] * 0.3 + [DIEM_CK] * 0.6, 1)";
-            this.gridColumn4.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 6;
-            this.gridColumn4.Width = 94;
+            this.DIEMTK.AppearanceHeader.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.DIEMTK.AppearanceHeader.ForeColor = System.Drawing.Color.Black;
+            this.DIEMTK.AppearanceHeader.Options.UseBackColor = true;
+            this.DIEMTK.AppearanceHeader.Options.UseForeColor = true;
+            this.DIEMTK.Caption = "Điểm Tổng Kết";
+            this.DIEMTK.FieldName = "gridColumn4";
+            this.DIEMTK.MinWidth = 25;
+            this.DIEMTK.Name = "DIEMTK";
+            this.DIEMTK.OptionsColumn.AllowEdit = false;
+            this.DIEMTK.OptionsColumn.ReadOnly = true;
+            this.DIEMTK.UnboundExpression = "Round([DIEM_CC] * 0.1 + [DIEM_GK] * 0.3 + [DIEM_CK] * 0.6, 1)";
+            this.DIEMTK.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.DIEMTK.Visible = true;
+            this.DIEMTK.VisibleIndex = 5;
+            this.DIEMTK.Width = 94;
             // 
             // frmNhapDiem
             // 
@@ -563,13 +551,12 @@ namespace QLDSV_TC.views
         private DevExpress.XtraGrid.Columns.GridColumn DIEM_CC;
         private DevExpress.XtraGrid.Columns.GridColumn DIEM_GK;
         private DevExpress.XtraGrid.Columns.GridColumn DIEM_CK;
-        private DevExpress.XtraGrid.Columns.GridColumn DIEM_TK;
         private DevExpress.XtraGrid.GridControl gridControl2;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn MASV;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn DIEMTK;
     }
 }

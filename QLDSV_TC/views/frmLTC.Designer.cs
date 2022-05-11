@@ -36,9 +36,9 @@ namespace QLDSV_TC.views
             System.Windows.Forms.Label nIENKHOALabel;
             System.Windows.Forms.Label hOCKYLabel;
             System.Windows.Forms.Label nHOMLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLTC));
             System.Windows.Forms.Label mAGVLabel;
             System.Windows.Forms.Label mAMHLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLTC));
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -57,13 +57,8 @@ namespace QLDSV_TC.views
             this.qLDSV_TCDataSet = new QLDSV_TC.QLDSV_TCDataSet();
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
             this.bdslOPTINCHI = new System.Windows.Forms.BindingSource(this.components);
-            this.ltcMAGV = new System.Windows.Forms.ComboBox();
-            this.ltcMaMH = new System.Windows.Forms.ComboBox();
-            this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
+            this.bdsGV = new System.Windows.Forms.BindingSource(this.components);
             this.ltcNHOM = new DevExpress.XtraEditors.SpinEdit();
             this.ltcHOCKY = new DevExpress.XtraEditors.SpinEdit();
             this.ltcNIENKHOA = new DevExpress.XtraEditors.TextEdit();
@@ -87,8 +82,9 @@ namespace QLDSV_TC.views
             this.dANGKYTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.DANGKYTableAdapter();
             this.mONHOCTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.MONHOCTableAdapter();
             this.bdsMONHOC = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsGV = new System.Windows.Forms.BindingSource(this.components);
             this.gIANGVIENTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.GIANGVIENTableAdapter();
+            this.ltcMaGV = new System.Windows.Forms.ComboBox();
+            this.ltcMaMH = new System.Windows.Forms.ComboBox();
             mAKHOALabel = new System.Windows.Forms.Label();
             sOSVTOITHIEULabel = new System.Windows.Forms.Label();
             hUYLOPLabel = new System.Windows.Forms.Label();
@@ -103,9 +99,8 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdslOPTINCHI)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcNHOM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcHOCKY.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcNIENKHOA.Properties)).BeginInit();
@@ -115,7 +110,6 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDANGKY)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).BeginInit();
             this.SuspendLayout();
             // 
             // mAKHOALabel
@@ -177,26 +171,6 @@ namespace QLDSV_TC.views
             nHOMLabel.Size = new System.Drawing.Size(56, 21);
             nHOMLabel.TabIndex = 32;
             nHOMLabel.Text = "Nhóm";
-            // 
-            // mAGVLabel
-            // 
-            mAGVLabel.AutoSize = true;
-            mAGVLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAGVLabel.Location = new System.Drawing.Point(849, 193);
-            mAGVLabel.Name = "mAGVLabel";
-            mAGVLabel.Size = new System.Drawing.Size(107, 21);
-            mAGVLabel.TabIndex = 34;
-            mAGVLabel.Text = "Mã Giáo Viên";
-            // 
-            // mAMHLabel
-            // 
-            mAMHLabel.AutoSize = true;
-            mAMHLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAMHLabel.Location = new System.Drawing.Point(848, 135);
-            mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(101, 21);
-            mAMHLabel.TabIndex = 37;
-            mAMHLabel.Text = "Mã Môn Học";
             // 
             // barManager1
             // 
@@ -297,7 +271,7 @@ namespace QLDSV_TC.views
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1720, 50);
+            this.barDockControlTop.Size = new System.Drawing.Size(1783, 50);
             // 
             // barDockControlBottom
             // 
@@ -306,7 +280,7 @@ namespace QLDSV_TC.views
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 1062);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1720, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1783, 0);
             // 
             // barDockControlLeft
             // 
@@ -321,7 +295,7 @@ namespace QLDSV_TC.views
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1720, 50);
+            this.barDockControlRight.Location = new System.Drawing.Point(1783, 50);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 1012);
@@ -334,7 +308,7 @@ namespace QLDSV_TC.views
             this.panelControl1.Location = new System.Drawing.Point(0, 50);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1720, 46);
+            this.panelControl1.Size = new System.Drawing.Size(1783, 46);
             this.panelControl1.TabIndex = 5;
             // 
             // cbKhoa
@@ -379,14 +353,10 @@ namespace QLDSV_TC.views
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.label4);
-            this.panelControl2.Controls.Add(this.label3);
             this.panelControl2.Controls.Add(mAMHLabel);
-            this.panelControl2.Controls.Add(this.txtMaMH);
-            this.panelControl2.Controls.Add(this.ltcMAGV);
             this.panelControl2.Controls.Add(this.ltcMaMH);
             this.panelControl2.Controls.Add(mAGVLabel);
-            this.panelControl2.Controls.Add(this.txtMAGV);
+            this.panelControl2.Controls.Add(this.ltcMaGV);
             this.panelControl2.Controls.Add(nHOMLabel);
             this.panelControl2.Controls.Add(this.ltcNHOM);
             this.panelControl2.Controls.Add(hOCKYLabel);
@@ -405,83 +375,19 @@ namespace QLDSV_TC.views
             this.panelControl2.Location = new System.Drawing.Point(0, 753);
             this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1720, 309);
+            this.panelControl2.Size = new System.Drawing.Size(1783, 309);
             this.panelControl2.TabIndex = 8;
             this.panelControl2.Paint += new System.Windows.Forms.PaintEventHandler(this.panelControl2_Paint);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(431, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(74, 21);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Môn Học";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(425, 189);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 21);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Giáo Viên";
-            // 
-            // txtMaMH
-            // 
-            this.txtMaMH.CausesValidation = false;
-            this.txtMaMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdslOPTINCHI, "MAMH", true));
-            this.txtMaMH.Location = new System.Drawing.Point(962, 136);
-            this.txtMaMH.MenuManager = this.barManager1;
-            this.txtMaMH.Name = "txtMaMH";
-            this.txtMaMH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaMH.Properties.Appearance.Options.UseFont = true;
-            this.txtMaMH.Properties.ReadOnly = true;
-            this.txtMaMH.Size = new System.Drawing.Size(191, 28);
-            this.txtMaMH.TabIndex = 38;
-            this.txtMaMH.EditValueChanged += new System.EventHandler(this.txtMaMH_EditValueChanged_1);
             // 
             // bdslOPTINCHI
             // 
             this.bdslOPTINCHI.DataMember = "LOPTINCHI";
             this.bdslOPTINCHI.DataSource = this.qLDSV_TCDataSet;
             // 
-            // ltcMAGV
+            // bdsGV
             // 
-            this.ltcMAGV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ltcMAGV.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltcMAGV.FormattingEnabled = true;
-            this.ltcMAGV.Location = new System.Drawing.Point(536, 181);
-            this.ltcMAGV.Name = "ltcMAGV";
-            this.ltcMAGV.Size = new System.Drawing.Size(232, 29);
-            this.ltcMAGV.TabIndex = 37;
-            this.ltcMAGV.SelectedIndexChanged += new System.EventHandler(this.ltcMAGV_SelectedIndexChanged);
-            // 
-            // ltcMaMH
-            // 
-            this.ltcMaMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ltcMaMH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ltcMaMH.FormattingEnabled = true;
-            this.ltcMaMH.Location = new System.Drawing.Point(535, 135);
-            this.ltcMaMH.Name = "ltcMaMH";
-            this.ltcMaMH.Size = new System.Drawing.Size(233, 29);
-            this.ltcMaMH.TabIndex = 36;
-            this.ltcMaMH.SelectedIndexChanged += new System.EventHandler(this.ltcMaMH_SelectedIndexChanged);
-            // 
-            // txtMAGV
-            // 
-            this.txtMAGV.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdslOPTINCHI, "MAGV", true));
-            this.txtMAGV.Location = new System.Drawing.Point(962, 186);
-            this.txtMAGV.MenuManager = this.barManager1;
-            this.txtMAGV.Name = "txtMAGV";
-            this.txtMAGV.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMAGV.Properties.Appearance.Options.UseFont = true;
-            this.txtMAGV.Properties.ReadOnly = true;
-            this.txtMAGV.Size = new System.Drawing.Size(191, 28);
-            this.txtMAGV.TabIndex = 35;
-            this.txtMAGV.EditValueChanged += new System.EventHandler(this.txtMAGV_EditValueChanged);
+            this.bdsGV.DataMember = "GIANGVIEN";
+            this.bdsGV.DataSource = this.qLDSV_TCDataSet;
             // 
             // ltcNHOM
             // 
@@ -602,7 +508,7 @@ namespace QLDSV_TC.views
             this.lOPTINCHIGridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.lOPTINCHIGridControl.MenuManager = this.barManager1;
             this.lOPTINCHIGridControl.Name = "lOPTINCHIGridControl";
-            this.lOPTINCHIGridControl.Size = new System.Drawing.Size(1720, 657);
+            this.lOPTINCHIGridControl.Size = new System.Drawing.Size(1783, 657);
             this.lOPTINCHIGridControl.TabIndex = 13;
             this.lOPTINCHIGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -723,21 +629,58 @@ namespace QLDSV_TC.views
             this.bdsMONHOC.DataMember = "MONHOC";
             this.bdsMONHOC.DataSource = this.qLDSV_TCDataSet;
             // 
-            // bdsGV
-            // 
-            this.bdsGV.DataMember = "GIANGVIEN";
-            this.bdsGV.DataSource = this.qLDSV_TCDataSet;
-            // 
             // gIANGVIENTableAdapter
             // 
             this.gIANGVIENTableAdapter.ClearBeforeFill = true;
+            // 
+            // mAGVLabel
+            // 
+            mAGVLabel.AutoSize = true;
+            mAGVLabel.Location = new System.Drawing.Point(439, 192);
+            mAGVLabel.Name = "mAGVLabel";
+            mAGVLabel.Size = new System.Drawing.Size(84, 17);
+            mAGVLabel.TabIndex = 34;
+            mAGVLabel.Text = "Mã Giáo Viên";
+            // 
+            // ltcMaGV
+            // 
+            this.ltcMaGV.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdslOPTINCHI, "MAGV", true));
+            this.ltcMaGV.DataSource = this.bdsGV;
+            this.ltcMaGV.DisplayMember = "FULLNAME";
+            this.ltcMaGV.FormattingEnabled = true;
+            this.ltcMaGV.Location = new System.Drawing.Point(536, 189);
+            this.ltcMaGV.Name = "ltcMaGV";
+            this.ltcMaGV.Size = new System.Drawing.Size(231, 24);
+            this.ltcMaGV.TabIndex = 35;
+            this.ltcMaGV.ValueMember = "MAGV";
+            // 
+            // mAMHLabel
+            // 
+            mAMHLabel.AutoSize = true;
+            mAMHLabel.Location = new System.Drawing.Point(437, 148);
+            mAMHLabel.Name = "mAMHLabel";
+            mAMHLabel.Size = new System.Drawing.Size(83, 17);
+            mAMHLabel.TabIndex = 35;
+            mAMHLabel.Text = "Mã Môn Học";
+            // 
+            // ltcMaMH
+            // 
+            this.ltcMaMH.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.bdslOPTINCHI, "MAMH", true));
+            this.ltcMaMH.DataSource = this.bdsMONHOC;
+            this.ltcMaMH.DisplayMember = "TENMH";
+            this.ltcMaMH.FormattingEnabled = true;
+            this.ltcMaMH.Location = new System.Drawing.Point(535, 145);
+            this.ltcMaMH.Name = "ltcMaMH";
+            this.ltcMaMH.Size = new System.Drawing.Size(233, 24);
+            this.ltcMaMH.TabIndex = 36;
+            this.ltcMaMH.ValueMember = "MAMH";
             // 
             // frmLTC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1720, 1062);
+            this.ClientSize = new System.Drawing.Size(1783, 1062);
             this.Controls.Add(this.lOPTINCHIGridControl);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);
@@ -757,9 +700,8 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).EndInit();
             this.panelControl2.ResumeLayout(false);
             this.panelControl2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdslOPTINCHI)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcNHOM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcHOCKY.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcNIENKHOA.Properties)).EndInit();
@@ -769,7 +711,6 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDANGKY)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -819,13 +760,9 @@ namespace QLDSV_TC.views
         private QLDSV_TCDataSetTableAdapters.DANGKYTableAdapter dANGKYTableAdapter;
         private QLDSV_TCDataSetTableAdapters.MONHOCTableAdapter mONHOCTableAdapter;
         private System.Windows.Forms.BindingSource bdsMONHOC;
-        private System.Windows.Forms.ComboBox ltcMAGV;
-        private System.Windows.Forms.ComboBox ltcMaMH;
-        private DevExpress.XtraEditors.TextEdit txtMAGV;
-        private DevExpress.XtraEditors.TextEdit txtMaMH;
         private System.Windows.Forms.BindingSource bdsGV;
         private QLDSV_TCDataSetTableAdapters.GIANGVIENTableAdapter gIANGVIENTableAdapter;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox ltcMaMH;
+        private System.Windows.Forms.ComboBox ltcMaGV;
     }
 }

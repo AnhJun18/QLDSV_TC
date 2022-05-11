@@ -22,8 +22,7 @@ namespace QLDSV_TC.views
        
         private void frmClass_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'qLDSV_TCDataSet.KHOA' table. You can move, or remove it, as needed.
-
+         
             qLDSV_TCDataSet.EnforceConstraints = false;
 
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
@@ -202,6 +201,14 @@ namespace QLDSV_TC.views
                     return;
                 }
             }    
+        }
+
+        private void btnThemSV_Click(object sender, EventArgs e)
+        {
+            lOPGridControl.Enabled=false;
+            bdsSV.AddNew();
+           
+
         }
     }
     
