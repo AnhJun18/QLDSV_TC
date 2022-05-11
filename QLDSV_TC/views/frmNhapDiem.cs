@@ -192,24 +192,16 @@ namespace QLDSV_TC.views
             this.Close();
         }
 
-        private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
-        {
-            if (e.Column.FieldName == "DIEM_CC")
-            {
-                if (int.Parse(e.CellValue.ToString()) > 10)
-                {
-                    MessageBox.Show("111");
-                }
-
-            }
-        }
-
         private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
         {
             var view = sender as GridView;
             var value = Convert.ToInt32(e.Value);
             if (value > 10 || value< 0)
+            {
                 MessageBox.Show("Vui lòng nhập điểm >0 và <10", "", MessageBoxButtons.OK);
+            }
+                
+
         }
     }
 }

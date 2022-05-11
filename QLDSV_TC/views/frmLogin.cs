@@ -101,11 +101,11 @@ namespace QLDSV_TC.views
                 Program.mlogin = "SVIEN";
                 Program.pass = "1";
                 loginNameSV = txtUserName.Text;
-                passSV = txtPass.Text;
+                Program.passSV = txtPass.Text;
 
                 if (Program.KetNoi() == 0) return;
 
-                String strCmd = "EXEC SP_CHECK_LOGIN_SV '" + Program.mlogin + "', '" + loginNameSV + "','" + passSV + "'";
+                String strCmd = "EXEC SP_CHECK_LOGIN_SV '" + Program.mlogin + "', '" + loginNameSV + "','" + Program.passSV + "'";
                 Program.myReader = Program.ExecSqlDataReader(strCmd);
             }
             Program.mPhongBan = cmbKhoa.SelectedIndex;
@@ -152,6 +152,13 @@ namespace QLDSV_TC.views
             {
 
             }
+        }
+        public void loadAgain()
+        {
+            cmbKhoa.SelectedItem = Program.mGroup;
+            Program.servername = cmbKhoa.SelectedValue.ToString();
+            txtUserName.Text = null;
+            txtPass.Text = null;
         }
     }
 }
