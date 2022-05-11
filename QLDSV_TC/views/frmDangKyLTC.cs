@@ -24,7 +24,7 @@ namespace QLDSV_TC.views
         private void loadcbNienkhoa()
         {
             DataTable dt = new DataTable();
-            string cmd = "EXEC dbo.Sp_GetNienKhoa";
+            string cmd = "EXEC dbo.Sp_Get_NienKhoa";
             dt = Program.ExecSqlDataTable(cmd);
 
             cbNienKhoa.DataSource = dt;
@@ -36,7 +36,7 @@ namespace QLDSV_TC.views
         private  void loadcbHocKi(string nienkhoa)
         {
             DataTable dt = new DataTable();
-            string cmd = "EXEC dbo.Sp_GetHocKy'" + nienkhoa + "'";
+            string cmd = "EXEC dbo.Sp_Get_HocKy'" + nienkhoa + "'";
             dt = Program.ExecSqlDataTable(cmd);
 
             cbHocKy.DataSource = dt;

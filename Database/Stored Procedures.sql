@@ -77,8 +77,107 @@ BEGIN
 	 RETURN 0 --Không bị trùng được thêm
 END
 
+
+
+CREATE proc [dbo].[SP_GET_LISTLOPTINCHI_DKI]
+@Nienkhoa nchar(9),
+@Hocky int,
+@MaSV nchar(10)
+as
+BEGIN
+	
+select  MALTC,MAMH,TENMH=(select TENMH from MONHOC a where a.MAMH=ltc.MAMH),
+		NHOM=ltc.NHOM, GIANGVIEN=(SELECT gv.HO+' '+gv.TEN FROM GIANGVIEN gv WHERE gv.MAGV=ltc.MAGV),
+         DADANGKY=(select COUNT(*) from DANGKY dk where dk.MALTC = ltc.MALTC and (dk.HUYDANGKY =0 or dk.HUYDANGKY is null))
+  from LOPTINCHI ltc
+ WHERE ltc.NIENKHOA = @Nienkhoa and ltc.HOCKY = @Hocky and ltc.HUYLOP = 0 and 
+ @MaSV not in (select MASV from DANGKY where MALTC =ltc.MALTC and (HUYDANGKY =0 or HUYDANGKY is null))
+END
+
+CREATE proc [dbo].[SP_GET_LISTLOPTINCHI_DADKI]
+@Nienkhoa nchar(9),
+@Hocky int,
+@MaSV nchar(10)
+as
+BEGIN
+	
+select  MALTC,MAMH,TENMH=(select TENMH from MONHOC a where a.MAMH=ltc.MAMH),
+		NHOM=ltc.NHOM, GIANGVIEN=(SELECT gv.HO+' '+gv.TEN FROM GIANGVIEN gv WHERE gv.MAGV=ltc.MAGV),
+         DADANGKY=(select COUNT(*) from DANGKY dk where dk.MALTC = ltc.MALTC and (dk.HUYDANGKY =0 or dk.HUYDANGKY is null))
+  from LOPTINCHI ltc
+ WHERE ltc.NIENKHOA = @Nienkhoa and ltc.HOCKY = @Hocky and ltc.HUYLOP = 0 and 
+ @MaSV in (select MASV from DANGKY where MALTC =ltc.MALTC and (HUYDANGKY =0 or HUYDANGKY is null))
+END
+
+
+
+create proc [dbo].[SP_DKY_LTC]
+@MALTC int,
+@MASV nchar(10)
+AS
+BEGIN 
+  IF EXISTS ( SELECT * FROM DANGKY WHERE MALTC=@MALTC AND MASV=@MASV AND HUYDANGKY=1)
+    BEGIN 
+		UPDATE DANGKY 
+		SET HUYDANGKY=0
+		WHERE MALTC=@MALTC AND MASV=@MASV
+	END
+  ELSE
+	BEGIN
+		INSERT INTO DANGKY(MALTC,MASV) VALUES (@MALTC,@MASV)
+	END
+
+END
+
+
+CREATE proc [dbo].[SP_HUY_DKY_LTC]
+@MALTC int,
+@MASV nchar(10)
+AS
+BEGIN 
+  IF EXISTS ( SELECT * FROM DANGKY WHERE MALTC=@MALTC AND MASV=@MASV AND (HUYDANGKY=0 OR HUYDANGKY is null))
+    BEGIN 
+		UPDATE DANGKY 
+		SET HUYDANGKY=1
+		WHERE MALTC=@MALTC AND MASV=@MASV
+	END
+END
+
+CREATE TYPE [dbo].[TYPE_DANGKY] AS TABLE(
+	[MALTC] [int] NULL,
+	[MASV] [nchar](10) NULL,
+	[DIEM_CC] [int] NULL,
+	[DIEM_GK] [float] NULL,
+	[DIEM_CK] [float] NULL
+)
+
+CREATE PROCEDURE [dbo].[SP_SEARCH_LTC] @NienKhoa nchar(9), @HocKy int, @Nhom int,@MonHoc nchar(10)
+as
+BEGIN
+declare @LOPTINCHI int
+select @LOPTINCHI= MALTC
+from LOPTINCHI JOIN MONHOC ON LOPTINCHI.MAMH = MONHOC.MAMH
+where LOPTINCHI.NIENKHOA = @NienKhoa AND LOPTINCHI.HOCKY = @HocKy AND LOPTINCHI.NHOM = @Nhom
+AND MONHOC.MAMH = @MonHoc 
+
+select MALTC, MONHOC.TENMH, HOTEN=GIANGVIEN.HO+' '+GIANGVIEN.TEN
+from  MONHOC JOIN (LOPTINCHI JOIN GIANGVIEN ON LOPTINCHI.MAGV = GIANGVIEN.MAGV) ON LOPTINCHI.MAMH = MONHOC.MAMH
+where LOPTINCHI.MALTC =  @LOPTINCHI
+
+END
+
+CREATE proc [dbo].[SP_GETDIEMSV]
+@MASV nchar(10)
+AS
+BEGIN
+select NKHK=N'Học Kỳ '+ CAST(ltc.HOCKY as nvarchar(1))+N' - Năm học '+ltc.NIENKHOA,dk.MALTC,mh.TENMH,dk.DIEM_CC,dk.DIEM_GK,dk.DIEM_CK 
+from DANGKY dk JOIN (select MALTC, NIENKHOA, HOCKY,MAMH FROM LOPTINCHI) ltc on dk.MALTC=ltc.MALTC 
+				 JOIN (select MAMH,TenMH FROM MONHOC) mh ON ltc.MAMH = mh.MAMH
+where dk.MASV=@MASV and( HUYDANGKY=0 or HUYDANGKY is NULL)
+END
+
 /* frm nhập điểm */
-ALTER PROCEDURE [dbo].[SP_DSDKMH] @NienKhoa nchar(9), @HocKy int, @Nhom int,@MonHoc nchar(10)
+CREATE PROCEDURE [dbo].[SP_DSDKMH] @NienKhoa nchar(9), @HocKy int, @Nhom int,@MonHoc nchar(10)
 as
 BEGIN
 	declare @LOPTINCHI int
@@ -92,32 +191,84 @@ BEGIN
 END
 
 
-ALTER PROC [dbo].[SP_Ghi_DIEM]
-@MSSV nchar(10),
-@MALTC int,
-@DIEM_CC float,
-@DIEM_GK float,
-@DIEM_CK float
+create proc [dbo].[SP_UPDATEDIEM]
+@DIEMTHI TYPE_DANGKY READONLY 
+AS 
+BEGIN 
+	MERGE INTO DANGKY AS TARGET
+	USING (SELECT MALTC, MASV, DIEM_CC, DIEM_GK, DIEM_CK FROM @DIEMTHI) AS SOURCE
+	ON TARGET.MALTC = SOURCE.MALTC AND TARGET.MASV = SOURCE.MASV 
+	WHEN MATCHED THEN
+		UPDATE SET TARGET.DIEM_CC = SOURCE.DIEM_CC,
+				   TARGET.DIEM_GK = SOURCE.DIEM_GK,
+				   TARGET.DIEM_CK = SOURCE.DIEM_CK
+	WHEN NOT MATCHED THEN 
+		INSERT ( MALTC, MASV, DIEM_CC, DIEM_GK, DIEM_CK)
+		 VALUES (SOURCE.MALTC, SOURCE.MASV, SOURCE.DIEM_CC, SOURCE.DIEM_GK, SOURCE.DIEM_CK);
+END 
+
+
+create proc [dbo].[SP_GET_NIENKHOA]
+ as 
+	select NIENKHOA from LOPTINCHI group by NIENKHOA
+
+
+create proc [dbo].[SP_GET_HOCKY] 
+@NIENKHOA nchar(9)  
 as 
-BEGIN
-	IF EXISTS (Select 1 From DANGKY where MASV = @MSSV AND MALTC = @MALTC)
-	BEGIN
-		UPDATE DANGKY
-		SET DIEM_CC = @DIEM_CC, DIEM_GK = @DIEM_GK, DIEM_CK = @DIEM_CK
-		WHERE MASV = @MSSV AND MALTC = @MALTC
-	END
-	ELSE 
-	RAISERROR(N'THÔNG TIN ĐĂNG KÝ KHÔNG TỒN TẠI',16,1)
+BEGIN 
+	select HOCKY from LOPTINCHI 
+	where NIENKHOA= @NIENKHOA group by HOCKY
 END
 
-ALTER proc [dbo].[sp_get_Nhom] @NIENKHOA varchar(9), @HOCKI int, @MAMH nchar(10)
-as select NHOM FROM LOPTINCHI where @NIENKHOA = NIENKHOA AND HOCKY = @HOCKI AND MAMH = @MAMH group by NHOM
 
-ALTER proc [dbo].[sp_get_MonHoc] @NIENKHOA varchar(9), @HOCKI int
-as select MAMH FROM LOPTINCHI where @NIENKHOA = NIENKHOA AND HOCKY = @HOCKI  group by MAMH
+create proc [dbo].[SP_GET_NHOM] 
+@NIENKHOA varchar(9), @HOCKI int, @MAMH nchar(10)
+as 
+BEGIN
+	select NHOM FROM LOPTINCHI 
+	where @NIENKHOA = NIENKHOA AND HOCKY = @HOCKI AND MAMH = @MAMH 
+	group by NHOM
+END
 
-ALTER proc [dbo].[sp_get_HocKy] @NIENKHOA nchar(9)  as 
-select HOCKY from LOPTINCHI where NIENKHOA= @NIENKHOA group by HOCKY
+create proc [dbo].[SP_GET_MONHOC] @NIENKHOA varchar(9), @HOCKI int
+as
+	 select MAMH FROM LOPTINCHI 
+	 where @NIENKHOA = NIENKHOA AND HOCKY = @HOCKI  group by MAMH
+GO
 
-ALTER proc [dbo].[sp_get_NienKhoa] as 
-select NIENKHOA from LOPTINCHI group by NIENKHOA
+
+CREATE proc SP_CHANGEPASS @LOGIN nchar(10), @PASSOLD nvarchar(40), @PASSNEW nvarchar(40)
+ AS
+ BEGIN
+	IF EXISTS ( SELECT 1 FROM SINHVIEN WHERE SINHVIEN.MASV = @LOGIN AND SINHVIEN.PASSWORD = @PASSOLD )
+	   BEGIN
+	      UPDATE SINHVIEN
+		  SET SINHVIEN.PASSWORD = @PASSNEW
+		  WHERE SINHVIEN.MASV = @LOGIN
+		  RETURN;
+	   END
+	ELSE IF EXISTS ( SELECT 1 FROM SYS.sql_logins WHERE NAME = @LOGIN )
+		BEGIN
+			declare @SQLSTR nvarchar(200)
+			Set @SQLSTR = 'ALTER LOGIN '+@LOGIN+' WITH PASSWORD= ' +QUOTENAME(@PASSNEW,'''')+ ' OLD_PASSWORD = '+QUOTENAME(@PASSOLD,'''')
+			exec(@SQLSTR)
+		END
+	ELSE
+	   Raiserror('Sai Mật Khẩu', 12, 1)
+
+ END
+
+
+ CREATE proc [dbo].[SP_REPORT_DS_LOPTINCHI]
+@Nienkhoa nchar(9),
+@Hocky int
+as
+BEGIN
+	
+select  TENMH=(select TENMH from MONHOC a where a.MAMH=ltc.MAMH),
+		NHOM=ltc.NHOM, GIANGVIEN=(SELECT gv.HO+' '+gv.TEN FROM GIANGVIEN gv WHERE gv.MAGV=ltc.MAGV),
+        ltc.SOSVTOITHIEU, DADANGKY=(select COUNT(*) from DANGKY dk where dk.MALTC = ltc.MALTC and (dk.HUYDANGKY =0 or dk.HUYDANGKY is null))
+  from LOPTINCHI ltc
+ WHERE ltc.NIENKHOA = @Nienkhoa and ltc.HOCKY = @Hocky and ltc.HUYLOP = 0 
+END

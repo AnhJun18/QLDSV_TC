@@ -66,7 +66,7 @@ namespace QLDSV_TC
             }
             catch (Exception e)
             {
-                if (isShow) XtraMessageBox.Show("Vui lòng xem lại user name và password\n", "Lỗi đăng nhập", MessageBoxButtons.OK);
+                if (isShow) XtraMessageBox.Show("Vui lòng xem lại user name và password\n"+e.Message, "Lỗi đăng nhập", MessageBoxButtons.OK);
                 return 0;
             }
         }

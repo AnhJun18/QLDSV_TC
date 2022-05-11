@@ -80,7 +80,7 @@ namespace QLDSV_TC.views
         void loadcbNienkhoa()
         {
 
-            string cmd = "EXEC dbo.sp_get_NienKhoa";
+            string cmd = "EXEC dbo.SP_GET_NIENKHOA";
             DataTable dt = Program.ExecSqlDataTable(cmd);
             cbNIENKHOA.DataSource = dt;
             cbNIENKHOA.DisplayMember = "NIENKHOA";
@@ -90,7 +90,7 @@ namespace QLDSV_TC.views
         void loadcbHocKi(string nienkhoa)
         {
 
-            string cmd = "EXEC dbo.sp_get_HocKy '" + nienkhoa + "'";
+            string cmd = "EXEC dbo.SP_GET_HOCKY '" + nienkhoa + "'";
             DataTable dt = Program.ExecSqlDataTable(cmd);
 
             cbHOCKY.DataSource = dt;
@@ -101,7 +101,7 @@ namespace QLDSV_TC.views
         void loadMH(string nienkhoa, string hocki)
         {
 
-            string cmd = "EXEC dbo.sp_get_MonHoc '" + nienkhoa + "', " + hocki;
+            string cmd = "EXEC dbo.SP_GET_MONHOC '" + nienkhoa + "', " + hocki;
             DataTable dt = Program.ExecSqlDataTable(cmd);
 
             cbMAMH.DataSource = dt;
@@ -111,7 +111,7 @@ namespace QLDSV_TC.views
         void loadNhom(string nienkhoa, string hocki, string mamonhoc)
         {
 
-            string cmd = "EXEC dbo.sp_get_Nhom '" + nienkhoa + "', " + hocki + ", '" + mamonhoc + "'";
+            string cmd = "EXEC dbo.SP_GET_NHOM '" + nienkhoa + "', " + hocki + ", '" + mamonhoc + "'";
             DataTable dt = Program.ExecSqlDataTable(cmd);
 
             cbNHOM.DataSource = dt;
@@ -136,13 +136,13 @@ namespace QLDSV_TC.views
         DataTable dkTable = new DataTable();
         private void loatBtnBD()
         {
-            string cmd = "EXEC SP_DSDkMH '" + cbNIENKHOA.Text + "', " + cbHOCKY.Text + ", " + cbNHOM.Text + ", '" + cbMAMH.Text + "'";
+            string cmd = "EXEC SP_DSDKMH '" + cbNIENKHOA.Text + "', " + cbHOCKY.Text + ", " + cbNHOM.Text + ", '" + cbMAMH.Text + "'";
             dkTable = Program.ExecSqlDataTable(cmd);
             this.gridControl1.DataSource = dkTable;
         }
         private void btnBD_Click(object sender, EventArgs e)
         {
-            string cmdd = "EXEC SP_GET_LTC'" + cbNIENKHOA.Text + "', " + cbHOCKY.Text + ", " + cbNHOM.Text + ", '" + cbMAMH.Text + "'";
+            string cmdd = "EXEC SP_SEARCH_LTC'" + cbNIENKHOA.Text + "', " + cbHOCKY.Text + ", " + cbNHOM.Text + ", '" + cbMAMH.Text + "'";
             DataTable ltcTable = Program.ExecSqlDataTable(cmdd);
             this.gridControl2.DataSource = ltcTable;
             btnCN.Enabled = true;
@@ -181,7 +181,7 @@ namespace QLDSV_TC.views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ghi điểm thất bại", "", MessageBoxButtons.OK);
+                MessageBox.Show("Ghi điểm thất bại\n" + ex.Message, "", MessageBoxButtons.OK);
                 loatBtnBD();
             }
 
@@ -194,6 +194,7 @@ namespace QLDSV_TC.views
 
         private void gridView1_RowCellClick(object sender, DevExpress.XtraGrid.Views.Grid.RowCellClickEventArgs e)
         {
+
             if (e.Column.FieldName == "DIEM_CC")
             {
                 if (int.Parse(e.CellValue.ToString()) > 10)
@@ -208,8 +209,40 @@ namespace QLDSV_TC.views
         {
             var view = sender as GridView;
             var value = Convert.ToInt32(e.Value);
-            if (value > 10 || value< 0)
+            if (value > 10 || value < 0)
+            {
                 MessageBox.Show("Vui lòng nhập điểm >0 và <10", "", MessageBoxButtons.OK);
+                gridView1.SetFocusedRowCellValue("DIEM_CC", e.Value);
+            }
+        }
+
+        private void gridView1_CellValueChanging(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+           
+        }
+
+        private void gridView1_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            var value = Convert.ToInt32(e.Value);
+            if (value > 10 || value < 0)
+            {
+                gridView1.FocusedColumn=  e.Column;
+               gridView1.FocusedRowHandle= 0;
+                gridView1.ResetCursor();
+                MessageBox.Show("Vui lòng  abc nhập điểm >0 và <10", "", MessageBoxButtons.OK);
+                gridView1.ShowEditor();
+
+
+            }
+              
+
+        }
+
+        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
+        {
+            
         }
     }
+      
+
 }

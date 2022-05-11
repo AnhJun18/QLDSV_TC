@@ -136,7 +136,7 @@ namespace QLDSV_TC.views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ", "", MessageBoxButtons.OK);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ"+ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
 

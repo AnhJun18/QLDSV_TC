@@ -97,3 +97,4 @@ C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QL
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.csproj.CopyComplete
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.exe
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.pdb
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.csproj.AssemblyReference.cache
