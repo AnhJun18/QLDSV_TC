@@ -85,6 +85,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSV_TCDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="reports\Report_BangDiem_TongKet_Lop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\Report_BangDiem_TongKet_Lop.Designer.cs">
+      <DependentUpon>Report_BangDiem_TongKet_Lop.cs</DependentUpon>
+    </Compile>
     <Compile Include="reports\Report_DS_LopTinChi.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -120,6 +126,12 @@
     </Compile>
     <Compile Include="views\frmDangKyLTC.Designer.cs">
       <DependentUpon>frmDangKyLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmHocPhi.Designer.cs">
+      <DependentUpon>frmHocPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="views\frmLogin.cs">
       <SubType>Form</SubType>
@@ -175,6 +187,12 @@
     <Compile Include="views\XfrmDanhSachSinhVienDangKyLTC.Designer.cs">
       <DependentUpon>XfrmDanhSachSinhVienDangKyLTC.cs</DependentUpon>
     </Compile>
+    <Compile Include="views\Xfrm_BangDiem_TongKetLop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\Xfrm_BangDiem_TongKetLop.Designer.cs">
+      <DependentUpon>Xfrm_BangDiem_TongKetLop.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -185,6 +203,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reports\Report_BangDiem_TongKet_Lop.resx">
+      <DependentUpon>Report_BangDiem_TongKet_Lop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reports\Report_DS_LopTinChi.resx">
       <DependentUpon>Report_DS_LopTinChi.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmDangKyLTC.resx">
       <DependentUpon>frmDangKyLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmHocPhi.resx">
+      <DependentUpon>frmHocPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -229,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\XfrmDanhSachSinhVienDangKyLTC.resx">
       <DependentUpon>XfrmDanhSachSinhVienDangKyLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\Xfrm_BangDiem_TongKetLop.resx">
+      <DependentUpon>Xfrm_BangDiem_TongKetLop.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">

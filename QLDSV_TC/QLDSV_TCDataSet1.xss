@@ -26,6 +26,18 @@
         </Point>
       </RoutePoints>
     </Connector>
+    <Connector ID="DesignRelation:FK_GIANGVIEN_KHOA" ZOrder="1" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>1145</X>
+          <Y>446</Y>
+        </Point>
+        <Point>
+          <X>1215</X>
+          <Y>446</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
     <Connector ID="DesignRelation:FK_HOCPHI_SINHVIEN" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -42,18 +54,6 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_SINHVIEN_LOP" ZOrder="3" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>672</X>
-          <Y>469</Y>
-        </Point>
-        <Point>
-          <X>602</X>
-          <Y>469</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
     <Connector ID="DesignRelation:FK_LOP_KHOA" ZOrder="2" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -66,15 +66,15 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_GIANGVIEN_KHOA" ZOrder="1" LineWidth="11">
+    <Connector ID="DesignRelation:FK_SINHVIEN_LOP" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
-          <X>1145</X>
-          <Y>446</Y>
+          <X>672</X>
+          <Y>469</Y>
         </Point>
         <Point>
-          <X>1215</X>
-          <Y>446</Y>
+          <X>602</X>
+          <Y>469</Y>
         </Point>
       </RoutePoints>
     </Connector>

@@ -23,6 +23,14 @@ namespace QLDSV_TC.views
                 ribbonPageBaoCao.Visible = false;
                 ribbonPageQuanLy.Visible = false;
             }
+            else if (Program.mGroup.Equals("PKT"))
+            {
+                ribbonPageBaoCao.Visible = false;
+                ribbonPageKhoa_PGV.Visible = false;
+                ribbonPageGroupPKT.Visible = true;
+                ribbon.SelectedPage = ribbonPageQuanLy;
+
+            }
         }
 
         private Form CheckExists(Type ftype)
@@ -117,7 +125,7 @@ namespace QLDSV_TC.views
             {
                 frmDangKyLTC frmDkLTC = new frmDangKyLTC();
                 frmDkLTC.MdiParent = this;
-                 frmDkLTC.Show();
+                frmDkLTC.Show();
 
             }
         }
@@ -145,7 +153,7 @@ namespace QLDSV_TC.views
                 Program.frmLogin.Visible = true;
                 Program.bdsDSPM.RemoveFilter();
                 Program.frmLogin.loadAgain();
-                
+
             }
         }
 
@@ -168,7 +176,7 @@ namespace QLDSV_TC.views
             if (frm != null) frm.Activate();
             else
             {
-                XfrmDanhSachSinhVienDangKyLTC frmDSSV_DK_LTC= new XfrmDanhSachSinhVienDangKyLTC();
+                XfrmDanhSachSinhVienDangKyLTC frmDSSV_DK_LTC = new XfrmDanhSachSinhVienDangKyLTC();
                 frmDSSV_DK_LTC.MdiParent = this;
                 frmDSSV_DK_LTC.Show();
 
@@ -185,6 +193,32 @@ namespace QLDSV_TC.views
                 XfrmBangDiemLopTinChi frmbangdiem = new XfrmBangDiemLopTinChi();
                 frmbangdiem.MdiParent = this;
                 frmbangdiem.Show();
+
+            }
+        }
+
+        private void barButtonItem5_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.Xfrm_BangDiem_TongKetLop));
+            if (frm != null) frm.Activate();
+            else
+            {
+                Xfrm_BangDiem_TongKetLop frmbdLop = new Xfrm_BangDiem_TongKetLop();
+                frmbdLop.MdiParent = this;
+                frmbdLop.Show();
+
+            }
+        }
+
+        private void btnHocPhi_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmHocPhi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmHocPhi frmhp = new frmHocPhi();
+                frmhp.MdiParent = this;
+                frmhp.Show();
 
             }
         }
