@@ -48,6 +48,7 @@ namespace QLDSV_TC.views
             this.btnSinhVien = new DevExpress.XtraBars.BarButtonItem();
             this.btnNhapDiem = new DevExpress.XtraBars.BarButtonItem();
             this.btnChangePass = new DevExpress.XtraBars.BarButtonItem();
+            this.btnDSV = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPageQuanLy = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageSinhVien = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -64,6 +65,7 @@ namespace QLDSV_TC.views
             this.statusMa = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusTen = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusKhoa = new System.Windows.Forms.ToolStripStatusLabel();
+            this.rpHP = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.statusBar.SuspendLayout();
@@ -90,10 +92,12 @@ namespace QLDSV_TC.views
             this.barButtonItem9,
             this.btnSinhVien,
             this.btnNhapDiem,
-            this.btnChangePass});
+            this.btnChangePass,
+            this.btnDSV,
+            this.rpHP});
             this.ribbon.Location = new System.Drawing.Point(0, 0);
             this.ribbon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.ribbon.MaxItemId = 18;
+            this.ribbon.MaxItemId = 20;
             this.ribbon.Name = "ribbon";
             this.ribbon.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPageQuanLy,
@@ -189,6 +193,7 @@ namespace QLDSV_TC.views
             this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
             this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
             this.barButtonItem4.Name = "barButtonItem4";
+            this.barButtonItem4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem4_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -230,6 +235,16 @@ namespace QLDSV_TC.views
             this.btnChangePass.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnChangePass.ImageOptions.SvgImage")));
             this.btnChangePass.Name = "btnChangePass";
             this.btnChangePass.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnChangePass_ItemClick);
+            // 
+            // btnDSV
+            // 
+            this.btnDSV.Caption = "Bảng Điểm Theo Sinh Viên";
+            this.btnDSV.CausesValidation = true;
+            this.btnDSV.Id = 18;
+            this.btnDSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDSV.ImageOptions.Image")));
+            this.btnDSV.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnDSV.ImageOptions.LargeImage")));
+            this.btnDSV.Name = "btnDSV";
+            this.btnDSV.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDSV_ItemClick);
             // 
             // ribbonPageQuanLy
             // 
@@ -280,6 +295,8 @@ namespace QLDSV_TC.views
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnDSV);
+            this.ribbonPageGroup2.ItemLinks.Add(this.rpHP);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             // 
             // ribbonPage5
@@ -346,6 +363,15 @@ namespace QLDSV_TC.views
             this.statusKhoa.Size = new System.Drawing.Size(40, 17);
             this.statusKhoa.Text = "Khoa: ";
             // 
+            // rpHP
+            // 
+            this.rpHP.Caption = "Học Phí Theo Lớp";
+            this.rpHP.CausesValidation = true;
+            this.rpHP.Id = 19;
+            this.rpHP.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem5.ImageOptions.SvgImage")));
+            this.rpHP.Name = "rpHP";
+            this.rpHP.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.rpHP_ItemClick);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -407,5 +433,7 @@ namespace QLDSV_TC.views
         private DevExpress.XtraBars.BarButtonItem btnSinhVien;
         private DevExpress.XtraBars.BarButtonItem btnNhapDiem;
         private DevExpress.XtraBars.BarButtonItem btnChangePass;
+        private DevExpress.XtraBars.BarButtonItem btnDSV;
+        private DevExpress.XtraBars.BarButtonItem rpHP;
     }
 }

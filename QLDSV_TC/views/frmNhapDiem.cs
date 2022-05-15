@@ -238,10 +238,6 @@ namespace QLDSV_TC.views
 
         }
 
-        private void gridView1_ValidateRow(object sender, DevExpress.XtraGrid.Views.Base.ValidateRowEventArgs e)
-        {
-            
-        }
     }
       
 

@@ -46,7 +46,7 @@ namespace QLDSV_TC.views
                 else
                     strCmd = "exec SP_CHANGEPASS " + Program.mlogin + " ,'" + mkHT.Text + "','" + mkMoi.Text + "';";
 
-                MessageBox.Show(strCmd);
+                
                 SqlDataReader dataReader = Program.ExecSqlDataReader(strCmd);
                 if (dataReader != null)
                 {
