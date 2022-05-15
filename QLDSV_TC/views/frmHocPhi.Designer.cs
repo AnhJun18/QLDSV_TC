@@ -37,6 +37,7 @@ namespace QLDSV_TC.views
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar2 = new DevExpress.XtraBars.Bar();
             this.btnThem = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barBtnXoa = new DevExpress.XtraBars.BarButtonItem();
             this.btnSua = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnPH = new DevExpress.XtraBars.BarLargeButtonItem();
             this.btnGhi = new DevExpress.XtraBars.BarLargeButtonItem();
@@ -65,7 +66,7 @@ namespace QLDSV_TC.views
             this.sP_GET_CTDONG_HOCPHIGridControl = new DevExpress.XtraGrid.GridControl();
             this.menuCTHocPhi = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dongHocPhi = new System.Windows.Forms.ToolStripMenuItem();
-            this.luuDongHocPhi = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoatDongHP = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colNGAYDONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.SOTIENDONG = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,6 +83,10 @@ namespace QLDSV_TC.views
             this.colHOCPHI = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDADONG = new DevExpress.XtraGrid.Columns.GridColumn();
             this.CanDong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.barLargeButtonItem1 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem2 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem3 = new DevExpress.XtraBars.BarLargeButtonItem();
+            this.barLargeButtonItem4 = new DevExpress.XtraBars.BarLargeButtonItem();
             nIENKHOALabel = new System.Windows.Forms.Label();
             hOCKYLabel = new System.Windows.Forms.Label();
             hOCPHILabel = new System.Windows.Forms.Label();
@@ -150,9 +155,10 @@ namespace QLDSV_TC.views
             this.btnSua,
             this.btnPH,
             this.btnGhi,
-            this.btnThoat});
+            this.btnThoat,
+            this.barBtnXoa});
             this.barManager1.MainMenu = this.bar2;
-            this.barManager1.MaxItemId = 6;
+            this.barManager1.MaxItemId = 7;
             // 
             // bar2
             // 
@@ -163,6 +169,7 @@ namespace QLDSV_TC.views
             this.bar2.FloatLocation = new System.Drawing.Point(293, 146);
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(this.btnThem),
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.barBtnXoa, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnSua),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnPH),
             new DevExpress.XtraBars.LinkPersistInfo(this.btnGhi),
@@ -181,6 +188,16 @@ namespace QLDSV_TC.views
             this.btnThem.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThem.ImageOptions.SvgImage")));
             this.btnThem.Name = "btnThem";
             this.btnThem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThem_ItemClick);
+            // 
+            // barBtnXoa
+            // 
+            this.barBtnXoa.Caption = "Xóa";
+            this.barBtnXoa.Enabled = false;
+            this.barBtnXoa.Id = 6;
+            this.barBtnXoa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barBtnXoa.ImageOptions.Image")));
+            this.barBtnXoa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barBtnXoa.ImageOptions.LargeImage")));
+            this.barBtnXoa.Name = "barBtnXoa";
+            this.barBtnXoa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barBtnXoa_ItemClick);
             // 
             // btnSua
             // 
@@ -422,7 +439,7 @@ namespace QLDSV_TC.views
             this.menuCTHocPhi.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuCTHocPhi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dongHocPhi,
-            this.luuDongHocPhi});
+            this.thoatDongHP});
             this.menuCTHocPhi.Name = "menuCTHocPhi";
             this.menuCTHocPhi.Size = new System.Drawing.Size(171, 52);
             // 
@@ -433,12 +450,12 @@ namespace QLDSV_TC.views
             this.dongHocPhi.Text = "Đóng Học Phí";
             this.dongHocPhi.Click += new System.EventHandler(this.dongHocPhi_Click);
             // 
-            // luuDongHocPhi
+            // thoatDongHP
             // 
-            this.luuDongHocPhi.Name = "luuDongHocPhi";
-            this.luuDongHocPhi.Size = new System.Drawing.Size(170, 24);
-            this.luuDongHocPhi.Text = "Lưu";
-            this.luuDongHocPhi.Click += new System.EventHandler(this.luuDongHocPhi_Click);
+            this.thoatDongHP.Name = "thoatDongHP";
+            this.thoatDongHP.Size = new System.Drawing.Size(170, 24);
+            this.thoatDongHP.Text = "Thoát";
+            this.thoatDongHP.Click += new System.EventHandler(this.thoatDongHP_Click);
             // 
             // gridView2
             // 
@@ -449,14 +466,18 @@ namespace QLDSV_TC.views
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsNavigation.AutoMoveRowFocus = false;
             this.gridView2.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView2_ShowingEditor);
-            this.gridView2.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gridView2_CellValueChanged);
+            this.gridView2.InvalidRowException += new DevExpress.XtraGrid.Views.Base.InvalidRowExceptionEventHandler(this.gridView2_InvalidRowException);
             this.gridView2.ValidateRow += new DevExpress.XtraGrid.Views.Base.ValidateRowEventHandler(this.gridView2_ValidateRow);
             this.gridView2.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView2_ValidatingEditor);
             // 
             // colNGAYDONG
             // 
             this.colNGAYDONG.Caption = "Ngày Đóng";
+            this.colNGAYDONG.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAYDONG.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAYDONG.FieldName = "NGAYDONG";
+            this.colNGAYDONG.GroupFormat.FormatString = "dd/MM/yyyy";
+            this.colNGAYDONG.GroupFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colNGAYDONG.MinWidth = 25;
             this.colNGAYDONG.Name = "colNGAYDONG";
             this.colNGAYDONG.Visible = true;
@@ -653,6 +674,38 @@ namespace QLDSV_TC.views
             this.CanDong.VisibleIndex = 4;
             this.CanDong.Width = 94;
             // 
+            // barLargeButtonItem1
+            // 
+            this.barLargeButtonItem1.Caption = "Xóa";
+            this.barLargeButtonItem1.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.barLargeButtonItem1.Id = 1;
+            this.barLargeButtonItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barLargeButtonItem1.ImageOptions.SvgImage")));
+            this.barLargeButtonItem1.Name = "barLargeButtonItem1";
+            // 
+            // barLargeButtonItem2
+            // 
+            this.barLargeButtonItem2.Caption = "Xóa";
+            this.barLargeButtonItem2.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.barLargeButtonItem2.Id = 1;
+            this.barLargeButtonItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barLargeButtonItem2.ImageOptions.SvgImage")));
+            this.barLargeButtonItem2.Name = "barLargeButtonItem2";
+            // 
+            // barLargeButtonItem3
+            // 
+            this.barLargeButtonItem3.Caption = "Xóa";
+            this.barLargeButtonItem3.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.barLargeButtonItem3.Id = 1;
+            this.barLargeButtonItem3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barLargeButtonItem3.ImageOptions.SvgImage")));
+            this.barLargeButtonItem3.Name = "barLargeButtonItem3";
+            // 
+            // barLargeButtonItem4
+            // 
+            this.barLargeButtonItem4.Caption = "Xóa";
+            this.barLargeButtonItem4.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.barLargeButtonItem4.Id = 1;
+            this.barLargeButtonItem4.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barLargeButtonItem4.ImageOptions.SvgImage")));
+            this.barLargeButtonItem4.Name = "barLargeButtonItem4";
+            // 
             // frmHocPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -740,7 +793,12 @@ namespace QLDSV_TC.views
         private System.Windows.Forms.Label labelDaDong;
         private System.Windows.Forms.ContextMenuStrip menuCTHocPhi;
         private System.Windows.Forms.ToolStripMenuItem dongHocPhi;
-        private System.Windows.Forms.ToolStripMenuItem luuDongHocPhi;
+        private System.Windows.Forms.ToolStripMenuItem thoatDongHP;
         private DevExpress.XtraGrid.Columns.GridColumn CanDong;
+        private DevExpress.XtraBars.BarButtonItem barBtnXoa;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem1;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem2;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem3;
+        private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem4;
     }
 }

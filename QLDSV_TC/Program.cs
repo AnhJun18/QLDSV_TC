@@ -124,7 +124,8 @@ namespace QLDSV_TC
             {
                 MessageBox.Show(ex.Message);
                 conn.Close();
-                return ex.State;
+                
+                return ex.State == 0?-1:ex.State;
             }
         }
 
