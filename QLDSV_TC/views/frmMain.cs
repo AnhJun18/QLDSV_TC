@@ -261,7 +261,15 @@ namespace QLDSV_TC.views
 
         private void barBtnTaoLogin_ItemClick(object sender, ItemClickEventArgs e)
         {
+            Form frm = CheckExists(typeof(views.frmCreateLogin));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmCreateLogin frmbd = new frmCreateLogin();
+                frmbd.MdiParent = this;
+                frmbd.Show();
 
+            }
         }
 
         private void barDtnReportDongHP_ItemClick(object sender, ItemClickEventArgs e)

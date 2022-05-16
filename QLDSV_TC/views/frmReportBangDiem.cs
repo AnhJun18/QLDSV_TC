@@ -89,27 +89,23 @@ namespace QLDSV_TC.views
             }
             else
             {
-                string cmd = 
-                               " DECLARE @return_value INT " +
-                               " EXEC @return_value = dbo.SP_CHECKEXISTS_SV '" + tbMaSV.Text + 
-                               "'; SELECT  'Return Value' = @return_value ";
-                int tmp = Program.CheckDataHelper(cmd);
-                if (tmp == 1)
+                try
                 {
 
-                    Report_PhieuDiemTheoSinhVien rpt = new Report_PhieuDiemTheoSinhVien(tbMaSV.Text);
+                          Report_PhieuDiemTheoSinhVien rpt = new Report_PhieuDiemTheoSinhVien(tbMaSV.Text);
+                          rpt.lbTD.Text = "KHOA " + cbKhoa.Text.ToUpper();
+                          rpt.lbSV.Text = "Bảng Điểm Sinh Viên: " + tbMaSV.Text;
 
-                    rpt.lbTD.Text = "KHOA " + cbKhoa.Text.ToUpper();
-                    rpt.lbSV.Text = "Bảng Điểm Sinh Viên: " + tbMaSV.Text;
+                         ReportPrintTool print = new ReportPrintTool(rpt);
+                         print.ShowPreviewDialog();
 
-                    ReportPrintTool print = new ReportPrintTool(rpt);
-                    print.ShowPreviewDialog();
                 }
-                else
+                catch(Exception ex)
                 {
-                    MessageBox.Show("Mã sinh viên không hợp lệ.", "Thông Báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Sinh viên không tồn tại \n "+ex.Message);
                     tbMaSV.Focus();
                 }
+                 
             }
             
                

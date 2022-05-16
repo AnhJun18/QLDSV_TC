@@ -69,6 +69,8 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
+            loadcbNienkhoa();
+
         }
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)

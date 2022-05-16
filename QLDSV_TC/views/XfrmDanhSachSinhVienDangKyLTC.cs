@@ -70,7 +70,7 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
-           
+            loadcbNienkhoa();
 
         }
 
