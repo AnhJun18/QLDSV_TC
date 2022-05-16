@@ -91,12 +91,13 @@ namespace QLDSV_TC.views
             }
             Program.mlogin = txtUserName.Text;
             Program.pass = txtPass.Text;
+
             if (Program.KetNoi(false) == 1)
             {
                 String strCmd = "EXEC SP_CHECK_DANGNHAP '" + Program.mlogin + "'";
                 Program.myReader = Program.ExecSqlDataReader(strCmd);
             }
-            else
+            else if(!cmbKhoa.Text.ToString().Equals("Kế Toán"))
             {
                 Program.mlogin = "SVIEN";
                 Program.pass = "1";
@@ -108,10 +109,17 @@ namespace QLDSV_TC.views
                 String strCmd = "EXEC SP_CHECK_LOGIN_SV '" + Program.mlogin + "', '" + loginNameSV + "','" + Program.passSV + "'";
                 Program.myReader = Program.ExecSqlDataReader(strCmd);
             }
+            else
+            {
+                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ \n Vui long kiem tra lại");
+                return;
+            }
             Program.mPhongBan = cmbKhoa.SelectedIndex;
             Program.mloginDN = Program.mlogin;
             Program.passDN = Program.pass;
-            if (Program.myReader == null) return;
+            if (Program.myReader == null)  {
+                return;
+            }
 
             Program.myReader.Read();
 
@@ -136,7 +144,7 @@ namespace QLDSV_TC.views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ"+ex.Message, "", MessageBoxButtons.OK);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ \n Vui long kiem tra lại \n", "", MessageBoxButtons.OK);
                 return;
             }
 

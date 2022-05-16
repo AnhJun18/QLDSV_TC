@@ -138,9 +138,9 @@ namespace QLDSV_TC.views
             int hocphi = (int)txtHocPhi.Value;
             string cmd = null;
             if (modeSave.Equals("ADD"))
-                    cmd  = "EXEC [dbo].[SP_ADD_HOCPHI] '" + masv + "' , '" + nienkhoa + "' , " + hocky + " ," + hocphi + "";
+                    cmd  = "EXEC [dbo].[SP3_ADD_HOCPHI] '" + masv + "' , '" + nienkhoa + "' , " + hocky + " ," + hocphi + "";
             else
-                cmd = "EXEC [dbo].[SP_UPDATE_HOCPHI] '" + masv + "' , '" + nienkhoa + "' , " + hocky + " ," + hocphi + "";
+                cmd = "EXEC [dbo].[SP3_UPDATE_HOCPHI] '" + masv + "' , '" + nienkhoa + "' , " + hocky + " ," + hocphi + "";
             try
             {
 
@@ -263,7 +263,7 @@ namespace QLDSV_TC.views
             int sotiendong = int.Parse(dt["SOTIENDONG"].ToString());
             DateTime ngaydong = Convert.ToDateTime( dt["NGAYDONG"].ToString());
           
-            string cmd = "EXEC [dbo].[SP_SAVE_DONG_HOCPHI] '" + masv + "' , '" + nienkhoa + "' , " + hocky + " ,'" + ngaydong.ToString("MM/dd/yyyy") + "' ," + sotiendong + "";
+            string cmd = "EXEC [dbo].[SP3_SAVE_DONG_HOCPHI] '" + masv + "' , '" + nienkhoa + "' , " + hocky + " ,'" + ngaydong.ToString("MM/dd/yyyy") + "' ," + sotiendong + "";
             try
             {
                 if (Program.ExecSqlNonQuery(cmd) != 0)
@@ -400,7 +400,7 @@ namespace QLDSV_TC.views
                 try
                 {
 
-                    string cmd = "EXEC [dbo].[SP_DELETE_HOCPHI] '" + masv + "' , '" + nienkhoa + "' , " + hocky + "";
+                    string cmd = "EXEC [dbo].[SP3_DELETE_HOCPHI] '" + masv + "' , '" + nienkhoa + "' , " + hocky + "";
                     int i = 0;
                    if( Program.ExecSqlNonQuery(cmd) !=0)
                     while ((i < bds_SP_GET_HOCPHI.Count))

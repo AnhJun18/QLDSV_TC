@@ -39,9 +39,9 @@ namespace QLDSV_TC.views
             try
             {
                 String strCmd = "";
-                if (CV.Text == "SV")
+                if (CV.Text == "SINHVIEN")
                 {
-                    strCmd = "exec SP_CHANGEPASS "+ Program.username + " ,'" + mkHT.Text + "','" + mkMoi.Text + "';";
+                    strCmd = "exec SP_CHANGEPASS_FOR_SV "+ Program.username + " ,'" + mkHT.Text + "','" + mkMoi.Text + "';";
                 }
                 else
                     strCmd = "exec SP_CHANGEPASS " + Program.mlogin + " ,'" + mkHT.Text + "','" + mkMoi.Text + "';";

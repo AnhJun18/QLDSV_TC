@@ -17,13 +17,13 @@ namespace QLDSV_TC.views
         public frmMain()
         {
             InitializeComponent();
-            if (Program.mGroup.Equals("SV"))
+            if (Program.mGroup.Equals("SINHVIEN"))
             {
                 ribbonPageSinhVien.Visible = true;
                 ribbonPageBaoCao.Visible = false;
                 ribbonPageQuanLy.Visible = false;
             }
-            else if (Program.mGroup.Equals("PKT"))
+            else if (Program.mGroup.Equals("PKTOAN"))
             {
                 ribbonPageBaoCao.Visible = true;
                 ribbonPageGroupPKT.Visible = true;
