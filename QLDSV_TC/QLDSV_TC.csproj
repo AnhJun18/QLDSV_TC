@@ -109,6 +109,18 @@
     <Compile Include="reports\Report_BangDiemLTC.Designer.cs">
       <DependentUpon>Report_BangDiemLTC.cs</DependentUpon>
     </Compile>
+    <Compile Include="reports\Report_HocPhiTheoLop.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\Report_HocPhiTheoLop.Designer.cs">
+      <DependentUpon>Report_HocPhiTheoLop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reports\Report_PhieuDiemTheoSinhVien.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reports\Report_PhieuDiemTheoSinhVien.Designer.cs">
+      <DependentUpon>Report_PhieuDiemTheoSinhVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\frmChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,6 +132,12 @@
     </Compile>
     <Compile Include="views\frmClass.Designer.cs">
       <DependentUpon>frmClass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmCreateLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmCreateLogin.Designer.cs">
+      <DependentUpon>frmCreateLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="views\frmDangKyLTC.cs">
       <SubType>Form</SubType>
@@ -162,6 +180,24 @@
     </Compile>
     <Compile Include="views\frmNhapDiem.Designer.cs">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmReportBangDiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmReportBangDiem.Designer.cs">
+      <DependentUpon>frmReportBangDiem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmReportDSLTC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmReportDSLTC.Designer.cs">
+      <DependentUpon>frmReportDSLTC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="views\frmReportHocPhi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="views\frmReportHocPhi.Designer.cs">
+      <DependentUpon>frmReportHocPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="views\frmStudent.cs">
       <SubType>Form</SubType>
@@ -215,11 +251,20 @@
     <EmbeddedResource Include="reports\Report_BangDiemLTC.resx">
       <DependentUpon>Report_BangDiemLTC.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reports\Report_HocPhiTheoLop.resx">
+      <DependentUpon>Report_HocPhiTheoLop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reports\Report_PhieuDiemTheoSinhVien.resx">
+      <DependentUpon>Report_PhieuDiemTheoSinhVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\frmChangePass.resx">
       <DependentUpon>frmChangePass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmClass.resx">
       <DependentUpon>frmClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmCreateLogin.resx">
+      <DependentUpon>frmCreateLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmDangKyLTC.resx">
       <DependentUpon>frmDangKyLTC.cs</DependentUpon>
@@ -241,6 +286,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmReportBangDiem.resx">
+      <DependentUpon>frmReportBangDiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmReportDSLTC.resx">
+      <DependentUpon>frmReportDSLTC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="views\frmReportHocPhi.resx">
+      <DependentUpon>frmReportHocPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmStudent.resx">
       <DependentUpon>frmStudent.cs</DependentUpon>

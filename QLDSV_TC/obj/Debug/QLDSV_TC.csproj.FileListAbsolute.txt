@@ -203,3 +203,9 @@ C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QL
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.Report_BangDiem_TongKet_Lop.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_BangDiem_TongKetLop.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmHocPhi.resources
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.Report_HocPhiTheoLop.resources
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.Report_PhieuDiemTheoSinhVien.resources
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmCreateLogin.resources
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportBangDiem.resources
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportDSLTC.resources
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportHocPhi.resources

@@ -109,10 +109,10 @@ namespace QLDSV_TC.views
                 ltcHOCKY.Focus();
                 return;
             }
-            if (ltcMaGV.Text.Trim() == "")
+            if (ltcMAGV.Text.Trim() == "")
             {
                 MessageBox.Show("vui lòng chọn giáo viên!", "", MessageBoxButtons.OK);
-                ltcMaGV.Focus();
+                ltcMAGV.Focus();
                 return;
             }
             if (ltcMaMH.Text.Trim() == "")
@@ -226,5 +226,38 @@ namespace QLDSV_TC.views
         {
             this.Close();
         }
+        private void ltcMaMH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ltcMaMH.SelectedValue != null)
+                txtMaMH.Text = ltcMaMH.SelectedValue.ToString();
+        }
+
+
+        private void txtMaMH_EditValueChanged(object sender, EventArgs e)
+        {
+
+            if (txtMaMH.Text != "System.Data.DataRowView" && txtMaMH.Text != null)
+            {
+                ltcMaMH.SelectedValue = txtMaMH.Text;
+            }
+
+
+        }
+
+        private void ltcMAGV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ltcMAGV.SelectedValue != null)
+                txtMAGV.Text = ltcMAGV.SelectedValue.ToString();
+        }
+
+        private void txtMAGV_EditValueChanged(object sender, EventArgs e)
+        {
+            if (txtMAGV.Text != "System.Data.DataRowView" && txtMAGV.Text != null)
+            {
+                ltcMAGV.SelectedValue = txtMAGV.Text;
+            }
+
+        }
+      
     }
 }

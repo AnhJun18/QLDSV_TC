@@ -25,7 +25,9 @@ namespace QLDSV_TC.views
             }
             else if (Program.mGroup.Equals("PKT"))
             {
-                ribbonPageBaoCao.Visible = false;
+                ribbonPageBaoCao.Visible = true;
+                ribbonPageGroupPKT.Visible = true;
+                ribbonPagePGV_Khoa.Visible = false;
                 ribbonPageKhoa_PGV.Visible = false;
                 ribbonPageGroupPKT.Visible = true;
                 ribbon.SelectedPage = ribbonPageQuanLy;
@@ -219,6 +221,59 @@ namespace QLDSV_TC.views
                 frmHocPhi frmhp = new frmHocPhi();
                 frmhp.MdiParent = this;
                 frmhp.Show();
+
+            }
+        }
+
+        private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmReportDSLTC));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmReportDSLTC frmhp = new frmReportDSLTC();
+                frmhp.MdiParent = this;
+                frmhp.Show();
+
+            }
+
+        }
+
+        private void barbtnBangDiemSV_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            Form frm = CheckExists(typeof(views.frmReportBangDiem));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmReportBangDiem frmbd = new frmReportBangDiem();
+                frmbd.MdiParent = this;
+                frmbd.Show();
+
+            }
+        }
+
+        
+
+        private void barBtnDSDongHP_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barBtnTaoLogin_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void barDtnReportDongHP_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+            Form frm = CheckExists(typeof(views.frmReportHocPhi));
+            if (frm != null) frm.Activate();
+            else
+            {
+                frmReportHocPhi frmbd = new frmReportHocPhi();
+                frmbd.MdiParent = this;
+                frmbd.Show();
 
             }
         }
