@@ -221,5 +221,10 @@ namespace QLDSV_TC.views
         {
 
         }
+
+        private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
