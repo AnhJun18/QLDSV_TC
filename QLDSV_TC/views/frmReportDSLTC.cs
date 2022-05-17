@@ -27,7 +27,7 @@ namespace QLDSV_TC.views
             this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTINCHITableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
 
-            Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Học Phí%'  ";
+            Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Kế Toán%'  ";
             cbKhoa.DataSource = Program.bdsDSPM;
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";

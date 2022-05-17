@@ -65,7 +65,7 @@ namespace QLDSV_TC.views
 
         private void XfrmDanhSachSinhVienDangKyLTC_Load(object sender, EventArgs e)
         {
-            Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Học Phí%'  ";
+            Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Kế Toán%'  ";
             cbKhoa.DataSource = Program.bdsDSPM;
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";

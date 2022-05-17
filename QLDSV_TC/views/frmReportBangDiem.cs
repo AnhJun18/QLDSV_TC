@@ -37,7 +37,7 @@ namespace QLDSV_TC.views
             this.sINHVIENTableAdapter.Connection.ConnectionString = Program.connstr;
             this.sINHVIENTableAdapter.Fill(this.qLDSV_TCDataSet.SINHVIEN);
 
-            Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Học Phí%'  ";
+            Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Kế Toán%'  ";
             cbKhoa.DataSource = Program.bdsDSPM;
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
