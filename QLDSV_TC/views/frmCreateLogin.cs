@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraBars;
+﻿
+using DevExpress.XtraBars;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -108,6 +109,7 @@ namespace QLDSV_TC.views
 
                           "'; SELECT  'Return Value' = @return_value ";
                     int tmp = Program.CheckDataHelper(query);
+
                     if (tmp == 1)
                     {
                         MessageBox.Show("Tên đăng nhập đã tồn tại", "Thông Báo", MessageBoxButtons.OK);
@@ -118,10 +120,15 @@ namespace QLDSV_TC.views
                         MessageBox.Show("Giáo viên đã có tài khoản", "Thông Báo", MessageBoxButtons.OK);
                         teUSER.Focus();
                     }
-                    else
+                    else if(tmp ==0)
                     {
                         MessageBox.Show("Tạo tài khoản thành công", "Thông Báo", MessageBoxButtons.OK);
                         teUSER.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lỗi Vui Lòng Kiểm Tra Lại", "Thông Báo", MessageBoxButtons.OK);
+                        teUSER.Focus();
                     }
                 }
                 catch(Exception ex)

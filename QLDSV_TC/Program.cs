@@ -16,7 +16,7 @@ namespace QLDSV_TC
         public static SqlConnection conn = new SqlConnection();
         public static String connstr;
         public static SqlCommand sqlcmd = new SqlCommand();
-        //=======================================================================================================mode lấy tk của user window
+        //=====================================================mode lấy tk của user window===================================
         public static String constr_publisher = "Data Source=ANH-JUN; Initial Catalog=QLDSV_TC; Integrated Security=true";
 
         public static SqlDataReader myReader;
@@ -78,21 +78,19 @@ namespace QLDSV_TC
             SqlCommand sqlCmd = new SqlCommand(strCmd, Program.conn);
             sqlCmd.CommandType = CommandType.Text;
 
-            //cực kỳ quan trọng, nếu không có sẽ bị sai: 
             if (conn != null && conn.State == ConnectionState.Open)
                 conn.Close();
             try
             {
                 conn.ConnectionString = Program.connstr;
                 conn.Open();
-                //if (Program.conn.State == ConnectionState.Closed) Program.conn.Open();
                 myreader = sqlCmd.ExecuteReader();
                 return myreader;
             }
             catch (SqlException e)
             {
                 Program.conn.Close();
-                MessageBox.Show(e.Message);
+                MessageBox.Show("Lỗi: "+e.Message);
                 return null;
             }
 
@@ -112,7 +110,7 @@ namespace QLDSV_TC
         {
             SqlCommand sqlCmd = new SqlCommand(strLenh, conn);
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandTimeout = 600;//10p;
+            sqlCmd.CommandTimeout = 600;
             if (conn.State == ConnectionState.Closed) conn.Open();
             try
             {
@@ -133,11 +131,8 @@ namespace QLDSV_TC
         {
             SqlDataReader dataReader = Program.ExecSqlDataReader(query);
             if (dataReader == null)
-            {
-                MessageBox.Show("Server bị lỗi");
-                dataReader.Close();
-                return -1;
-            }
+                    return -1;
+            
             dataReader.Read();
             int result = dataReader.GetInt32(0);
             dataReader.Close();

@@ -23,7 +23,7 @@ namespace QLDSV_TC.views
                 ribbonPageBaoCao.Visible = false;
                 ribbonPageQuanLy.Visible = false;
             }
-            else if (Program.mGroup.Equals("PKTOAN"))
+            else if (Program.mGroup.Equals("PKT"))
             {
                 ribbonPageBaoCao.Visible = true;
                 ribbonPageGroupPKT.Visible = true;
