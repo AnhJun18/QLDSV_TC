@@ -70,6 +70,10 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
+            if (Program.mGroup == "KHOA")
+            {
+                cbKhoa.Enabled = false;
+            }
             loadcbNienkhoa();
 
         }
@@ -88,20 +92,7 @@ namespace QLDSV_TC.views
             loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.SelectedValue.ToString());
         }
 
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
-            
-            Report_DS_SV_DangKy_LTC rpt = new Report_DS_SV_DangKy_LTC(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text),  cbMAMH.SelectedValue.ToString(), int.Parse(cbNHOM.Text));
-            
-            rpt.labelTieuDe.Text = "DANH SÁCH SINH VIÊN ĐĂNG KÝ LỚP TÍN CHỈ \n KHOA " + cbKhoa.Text.ToUpper();
-            rpt.lbNienKhoa.Text = cbNIENKHOA.Text;
-            rpt.lbHocKy.Text = cbHOCKY.Text;
-            rpt.lbMonHoc.Text = cbMAMH.Text;
-            rpt.lbNhom.Text = cbNHOM.Text;
-            ReportPrintTool print = new ReportPrintTool(rpt);
-            print.ShowPreviewDialog();                                      
-
-        }
+       
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -127,6 +118,24 @@ namespace QLDSV_TC.views
                 loadcbNienkhoa();
 
             }
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
+        {
+            Report_DS_SV_DangKy_LTC rpt = new Report_DS_SV_DangKy_LTC(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text), cbMAMH.SelectedValue.ToString(), int.Parse(cbNHOM.Text));
+
+            rpt.labelTieuDe.Text = "DANH SÁCH SINH VIÊN ĐĂNG KÝ LỚP TÍN CHỈ \n KHOA " + cbKhoa.Text.ToUpper();
+            rpt.lbNienKhoa.Text = cbNIENKHOA.Text;
+            rpt.lbHocKy.Text = cbHOCKY.Text;
+            rpt.lbMonHoc.Text = cbMAMH.Text;
+            rpt.lbNhom.Text = cbNHOM.Text;
+            ReportPrintTool print = new ReportPrintTool(rpt);
+            print.ShowPreviewDialog();
         }
     }
 }

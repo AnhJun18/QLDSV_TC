@@ -100,17 +100,21 @@ namespace QLDSV_TC.views
             loadcbHocKi(cbNIENKHOA.Text);
         }
 
-        private void btInAn_Click(object sender, EventArgs e)
+        private void simpleButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void simpleButton4_Click(object sender, EventArgs e)
         {
             Report_DS_LopTinChi rpt = new Report_DS_LopTinChi(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text));
 
-            rpt.lbTD.Text = "KHOA "+ cbKhoa.Text.ToUpper() ;
+            rpt.lbTD.Text = "KHOA " + cbKhoa.Text.ToUpper();
             rpt.lbNK.Text = cbNIENKHOA.Text;
             rpt.lbHK.Text = cbHOCKY.Text;
 
             ReportPrintTool print = new ReportPrintTool(rpt);
             print.ShowPreviewDialog();
-
         }
     }
 }

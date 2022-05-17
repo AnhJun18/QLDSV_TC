@@ -92,9 +92,8 @@ namespace QLDSV_TC.views
             panelControl2.Enabled = true;
             ltcHUYLOP.Checked = false;
             cbKhoa.Enabled = false;
-
             ltcMAKHOA.Text = makhoa;
-
+            ltcHUYLOP.Enabled = false;
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
             lOPTINCHIGridControl.Enabled = false;
@@ -167,6 +166,7 @@ namespace QLDSV_TC.views
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
             cbKhoa.Enabled = false;
+            ltcHUYLOP.Enabled = true;
         }
 
         private void btnPH_ItemClick(object sender, ItemClickEventArgs e)
@@ -217,11 +217,7 @@ namespace QLDSV_TC.views
         {
 
         }
-        private void lOPTINCHIGridControl_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
         {
             this.Close();
@@ -258,6 +254,13 @@ namespace QLDSV_TC.views
             }
 
         }
-      
+
+        private void ltcNIENKHOA_Click(object sender, EventArgs e)
+        {
+
+            ltcNIENKHOA.SelectionStart = 0;
+            ltcNIENKHOA.SelectionLength = 0;
+        }
+
     }
 }
