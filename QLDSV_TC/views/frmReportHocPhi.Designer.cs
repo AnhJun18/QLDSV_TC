@@ -32,14 +32,15 @@ namespace QLDSV_TC.views
             System.Windows.Forms.Label nIENKHOALabel;
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label hOCKYLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportHocPhi));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.btnInAn = new System.Windows.Forms.Button();
             this.qLDSV_TCDataSet1 = new QLDSV_TC.QLDSV_TCDataSet1();
             this.tbMaLop = new DevExpress.XtraEditors.TextEdit();
             this.cbNIENKHOA = new DevExpress.XtraEditors.TextEdit();
             this.cbHOCKY = new DevExpress.XtraEditors.TextEdit();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             nIENKHOALabel = new System.Windows.Forms.Label();
             mALOPLabel = new System.Windows.Forms.Label();
             hOCKYLabel = new System.Windows.Forms.Label();
@@ -98,30 +99,6 @@ namespace QLDSV_TC.views
             this.label2.TabIndex = 37;
             this.label2.Text = "Nhập Thông Tin Lớp Học:";
             // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(406, 198);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 34);
-            this.btnThoat.TabIndex = 36;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnInAn
-            // 
-            this.btnInAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnInAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInAn.Location = new System.Drawing.Point(297, 198);
-            this.btnInAn.Name = "btnInAn";
-            this.btnInAn.Size = new System.Drawing.Size(75, 34);
-            this.btnInAn.TabIndex = 35;
-            this.btnInAn.Text = "In Ấn";
-            this.btnInAn.UseVisualStyleBackColor = false;
-            this.btnInAn.Click += new System.EventHandler(this.btnInAn_Click);
-            // 
             // qLDSV_TCDataSet1
             // 
             this.qLDSV_TCDataSet1.DataSetName = "QLDSV_TCDataSet1";
@@ -133,6 +110,7 @@ namespace QLDSV_TC.views
             this.tbMaLop.Name = "tbMaLop";
             this.tbMaLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaLop.Properties.Appearance.Options.UseFont = true;
+            this.tbMaLop.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbMaLop.Size = new System.Drawing.Size(400, 24);
             this.tbMaLop.TabIndex = 41;
             // 
@@ -154,11 +132,51 @@ namespace QLDSV_TC.views
             this.cbHOCKY.Size = new System.Drawing.Size(154, 24);
             this.cbHOCKY.TabIndex = 44;
             // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Turquoise;
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.simpleButton4.Appearance.Options.UseBackColor = true;
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseForeColor = true;
+            this.simpleButton4.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.simpleButton4.AppearanceDisabled.Options.UseBackColor = true;
+            this.simpleButton4.AppearancePressed.BackColor = System.Drawing.Color.White;
+            this.simpleButton4.AppearancePressed.Options.UseBackColor = true;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(348, 218);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton4.TabIndex = 55;
+            this.simpleButton4.Text = "In Ấn";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Turquoise;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.AppearancePressed.BackColor = System.Drawing.Color.White;
+            this.simpleButton2.AppearancePressed.Options.UseBackColor = true;
+            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.simpleButton2.Location = new System.Drawing.Point(457, 218);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton2.TabIndex = 54;
+            this.simpleButton2.Text = "Thoát";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
             // frmReportHocPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(887, 470);
+            this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cbHOCKY);
             this.Controls.Add(this.cbNIENKHOA);
             this.Controls.Add(hOCKYLabel);
@@ -167,8 +185,6 @@ namespace QLDSV_TC.views
             this.Controls.Add(nIENKHOALabel);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnInAn);
             this.Name = "frmReportHocPhi";
             this.Text = "frmReportHocPhi";
             this.Load += new System.EventHandler(this.frmReportHocPhi_Load);
@@ -186,11 +202,11 @@ namespace QLDSV_TC.views
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnThoat;
-        private System.Windows.Forms.Button btnInAn;
         private QLDSV_TCDataSet1 qLDSV_TCDataSet1;
         private DevExpress.XtraEditors.TextEdit tbMaLop;
         private DevExpress.XtraEditors.TextEdit cbNIENKHOA;
         private DevExpress.XtraEditors.TextEdit cbHOCKY;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

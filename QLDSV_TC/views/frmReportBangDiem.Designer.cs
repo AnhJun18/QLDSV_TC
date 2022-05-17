@@ -31,6 +31,7 @@ namespace QLDSV_TC.views
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label mASVLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportBangDiem));
             this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -38,10 +39,10 @@ namespace QLDSV_TC.views
             this.sINHVIENBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sINHVIENTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.SINHVIENTableAdapter();
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
-            this.btnInAn = new System.Windows.Forms.Button();
-            this.btnThoat = new System.Windows.Forms.Button();
             this.tbMaSV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             mASVLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -117,32 +118,9 @@ namespace QLDSV_TC.views
             this.tableAdapterManager.SINHVIENTableAdapter = this.sINHVIENTableAdapter;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // btnInAn
-            // 
-            this.btnInAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnInAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInAn.Location = new System.Drawing.Point(478, 88);
-            this.btnInAn.Name = "btnInAn";
-            this.btnInAn.Size = new System.Drawing.Size(75, 34);
-            this.btnInAn.TabIndex = 30;
-            this.btnInAn.Text = "In Ấn";
-            this.btnInAn.UseVisualStyleBackColor = false;
-            this.btnInAn.Click += new System.EventHandler(this.btnInAn_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(587, 88);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 34);
-            this.btnThoat.TabIndex = 31;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // tbMaSV
             // 
+            this.tbMaSV.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbMaSV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaSV.Location = new System.Drawing.Point(200, 93);
             this.tbMaSV.Name = "tbMaSV";
@@ -159,15 +137,53 @@ namespace QLDSV_TC.views
             this.label2.TabIndex = 33;
             this.label2.Text = "Nhập Thông Tin Sinh Viên:";
             // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Turquoise;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.AppearancePressed.BackColor = System.Drawing.Color.White;
+            this.simpleButton2.AppearancePressed.Options.UseBackColor = true;
+            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.simpleButton2.Location = new System.Drawing.Point(583, 93);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton2.TabIndex = 51;
+            this.simpleButton2.Text = "Thoát";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Turquoise;
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.simpleButton4.Appearance.Options.UseBackColor = true;
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseForeColor = true;
+            this.simpleButton4.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.simpleButton4.AppearanceDisabled.Options.UseBackColor = true;
+            this.simpleButton4.AppearancePressed.BackColor = System.Drawing.Color.White;
+            this.simpleButton4.AppearancePressed.Options.UseBackColor = true;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(474, 93);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton4.TabIndex = 53;
+            this.simpleButton4.Text = "In Ấn";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
             // frmReportBangDiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(920, 278);
+            this.Controls.Add(this.simpleButton4);
+            this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.tbMaSV);
-            this.Controls.Add(this.btnThoat);
-            this.Controls.Add(this.btnInAn);
             this.Controls.Add(mASVLabel);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmReportBangDiem";
@@ -192,9 +208,9 @@ namespace QLDSV_TC.views
         private System.Windows.Forms.BindingSource sINHVIENBindingSource;
         private QLDSV_TCDataSetTableAdapters.SINHVIENTableAdapter sINHVIENTableAdapter;
         private QLDSV_TCDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.Button btnInAn;
-        private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.TextBox tbMaSV;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
     }
 }

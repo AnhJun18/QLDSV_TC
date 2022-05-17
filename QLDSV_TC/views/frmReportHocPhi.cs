@@ -28,12 +28,15 @@ namespace QLDSV_TC.views
 
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+        
+        private String tenkhoa = "";
+        
+        private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private String tenkhoa = "";
-        private void btnInAn_Click(object sender, EventArgs e)
+
+        private void simpleButton4_Click(object sender, EventArgs e)
         {
             if (tbMaLop.Text.Length > 10)
             {
@@ -42,10 +45,10 @@ namespace QLDSV_TC.views
             }
             else
             {
-                
+
                 try
                 {
-                    string cmd = "exec SP_GETKHOA '" + tbMaLop.Text+"'";
+                    string cmd = "exec SP_GETKHOA '" + tbMaLop.Text + "'";
                     MessageBox.Show(cmd);
                     DataTable dt = Program.ExecSqlDataTable(cmd);
                     tenkhoa = dt.Rows[0][0].ToString();
@@ -62,11 +65,9 @@ namespace QLDSV_TC.views
                     MessageBox.Show("Thông tin lớp học không hợp lệ.", "Thông Báo", MessageBoxButtons.OK);
                     tbMaLop.Focus();
                 }
-                
-            }
-            
-        }
-       
 
+            }
+
+        }
     }
 }

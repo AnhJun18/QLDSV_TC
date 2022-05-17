@@ -32,6 +32,7 @@ namespace QLDSV_TC.views
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label nIENKHOALabel;
             System.Windows.Forms.Label hOCKYLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportDSLTC));
             this.cbKhoa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -40,10 +41,10 @@ namespace QLDSV_TC.views
             this.lOPTINCHITableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.LOPTINCHITableAdapter();
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
-            this.btThoat = new System.Windows.Forms.Button();
-            this.btInAn = new System.Windows.Forms.Button();
             this.cbHOCKY = new System.Windows.Forms.ComboBox();
             this.cbNIENKHOA = new System.Windows.Forms.ComboBox();
+            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             nIENKHOALabel = new System.Windows.Forms.Label();
             hOCKYLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -134,8 +135,8 @@ namespace QLDSV_TC.views
             // 
             // panelControl2
             // 
-            this.panelControl2.Controls.Add(this.btThoat);
-            this.panelControl2.Controls.Add(this.btInAn);
+            this.panelControl2.Controls.Add(this.simpleButton4);
+            this.panelControl2.Controls.Add(this.simpleButton2);
             this.panelControl2.Controls.Add(hOCKYLabel);
             this.panelControl2.Controls.Add(this.cbHOCKY);
             this.panelControl2.Controls.Add(nIENKHOALabel);
@@ -145,29 +146,6 @@ namespace QLDSV_TC.views
             this.panelControl2.Name = "panelControl2";
             this.panelControl2.Size = new System.Drawing.Size(916, 130);
             this.panelControl2.TabIndex = 27;
-            // 
-            // btThoat
-            // 
-            this.btThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btThoat.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btThoat.Location = new System.Drawing.Point(418, 90);
-            this.btThoat.Name = "btThoat";
-            this.btThoat.Size = new System.Drawing.Size(75, 35);
-            this.btThoat.TabIndex = 5;
-            this.btThoat.Text = "Thoát";
-            this.btThoat.UseVisualStyleBackColor = false;
-            // 
-            // btInAn
-            // 
-            this.btInAn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.btInAn.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btInAn.Location = new System.Drawing.Point(277, 90);
-            this.btInAn.Name = "btInAn";
-            this.btInAn.Size = new System.Drawing.Size(75, 35);
-            this.btInAn.TabIndex = 4;
-            this.btInAn.Text = "In ấn";
-            this.btInAn.UseVisualStyleBackColor = false;
-            this.btInAn.Click += new System.EventHandler(this.btInAn_Click);
             // 
             // cbHOCKY
             // 
@@ -191,6 +169,44 @@ namespace QLDSV_TC.views
             this.cbNIENKHOA.Size = new System.Drawing.Size(121, 25);
             this.cbNIENKHOA.TabIndex = 1;
             this.cbNIENKHOA.SelectedIndexChanged += new System.EventHandler(this.cbNIENKHOA_SelectedIndexChanged);
+            // 
+            // simpleButton4
+            // 
+            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Turquoise;
+            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton4.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.simpleButton4.Appearance.Options.UseBackColor = true;
+            this.simpleButton4.Appearance.Options.UseFont = true;
+            this.simpleButton4.Appearance.Options.UseForeColor = true;
+            this.simpleButton4.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.simpleButton4.AppearanceDisabled.Options.UseBackColor = true;
+            this.simpleButton4.AppearancePressed.BackColor = System.Drawing.Color.White;
+            this.simpleButton4.AppearancePressed.Options.UseBackColor = true;
+            this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
+            this.simpleButton4.Location = new System.Drawing.Point(261, 92);
+            this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton4.Name = "simpleButton4";
+            this.simpleButton4.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton4.TabIndex = 55;
+            this.simpleButton4.Text = "In Ấn";
+            this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Turquoise;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton2.Appearance.Options.UseBackColor = true;
+            this.simpleButton2.Appearance.Options.UseFont = true;
+            this.simpleButton2.AppearancePressed.BackColor = System.Drawing.Color.White;
+            this.simpleButton2.AppearancePressed.Options.UseBackColor = true;
+            this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
+            this.simpleButton2.Location = new System.Drawing.Point(389, 92);
+            this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton2.TabIndex = 54;
+            this.simpleButton2.Text = "Thoát";
+            this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // frmReportDSLTC
             // 
@@ -224,9 +240,9 @@ namespace QLDSV_TC.views
         private QLDSV_TCDataSetTableAdapters.LOPTINCHITableAdapter lOPTINCHITableAdapter;
         private QLDSV_TCDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraEditors.PanelControl panelControl2;
-        private System.Windows.Forms.Button btInAn;
         private System.Windows.Forms.ComboBox cbHOCKY;
         private System.Windows.Forms.ComboBox cbNIENKHOA;
-        private System.Windows.Forms.Button btThoat;
+        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
     }
 }

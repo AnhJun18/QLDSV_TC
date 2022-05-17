@@ -84,41 +84,41 @@ namespace QLDSV_TC.views
             // 
             mAMHLabel.AutoSize = true;
             mAMHLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAMHLabel.Location = new System.Drawing.Point(71, 116);
+            mAMHLabel.Location = new System.Drawing.Point(61, 94);
             mAMHLabel.Name = "mAMHLabel";
-            mAMHLabel.Size = new System.Drawing.Size(72, 21);
+            mAMHLabel.Size = new System.Drawing.Size(91, 17);
             mAMHLabel.TabIndex = 18;
-            mAMHLabel.Text = "MAMH:";
+            mAMHLabel.Text = "Mã Môn Học:";
             // 
             // nIENKHOALabel
             // 
             nIENKHOALabel.AutoSize = true;
             nIENKHOALabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nIENKHOALabel.Location = new System.Drawing.Point(71, 66);
+            nIENKHOALabel.Location = new System.Drawing.Point(61, 54);
             nIENKHOALabel.Name = "nIENKHOALabel";
-            nIENKHOALabel.Size = new System.Drawing.Size(110, 21);
+            nIENKHOALabel.Size = new System.Drawing.Size(75, 17);
             nIENKHOALabel.TabIndex = 19;
-            nIENKHOALabel.Text = "NIENKHOA:";
+            nIENKHOALabel.Text = "Niên Khóa:";
             // 
             // hOCKYLabel
             // 
             hOCKYLabel.AutoSize = true;
             hOCKYLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            hOCKYLabel.Location = new System.Drawing.Point(471, 66);
+            hOCKYLabel.Location = new System.Drawing.Point(404, 54);
             hOCKYLabel.Name = "hOCKYLabel";
-            hOCKYLabel.Size = new System.Drawing.Size(78, 21);
+            hOCKYLabel.Size = new System.Drawing.Size(58, 17);
             hOCKYLabel.TabIndex = 20;
-            hOCKYLabel.Text = "HOCKY:";
+            hOCKYLabel.Text = "Học Kỳ:";
             // 
             // nHOMLabel
             // 
             nHOMLabel.AutoSize = true;
             nHOMLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nHOMLabel.Location = new System.Drawing.Point(469, 117);
+            nHOMLabel.Location = new System.Drawing.Point(402, 95);
             nHOMLabel.Name = "nHOMLabel";
-            nHOMLabel.Size = new System.Drawing.Size(70, 21);
+            nHOMLabel.Size = new System.Drawing.Size(47, 17);
             nHOMLabel.TabIndex = 21;
-            nHOMLabel.Text = "NHOM:";
+            nHOMLabel.Text = "Nhóm:";
             // 
             // DIEM_GK
             // 
@@ -128,11 +128,9 @@ namespace QLDSV_TC.views
             this.DIEM_GK.AppearanceHeader.Options.UseForeColor = true;
             this.DIEM_GK.Caption = "Điểm Giữa Kì";
             this.DIEM_GK.FieldName = "DIEM_GK";
-            this.DIEM_GK.MinWidth = 23;
             this.DIEM_GK.Name = "DIEM_GK";
             this.DIEM_GK.Visible = true;
             this.DIEM_GK.VisibleIndex = 3;
-            this.DIEM_GK.Width = 87;
             // 
             // DIEM_CC
             // 
@@ -144,11 +142,9 @@ namespace QLDSV_TC.views
             this.DIEM_CC.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.DIEM_CC.FieldName = "DIEM_CC";
             this.DIEM_CC.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.DIEM_CC.MinWidth = 23;
             this.DIEM_CC.Name = "DIEM_CC";
             this.DIEM_CC.Visible = true;
             this.DIEM_CC.VisibleIndex = 2;
-            this.DIEM_CC.Width = 87;
             // 
             // lOPTINCHIBindingSource
             // 
@@ -183,9 +179,8 @@ namespace QLDSV_TC.views
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
-            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1402, 90);
+            this.panelControl1.Size = new System.Drawing.Size(1186, 73);
             this.panelControl1.TabIndex = 2;
             // 
             // cbKhoa
@@ -193,10 +188,9 @@ namespace QLDSV_TC.views
             this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(328, 47);
-            this.cbKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbKhoa.Location = new System.Drawing.Point(281, 38);
             this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(392, 29);
+            this.cbKhoa.Size = new System.Drawing.Size(337, 25);
             this.cbKhoa.TabIndex = 3;
             this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged_1);
             // 
@@ -204,9 +198,9 @@ namespace QLDSV_TC.views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(260, 50);
+            this.label2.Location = new System.Drawing.Point(223, 41);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 21);
+            this.label2.Size = new System.Drawing.Size(52, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "KHOA";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -215,9 +209,9 @@ namespace QLDSV_TC.views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(198, 11);
+            this.label1.Location = new System.Drawing.Point(170, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(139, 31);
+            this.label1.Size = new System.Drawing.Size(105, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nhập Điểm";
             // 
@@ -237,21 +231,18 @@ namespace QLDSV_TC.views
             this.panelControl2.Controls.Add(this.btnBD);
             this.panelControl2.Controls.Add(this.label7);
             this.panelControl2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl2.Location = new System.Drawing.Point(0, 90);
-            this.panelControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panelControl2.Location = new System.Drawing.Point(0, 73);
             this.panelControl2.Name = "panelControl2";
-            this.panelControl2.Size = new System.Drawing.Size(1402, 213);
+            this.panelControl2.Size = new System.Drawing.Size(1186, 173);
             this.panelControl2.TabIndex = 3;
             // 
             // gridControl2
             // 
             this.gridControl2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gridControl2.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl2.Location = new System.Drawing.Point(669, 2);
+            this.gridControl2.Location = new System.Drawing.Point(557, 2);
             this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(731, 209);
+            this.gridControl2.Size = new System.Drawing.Size(627, 169);
             this.gridControl2.TabIndex = 23;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -262,7 +253,6 @@ namespace QLDSV_TC.views
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3});
-            this.gridView2.DetailHeight = 431;
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             // 
@@ -274,13 +264,11 @@ namespace QLDSV_TC.views
             this.gridColumn1.AppearanceHeader.Options.UseForeColor = true;
             this.gridColumn1.Caption = "Mã Lớp Tín Chỉ";
             this.gridColumn1.FieldName = "MALTC";
-            this.gridColumn1.MinWidth = 23;
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 87;
             // 
             // gridColumn2
             // 
@@ -288,12 +276,10 @@ namespace QLDSV_TC.views
             this.gridColumn2.AppearanceHeader.Options.UseBackColor = true;
             this.gridColumn2.Caption = "Tên Môn Học";
             this.gridColumn2.FieldName = "TENMH";
-            this.gridColumn2.MinWidth = 23;
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.OptionsColumn.AllowEdit = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 87;
             // 
             // gridColumn3
             // 
@@ -301,12 +287,10 @@ namespace QLDSV_TC.views
             this.gridColumn3.AppearanceHeader.Options.UseBackColor = true;
             this.gridColumn3.Caption = "Giáo Viên";
             this.gridColumn3.FieldName = "HOTEN";
-            this.gridColumn3.MinWidth = 23;
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.OptionsColumn.AllowEdit = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 87;
             // 
             // cbNHOM
             // 
@@ -314,10 +298,9 @@ namespace QLDSV_TC.views
             this.cbNHOM.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNHOM.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNHOM.FormattingEnabled = true;
-            this.cbNHOM.Location = new System.Drawing.Point(559, 112);
-            this.cbNHOM.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbNHOM.Location = new System.Drawing.Point(479, 91);
             this.cbNHOM.Name = "cbNHOM";
-            this.cbNHOM.Size = new System.Drawing.Size(233, 29);
+            this.cbNHOM.Size = new System.Drawing.Size(200, 25);
             this.cbNHOM.TabIndex = 22;
             // 
             // cbHOCKY
@@ -326,10 +309,9 @@ namespace QLDSV_TC.views
             this.cbHOCKY.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHOCKY.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHOCKY.FormattingEnabled = true;
-            this.cbHOCKY.Location = new System.Drawing.Point(559, 63);
-            this.cbHOCKY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbHOCKY.Location = new System.Drawing.Point(479, 51);
             this.cbHOCKY.Name = "cbHOCKY";
-            this.cbHOCKY.Size = new System.Drawing.Size(233, 29);
+            this.cbHOCKY.Size = new System.Drawing.Size(200, 25);
             this.cbHOCKY.TabIndex = 21;
             this.cbHOCKY.SelectedIndexChanged += new System.EventHandler(this.cbHOCKY_SelectedIndexChanged);
             // 
@@ -339,10 +321,9 @@ namespace QLDSV_TC.views
             this.cbNIENKHOA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNIENKHOA.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNIENKHOA.FormattingEnabled = true;
-            this.cbNIENKHOA.Location = new System.Drawing.Point(184, 60);
-            this.cbNIENKHOA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbNIENKHOA.Location = new System.Drawing.Point(158, 49);
             this.cbNIENKHOA.Name = "cbNIENKHOA";
-            this.cbNIENKHOA.Size = new System.Drawing.Size(233, 29);
+            this.cbNIENKHOA.Size = new System.Drawing.Size(200, 25);
             this.cbNIENKHOA.TabIndex = 20;
             this.cbNIENKHOA.SelectedIndexChanged += new System.EventHandler(this.cbNIENKHOA_SelectedIndexChanged);
             // 
@@ -352,20 +333,19 @@ namespace QLDSV_TC.views
             this.cbMAMH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMAMH.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMAMH.FormattingEnabled = true;
-            this.cbMAMH.Location = new System.Drawing.Point(184, 112);
+            this.cbMAMH.Location = new System.Drawing.Point(158, 91);
             this.cbMAMH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMAMH.Name = "cbMAMH";
-            this.cbMAMH.Size = new System.Drawing.Size(233, 29);
+            this.cbMAMH.Size = new System.Drawing.Size(200, 25);
             this.cbMAMH.TabIndex = 19;
             this.cbMAMH.SelectedIndexChanged += new System.EventHandler(this.cbMAMH_SelectedIndexChanged);
             // 
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(506, 158);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Location = new System.Drawing.Point(434, 128);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(87, 28);
+            this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 11;
             this.button3.Text = "Thoát";
             this.button3.UseVisualStyleBackColor = true;
@@ -375,10 +355,9 @@ namespace QLDSV_TC.views
             // 
             this.btnCN.Enabled = false;
             this.btnCN.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCN.Location = new System.Drawing.Point(371, 159);
-            this.btnCN.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCN.Location = new System.Drawing.Point(318, 129);
             this.btnCN.Name = "btnCN";
-            this.btnCN.Size = new System.Drawing.Size(87, 28);
+            this.btnCN.Size = new System.Drawing.Size(75, 23);
             this.btnCN.TabIndex = 10;
             this.btnCN.Text = "Cập Nhật";
             this.btnCN.UseVisualStyleBackColor = true;
@@ -387,10 +366,9 @@ namespace QLDSV_TC.views
             // btnBD
             // 
             this.btnBD.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBD.Location = new System.Drawing.Point(244, 160);
-            this.btnBD.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnBD.Location = new System.Drawing.Point(209, 130);
             this.btnBD.Name = "btnBD";
-            this.btnBD.Size = new System.Drawing.Size(87, 28);
+            this.btnBD.Size = new System.Drawing.Size(75, 23);
             this.btnBD.TabIndex = 9;
             this.btnBD.Text = "Bắt Dầu";
             this.btnBD.UseVisualStyleBackColor = true;
@@ -400,21 +378,19 @@ namespace QLDSV_TC.views
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(49, 15);
+            this.label7.Location = new System.Drawing.Point(42, 12);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(143, 22);
+            this.label7.Size = new System.Drawing.Size(110, 19);
             this.label7.TabIndex = 0;
             this.label7.Text = "Nhập Thông Tin:";
             // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl1.Location = new System.Drawing.Point(0, 303);
+            this.gridControl1.Location = new System.Drawing.Point(0, 246);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1402, 363);
+            this.gridControl1.Size = new System.Drawing.Size(1186, 295);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -428,7 +404,6 @@ namespace QLDSV_TC.views
             this.DIEM_GK,
             this.DIEM_CK,
             this.DIEMTK});
-            this.gridView1.DetailHeight = 431;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView1_ValidatingEditor);
@@ -443,13 +418,11 @@ namespace QLDSV_TC.views
             this.MASV.AppearanceHeader.Options.UseForeColor = true;
             this.MASV.Caption = "Mã Sinh Viên";
             this.MASV.FieldName = "MASV";
-            this.MASV.MinWidth = 23;
             this.MASV.Name = "MASV";
             this.MASV.OptionsColumn.AllowEdit = false;
             this.MASV.OptionsColumn.ReadOnly = true;
             this.MASV.Visible = true;
             this.MASV.VisibleIndex = 0;
-            this.MASV.Width = 87;
             // 
             // HOTEN
             // 
@@ -459,13 +432,11 @@ namespace QLDSV_TC.views
             this.HOTEN.AppearanceHeader.Options.UseForeColor = true;
             this.HOTEN.Caption = "Họ Tên Sinh Viên";
             this.HOTEN.FieldName = "HOTEN";
-            this.HOTEN.MinWidth = 23;
             this.HOTEN.Name = "HOTEN";
             this.HOTEN.OptionsColumn.AllowEdit = false;
             this.HOTEN.OptionsColumn.ReadOnly = true;
             this.HOTEN.Visible = true;
             this.HOTEN.VisibleIndex = 1;
-            this.HOTEN.Width = 87;
             // 
             // DIEM_CK
             // 
@@ -475,11 +446,9 @@ namespace QLDSV_TC.views
             this.DIEM_CK.AppearanceHeader.Options.UseForeColor = true;
             this.DIEM_CK.Caption = "Điểm Cuối Kì";
             this.DIEM_CK.FieldName = "DIEM_CK";
-            this.DIEM_CK.MinWidth = 23;
             this.DIEM_CK.Name = "DIEM_CK";
             this.DIEM_CK.Visible = true;
             this.DIEM_CK.VisibleIndex = 4;
-            this.DIEM_CK.Width = 87;
             // 
             // DIEMTK
             // 
@@ -489,7 +458,7 @@ namespace QLDSV_TC.views
             this.DIEMTK.AppearanceHeader.Options.UseForeColor = true;
             this.DIEMTK.Caption = "Điểm Tổng Kết";
             this.DIEMTK.FieldName = "gridColumn4";
-            this.DIEMTK.MinWidth = 25;
+            this.DIEMTK.MinWidth = 21;
             this.DIEMTK.Name = "DIEMTK";
             this.DIEMTK.OptionsColumn.AllowEdit = false;
             this.DIEMTK.OptionsColumn.ReadOnly = true;
@@ -497,13 +466,13 @@ namespace QLDSV_TC.views
             this.DIEMTK.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.DIEMTK.Visible = true;
             this.DIEMTK.VisibleIndex = 5;
-            this.DIEMTK.Width = 94;
+            this.DIEMTK.Width = 81;
             // 
             // frmNhapDiem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1402, 666);
+            this.ClientSize = new System.Drawing.Size(1186, 541);
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl2);
             this.Controls.Add(this.panelControl1);

@@ -75,12 +75,13 @@ namespace QLDSV_TC.views
             }
         }
 
-        private void btnThoat_Click(object sender, EventArgs e)
+
+        private void simpleButton2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnInAn_Click(object sender, EventArgs e)
+        private void simpleButton4_Click(object sender, EventArgs e)
         {
             if (tbMaSV.Text.Length > 10)
             {
@@ -92,23 +93,22 @@ namespace QLDSV_TC.views
                 try
                 {
 
-                          Report_PhieuDiemTheoSinhVien rpt = new Report_PhieuDiemTheoSinhVien(tbMaSV.Text);
-                          rpt.lbTD.Text = "KHOA " + cbKhoa.Text.ToUpper();
-                          rpt.lbSV.Text = "Bảng Điểm Sinh Viên: " + tbMaSV.Text;
+                    Report_PhieuDiemTheoSinhVien rpt = new Report_PhieuDiemTheoSinhVien(tbMaSV.Text);
+                    rpt.lbTD.Text = "KHOA " + cbKhoa.Text.ToUpper();
+                    rpt.lbSV.Text = "Bảng Điểm Sinh Viên: " + tbMaSV.Text;
 
-                         ReportPrintTool print = new ReportPrintTool(rpt);
-                         print.ShowPreviewDialog();
+                    ReportPrintTool print = new ReportPrintTool(rpt);
+                    print.ShowPreviewDialog();
 
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Sinh viên không tồn tại \n "+ex.Message);
+                    MessageBox.Show("Sinh viên không tồn tại \n " + ex.Message);
                     tbMaSV.Focus();
                 }
-                 
+
             }
-            
-               
+
         }
     }
 }

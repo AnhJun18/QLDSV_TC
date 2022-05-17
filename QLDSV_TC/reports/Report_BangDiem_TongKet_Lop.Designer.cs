@@ -128,7 +128,7 @@ namespace QLDSV_TC.reports
             this.xrCrossTab1.ColumnDefinitions.AddRange(new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition[] {
             new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition(103F),
             new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition(103F),
-            new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition(73.8507F),
+            new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnDefinition(73.85069F),
             crossTabColumnDefinition1});
             crossTabColumnField1.FieldName = "TENMH";
             this.xrCrossTab1.ColumnFields.AddRange(new DevExpress.XtraReports.UI.CrossTab.CrossTabColumnField[] {
