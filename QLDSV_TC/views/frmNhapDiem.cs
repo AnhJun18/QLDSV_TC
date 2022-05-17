@@ -42,9 +42,9 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
-            if (Program.mGroup == "KHOA")
+            if (Program.mGroup == "PGV")
             {
-                panelControl1.Enabled = false;
+                panelChonKhoa.Enabled = true;
             }
 
             loadcbNienkhoa();

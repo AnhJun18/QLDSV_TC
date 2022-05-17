@@ -55,9 +55,10 @@ namespace QLDSV_TC.views
             // 
             // cbKhoa
             // 
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(303, 7);
+            this.cbKhoa.Location = new System.Drawing.Point(304, 11);
             this.cbKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.Size = new System.Drawing.Size(392, 29);

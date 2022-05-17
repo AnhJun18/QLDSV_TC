@@ -440,7 +440,7 @@ namespace QLDSV_TC.views
             this.Controls.Add(this.gridControlLTC);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmDangKyLTC";
-            this.Text = "frmDamgKyLTC";
+            this.Text = "Đăng Ký Lớp Tín Chỉ";
             this.Load += new System.EventHandler(this.frmDangKyLTC_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);

@@ -718,7 +718,7 @@ namespace QLDSV_TC.views
             this.Controls.Add(this.barDockControlBottom);
             this.Controls.Add(this.barDockControlTop);
             this.Name = "frmHocPhi";
-            this.Text = "frmHocPhi";
+            this.Text = "Học Phí";
             this.Load += new System.EventHandler(this.frmHocPhi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

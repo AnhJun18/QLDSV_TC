@@ -55,9 +55,9 @@ namespace QLDSV_TC.views
             // 
             nIENKHOALabel.AutoSize = true;
             nIENKHOALabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nIENKHOALabel.Location = new System.Drawing.Point(144, 155);
+            nIENKHOALabel.Location = new System.Drawing.Point(168, 191);
             nIENKHOALabel.Name = "nIENKHOALabel";
-            nIENKHOALabel.Size = new System.Drawing.Size(75, 17);
+            nIENKHOALabel.Size = new System.Drawing.Size(93, 21);
             nIENKHOALabel.TabIndex = 39;
             nIENKHOALabel.Text = "Niên Khóa:";
             // 
@@ -65,9 +65,9 @@ namespace QLDSV_TC.views
             // 
             mALOPLabel.AutoSize = true;
             mALOPLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mALOPLabel.Location = new System.Drawing.Point(144, 110);
+            mALOPLabel.Location = new System.Drawing.Point(168, 135);
             mALOPLabel.Name = "mALOPLabel";
-            mALOPLabel.Size = new System.Drawing.Size(59, 17);
+            mALOPLabel.Size = new System.Drawing.Size(74, 21);
             mALOPLabel.TabIndex = 40;
             mALOPLabel.Text = "Mã Lớp:";
             // 
@@ -75,9 +75,9 @@ namespace QLDSV_TC.views
             // 
             hOCKYLabel.AutoSize = true;
             hOCKYLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            hOCKYLabel.Location = new System.Drawing.Point(424, 155);
+            hOCKYLabel.Location = new System.Drawing.Point(495, 191);
             hOCKYLabel.Name = "hOCKYLabel";
-            hOCKYLabel.Size = new System.Drawing.Size(58, 17);
+            hOCKYLabel.Size = new System.Drawing.Size(73, 21);
             hOCKYLabel.TabIndex = 41;
             hOCKYLabel.Text = "Học Kỳ:";
             // 
@@ -85,17 +85,18 @@ namespace QLDSV_TC.views
             // 
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
+            this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(887, 54);
+            this.panelControl1.Size = new System.Drawing.Size(1035, 66);
             this.panelControl1.TabIndex = 34;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(143, 68);
+            this.label2.Location = new System.Drawing.Point(167, 84);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(210, 21);
+            this.label2.Size = new System.Drawing.Size(266, 27);
             this.label2.TabIndex = 37;
             this.label2.Text = "Nhập Thông Tin Lớp Học:";
             // 
@@ -106,30 +107,33 @@ namespace QLDSV_TC.views
             // 
             // tbMaLop
             // 
-            this.tbMaLop.Location = new System.Drawing.Point(241, 107);
+            this.tbMaLop.Location = new System.Drawing.Point(281, 132);
+            this.tbMaLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbMaLop.Name = "tbMaLop";
             this.tbMaLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaLop.Properties.Appearance.Options.UseFont = true;
             this.tbMaLop.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.tbMaLop.Size = new System.Drawing.Size(400, 24);
+            this.tbMaLop.Size = new System.Drawing.Size(467, 28);
             this.tbMaLop.TabIndex = 41;
             // 
             // cbNIENKHOA
             // 
-            this.cbNIENKHOA.Location = new System.Drawing.Point(241, 153);
+            this.cbNIENKHOA.Location = new System.Drawing.Point(281, 188);
+            this.cbNIENKHOA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbNIENKHOA.Name = "cbNIENKHOA";
             this.cbNIENKHOA.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNIENKHOA.Properties.Appearance.Options.UseFont = true;
-            this.cbNIENKHOA.Size = new System.Drawing.Size(175, 24);
+            this.cbNIENKHOA.Size = new System.Drawing.Size(204, 28);
             this.cbNIENKHOA.TabIndex = 43;
             // 
             // cbHOCKY
             // 
-            this.cbHOCKY.Location = new System.Drawing.Point(487, 153);
+            this.cbHOCKY.Location = new System.Drawing.Point(568, 188);
+            this.cbHOCKY.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbHOCKY.Name = "cbHOCKY";
             this.cbHOCKY.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHOCKY.Properties.Appearance.Options.UseFont = true;
-            this.cbHOCKY.Size = new System.Drawing.Size(154, 24);
+            this.cbHOCKY.Size = new System.Drawing.Size(180, 28);
             this.cbHOCKY.TabIndex = 44;
             // 
             // simpleButton4
@@ -145,10 +149,10 @@ namespace QLDSV_TC.views
             this.simpleButton4.AppearancePressed.BackColor = System.Drawing.Color.White;
             this.simpleButton4.AppearancePressed.Options.UseBackColor = true;
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(348, 218);
+            this.simpleButton4.Location = new System.Drawing.Point(406, 268);
             this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton4.Size = new System.Drawing.Size(94, 42);
             this.simpleButton4.TabIndex = 55;
             this.simpleButton4.Text = "In Ấn";
             this.simpleButton4.Click += new System.EventHandler(this.simpleButton4_Click);
@@ -162,19 +166,19 @@ namespace QLDSV_TC.views
             this.simpleButton2.AppearancePressed.BackColor = System.Drawing.Color.White;
             this.simpleButton2.AppearancePressed.Options.UseBackColor = true;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(457, 218);
+            this.simpleButton2.Location = new System.Drawing.Point(533, 268);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton2.Size = new System.Drawing.Size(94, 42);
             this.simpleButton2.TabIndex = 54;
             this.simpleButton2.Text = "Thoát";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
             // frmReportHocPhi
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 470);
+            this.ClientSize = new System.Drawing.Size(1035, 578);
             this.Controls.Add(this.simpleButton4);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.cbHOCKY);
@@ -185,8 +189,9 @@ namespace QLDSV_TC.views
             this.Controls.Add(nIENKHOALabel);
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.label2);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "frmReportHocPhi";
-            this.Text = "frmReportHocPhi";
+            this.Text = "In Học Phí";
             this.Load += new System.EventHandler(this.frmReportHocPhi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet1)).EndInit();

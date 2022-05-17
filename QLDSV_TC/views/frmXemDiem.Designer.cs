@@ -146,7 +146,7 @@ namespace QLDSV_TC.views
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.panelControl1);
             this.Name = "frmXemDiem";
-            this.Text = "frmXemDiem";
+            this.Text = "Xem Điểm";
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
