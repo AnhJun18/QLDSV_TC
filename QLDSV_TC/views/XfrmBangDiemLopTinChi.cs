@@ -79,6 +79,7 @@ namespace QLDSV_TC.views
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             if (cbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
             Program.servername = cbKhoa.SelectedValue.ToString();

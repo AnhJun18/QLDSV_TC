@@ -47,9 +47,6 @@ namespace QLDSV_TC.views
                 panelControl1.Enabled = false;
             }
 
-            cbHOCKY.SelectedIndex = -1;
-            cbMAMH.Text = "";
-            cbNHOM.Text = "";
             loadcbNienkhoa();
         }
         private void cbKhoa_SelectedIndexChanged_1(object sender, EventArgs e)
