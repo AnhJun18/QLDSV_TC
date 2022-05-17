@@ -62,7 +62,9 @@ namespace QLDSV_TC.views
             this.txtMaMH = new DevExpress.XtraEditors.TextEdit();
             this.bdslOPTINCHI = new System.Windows.Forms.BindingSource(this.components);
             this.ltcMAGV = new System.Windows.Forms.ComboBox();
+            this.bdsGV = new System.Windows.Forms.BindingSource(this.components);
             this.ltcMaMH = new System.Windows.Forms.ComboBox();
+            this.bdsMONHOC = new System.Windows.Forms.BindingSource(this.components);
             this.txtMAGV = new DevExpress.XtraEditors.TextEdit();
             this.ltcNHOM = new DevExpress.XtraEditors.SpinEdit();
             this.ltcHOCKY = new DevExpress.XtraEditors.SpinEdit();
@@ -86,8 +88,6 @@ namespace QLDSV_TC.views
             this.bdsDANGKY = new System.Windows.Forms.BindingSource(this.components);
             this.dANGKYTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.DANGKYTableAdapter();
             this.mONHOCTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.MONHOCTableAdapter();
-            this.bdsMONHOC = new System.Windows.Forms.BindingSource(this.components);
-            this.bdsGV = new System.Windows.Forms.BindingSource(this.components);
             this.gIANGVIENTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.GIANGVIENTableAdapter();
             mAKHOALabel = new System.Windows.Forms.Label();
             sOSVTOITHIEULabel = new System.Windows.Forms.Label();
@@ -105,6 +105,8 @@ namespace QLDSV_TC.views
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdslOPTINCHI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcNHOM.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcHOCKY.Properties)).BeginInit();
@@ -114,8 +116,6 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.lOPTINCHIGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDANGKY)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).BeginInit();
             this.SuspendLayout();
             // 
             // mAKHOALabel
@@ -340,6 +340,7 @@ namespace QLDSV_TC.views
             // 
             // cbKhoa
             // 
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
             this.cbKhoa.Location = new System.Drawing.Point(349, 7);
@@ -465,6 +466,11 @@ namespace QLDSV_TC.views
             this.ltcMAGV.ValueMember = "MAGV";
             this.ltcMAGV.SelectedIndexChanged += new System.EventHandler(this.ltcMAGV_SelectedIndexChanged);
             // 
+            // bdsGV
+            // 
+            this.bdsGV.DataMember = "GIANGVIEN";
+            this.bdsGV.DataSource = this.qLDSV_TCDataSet;
+            // 
             // ltcMaMH
             // 
             this.ltcMaMH.DataSource = this.bdsMONHOC;
@@ -479,6 +485,11 @@ namespace QLDSV_TC.views
             this.ltcMaMH.TabIndex = 36;
             this.ltcMaMH.ValueMember = "MAMH";
             this.ltcMaMH.SelectedIndexChanged += new System.EventHandler(this.ltcMaMH_SelectedIndexChanged);
+            // 
+            // bdsMONHOC
+            // 
+            this.bdsMONHOC.DataMember = "MONHOC";
+            this.bdsMONHOC.DataSource = this.qLDSV_TCDataSet;
             // 
             // txtMAGV
             // 
@@ -729,16 +740,6 @@ namespace QLDSV_TC.views
             // 
             this.mONHOCTableAdapter.ClearBeforeFill = true;
             // 
-            // bdsMONHOC
-            // 
-            this.bdsMONHOC.DataMember = "MONHOC";
-            this.bdsMONHOC.DataSource = this.qLDSV_TCDataSet;
-            // 
-            // bdsGV
-            // 
-            this.bdsGV.DataMember = "GIANGVIEN";
-            this.bdsGV.DataSource = this.qLDSV_TCDataSet;
-            // 
             // gIANGVIENTableAdapter
             // 
             this.gIANGVIENTableAdapter.ClearBeforeFill = true;
@@ -770,6 +771,8 @@ namespace QLDSV_TC.views
             this.panelControl2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaMH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdslOPTINCHI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMAGV.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcNHOM.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ltcHOCKY.Properties)).EndInit();
@@ -779,8 +782,6 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.lOPTINCHIGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsDANGKY)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsMONHOC)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

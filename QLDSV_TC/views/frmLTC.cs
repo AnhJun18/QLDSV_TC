@@ -40,7 +40,7 @@ namespace QLDSV_TC.views
             this.dANGKYTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dANGKYTableAdapter.Fill(this.qLDSV_TCDataSet.DANGKY);
 
-            Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Học Phí%'  ";
+            Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Kế Toán%'  ";
             cbKhoa.DataSource = Program.bdsDSPM;
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";

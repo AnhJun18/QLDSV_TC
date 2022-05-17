@@ -80,6 +80,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLDSV_TCDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="QLDSV_TCDataSet1.cs">
+      <DependentUpon>QLDSV_TCDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="QLDSV_TCDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -199,12 +202,6 @@
     <Compile Include="views\frmReportHocPhi.Designer.cs">
       <DependentUpon>frmReportHocPhi.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\frmStudent.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\frmStudent.Designer.cs">
-      <DependentUpon>frmStudent.cs</DependentUpon>
-    </Compile>
     <Compile Include="views\frmXemDiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -295,9 +292,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmReportHocPhi.resx">
       <DependentUpon>frmReportHocPhi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\frmStudent.resx">
-      <DependentUpon>frmStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmXemDiem.resx">
       <DependentUpon>frmXemDiem.cs</DependentUpon>

@@ -17,21 +17,38 @@ namespace QLDSV_TC.views
         public frmMain()
         {
             InitializeComponent();
-            if (Program.mGroup.Equals("SINHVIEN"))
+            if (Program.mGroup.Equals("PGV"))
+            {
+                ribbonQuanLyKhoa_PGV.Visible = true;
+                ribbonQuanLyKhoa_PGV.Enabled = true;
+                reportPagePGV_Khoa.Visible = true;
+                reportPagePGV_Khoa.Enabled = true;
+                barBtnTaoLogin.Enabled = true;
+                ribbon.SelectedPage = ribbonPageQuanLy;
+            }
+            else if((Program.mGroup.Equals("KHOA"))){
+                ribbonQuanLyKhoa_PGV.Visible = true;
+                ribbonQuanLyKhoa_PGV.Enabled = true;
+                reportPagePGV_Khoa.Visible = true;
+                reportPagePGV_Khoa.Enabled = true;
+                barBtnTaoLogin.Enabled = true;
+                ribbon.SelectedPage = ribbonPageQuanLy;
+            }
+            else if (Program.mGroup.Equals("SINHVIEN"))
             {
                 ribbonPageSinhVien.Visible = true;
                 ribbonPageBaoCao.Visible = false;
                 ribbonPageQuanLy.Visible = false;
+                barBtnTaoLogin.Visibility= BarItemVisibility.Never;
+                ribbon.SelectedPage = ribbonPageSinhVien;
             }
             else if (Program.mGroup.Equals("PKT"))
             {
-                ribbonPageBaoCao.Visible = true;
-                ribbonPageGroupPKT.Visible = true;
-                ribbonPagePGV_Khoa.Visible = false;
-                ribbonPageKhoa_PGV.Visible = false;
-                ribbonPageGroupPKT.Visible = true;
-                ribbon.SelectedPage = ribbonPageQuanLy;
-
+                ribbonQuanLyPKT.Visible = true;
+                ribbonQuanLyPKT.Enabled = true;
+                reportPagePKT.Visible = true;
+                reportPagePKT.Enabled = true;
+                barBtnTaoLogin.Enabled = true;
             }
         }
 
@@ -93,18 +110,6 @@ namespace QLDSV_TC.views
             }
         }
 
-        private void btnSInhVien_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            Form frm = CheckExists(typeof(views.frmStudent));
-            if (frm != null) frm.Activate();
-            else
-            {
-                Program.frmSinhVien = new frmStudent();
-                Program.frmSinhVien.MdiParent = this;
-                Program.frmSinhVien.Show();
-
-            }
-        }
 
         private void btnNhapDiem_ItemClick(object sender, ItemClickEventArgs e)
         {

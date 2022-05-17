@@ -63,12 +63,12 @@ namespace QLDSV_TC.views
             this.colKHOAHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelNhapLieu = new DevExpress.XtraEditors.PanelControl();
-            this.teMAKHOA = new DevExpress.XtraEditors.TextEdit();
-            this.tekHOAHOC = new DevExpress.XtraEditors.TextEdit();
-            this.teTENLOP = new DevExpress.XtraEditors.TextEdit();
+            this.txtKhoa = new DevExpress.XtraEditors.TextEdit();
+            this.txtKhoaHoc = new DevExpress.XtraEditors.TextEdit();
+            this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
             this.txtMALOP = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.panelFormSV = new DevExpress.XtraEditors.PanelControl();
             this.gridControlsv = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMASV = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -80,6 +80,7 @@ namespace QLDSV_TC.views
             this.colMALOP1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDANGHIHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelbarSV = new System.Windows.Forms.Panel();
+            this.btnEditSV = new DevExpress.XtraEditors.SimpleButton();
             this.btnUndoSV = new DevExpress.XtraEditors.SimpleButton();
             this.btnSaveSV = new DevExpress.XtraEditors.SimpleButton();
             this.btnDeleteSV = new DevExpress.XtraEditors.SimpleButton();
@@ -89,7 +90,6 @@ namespace QLDSV_TC.views
             this.barLargeButtonItem3 = new DevExpress.XtraBars.BarLargeButtonItem();
             this.bdsDangKy = new System.Windows.Forms.BindingSource(this.components);
             this.dANGKYTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.DANGKYTableAdapter();
-            this.btnEditSV = new DevExpress.XtraEditors.SimpleButton();
             mAKHOALabel = new System.Windows.Forms.Label();
             kHOAHOCLabel = new System.Windows.Forms.Label();
             tENLOPLabel = new System.Windows.Forms.Label();
@@ -104,12 +104,12 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelNhapLieu)).BeginInit();
             this.panelNhapLieu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teMAKHOA.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tekHOAHOC.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teTENLOP.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKhoa.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKhoaHoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMALOP.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelFormSV)).BeginInit();
+            this.panelFormSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlsv)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.panelbarSV.SuspendLayout();
@@ -120,7 +120,7 @@ namespace QLDSV_TC.views
             // 
             mAKHOALabel.AutoSize = true;
             mAKHOALabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mAKHOALabel.Location = new System.Drawing.Point(184, 220);
+            mAKHOALabel.Location = new System.Drawing.Point(187, 67);
             mAKHOALabel.Name = "mAKHOALabel";
             mAKHOALabel.Size = new System.Drawing.Size(50, 21);
             mAKHOALabel.TabIndex = 7;
@@ -130,7 +130,7 @@ namespace QLDSV_TC.views
             // 
             kHOAHOCLabel.AutoSize = true;
             kHOAHOCLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            kHOAHOCLabel.Location = new System.Drawing.Point(174, 119);
+            kHOAHOCLabel.Location = new System.Drawing.Point(177, 213);
             kHOAHOCLabel.Name = "kHOAHOCLabel";
             kHOAHOCLabel.Size = new System.Drawing.Size(87, 21);
             kHOAHOCLabel.TabIndex = 5;
@@ -140,7 +140,7 @@ namespace QLDSV_TC.views
             // 
             tENLOPLabel.AutoSize = true;
             tENLOPLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tENLOPLabel.Location = new System.Drawing.Point(174, 167);
+            tENLOPLabel.Location = new System.Drawing.Point(177, 165);
             tENLOPLabel.Name = "tENLOPLabel";
             tENLOPLabel.Size = new System.Drawing.Size(75, 21);
             tENLOPLabel.TabIndex = 3;
@@ -150,7 +150,7 @@ namespace QLDSV_TC.views
             // 
             mALOPLabel.AutoSize = true;
             mALOPLabel.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            mALOPLabel.Location = new System.Drawing.Point(174, 72);
+            mALOPLabel.Location = new System.Drawing.Point(177, 118);
             mALOPLabel.Name = "mALOPLabel";
             mALOPLabel.Size = new System.Drawing.Size(70, 21);
             mALOPLabel.TabIndex = 1;
@@ -225,6 +225,7 @@ namespace QLDSV_TC.views
             // 
             this.btnXoa.Caption = "Xóa";
             this.btnXoa.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.btnXoa.Enabled = false;
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
@@ -234,6 +235,7 @@ namespace QLDSV_TC.views
             // 
             this.btnSua.Caption = "Sửa";
             this.btnSua.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.btnSua.Enabled = false;
             this.btnSua.Id = 2;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
@@ -310,6 +312,7 @@ namespace QLDSV_TC.views
             this.panelChonKhoa.Controls.Add(this.cbKhoa);
             this.panelChonKhoa.Controls.Add(this.label1);
             this.panelChonKhoa.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelChonKhoa.Enabled = false;
             this.panelChonKhoa.Location = new System.Drawing.Point(0, 50);
             this.panelChonKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelChonKhoa.Name = "panelChonKhoa";
@@ -318,6 +321,7 @@ namespace QLDSV_TC.views
             // 
             // cbKhoa
             // 
+            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
             this.cbKhoa.Location = new System.Drawing.Point(630, 16);
@@ -382,6 +386,7 @@ namespace QLDSV_TC.views
             this.gridViewLop.GridControl = this.lOPGridControl;
             this.gridViewLop.Name = "gridViewLop";
             this.gridViewLop.OptionsBehavior.ReadOnly = true;
+            this.gridViewLop.RowCountChanged += new System.EventHandler(this.gridViewLop_RowCountChanged);
             // 
             // colMALOP
             // 
@@ -447,11 +452,11 @@ namespace QLDSV_TC.views
             // panelNhapLieu
             // 
             this.panelNhapLieu.Controls.Add(mAKHOALabel);
-            this.panelNhapLieu.Controls.Add(this.teMAKHOA);
+            this.panelNhapLieu.Controls.Add(this.txtKhoa);
             this.panelNhapLieu.Controls.Add(kHOAHOCLabel);
-            this.panelNhapLieu.Controls.Add(this.tekHOAHOC);
+            this.panelNhapLieu.Controls.Add(this.txtKhoaHoc);
             this.panelNhapLieu.Controls.Add(tENLOPLabel);
-            this.panelNhapLieu.Controls.Add(this.teTENLOP);
+            this.panelNhapLieu.Controls.Add(this.txtTenLop);
             this.panelNhapLieu.Controls.Add(mALOPLabel);
             this.panelNhapLieu.Controls.Add(this.txtMALOP);
             this.panelNhapLieu.Controls.Add(this.label2);
@@ -463,47 +468,48 @@ namespace QLDSV_TC.views
             this.panelNhapLieu.Size = new System.Drawing.Size(873, 264);
             this.panelNhapLieu.TabIndex = 56;
             // 
-            // teMAKHOA
+            // txtKhoa
             // 
-            this.teMAKHOA.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MAKHOA", true));
-            this.teMAKHOA.Enabled = false;
-            this.teMAKHOA.Location = new System.Drawing.Point(282, 216);
-            this.teMAKHOA.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.teMAKHOA.MenuManager = this.barManager1;
-            this.teMAKHOA.Name = "teMAKHOA";
-            this.teMAKHOA.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teMAKHOA.Properties.Appearance.Options.UseFont = true;
-            this.teMAKHOA.Size = new System.Drawing.Size(288, 28);
-            this.teMAKHOA.TabIndex = 8;
+            this.txtKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MAKHOA", true));
+            this.txtKhoa.EditValue = "";
+            this.txtKhoa.Enabled = false;
+            this.txtKhoa.Location = new System.Drawing.Point(285, 63);
+            this.txtKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtKhoa.MenuManager = this.barManager1;
+            this.txtKhoa.Name = "txtKhoa";
+            this.txtKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhoa.Properties.Appearance.Options.UseFont = true;
+            this.txtKhoa.Size = new System.Drawing.Size(288, 28);
+            this.txtKhoa.TabIndex = 8;
             // 
-            // tekHOAHOC
+            // txtKhoaHoc
             // 
-            this.tekHOAHOC.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "KHOAHOC", true));
-            this.tekHOAHOC.Location = new System.Drawing.Point(282, 115);
-            this.tekHOAHOC.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tekHOAHOC.MenuManager = this.barManager1;
-            this.tekHOAHOC.Name = "tekHOAHOC";
-            this.tekHOAHOC.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tekHOAHOC.Properties.Appearance.Options.UseFont = true;
-            this.tekHOAHOC.Size = new System.Drawing.Size(288, 28);
-            this.tekHOAHOC.TabIndex = 6;
+            this.txtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "KHOAHOC", true));
+            this.txtKhoaHoc.Location = new System.Drawing.Point(285, 209);
+            this.txtKhoaHoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtKhoaHoc.MenuManager = this.barManager1;
+            this.txtKhoaHoc.Name = "txtKhoaHoc";
+            this.txtKhoaHoc.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhoaHoc.Properties.Appearance.Options.UseFont = true;
+            this.txtKhoaHoc.Size = new System.Drawing.Size(288, 28);
+            this.txtKhoaHoc.TabIndex = 6;
             // 
-            // teTENLOP
+            // txtTenLop
             // 
-            this.teTENLOP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "TENLOP", true));
-            this.teTENLOP.Location = new System.Drawing.Point(282, 164);
-            this.teTENLOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.teTENLOP.MenuManager = this.barManager1;
-            this.teTENLOP.Name = "teTENLOP";
-            this.teTENLOP.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teTENLOP.Properties.Appearance.Options.UseFont = true;
-            this.teTENLOP.Size = new System.Drawing.Size(288, 28);
-            this.teTENLOP.TabIndex = 4;
+            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "TENLOP", true));
+            this.txtTenLop.Location = new System.Drawing.Point(285, 162);
+            this.txtTenLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenLop.MenuManager = this.barManager1;
+            this.txtTenLop.Name = "txtTenLop";
+            this.txtTenLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLop.Properties.Appearance.Options.UseFont = true;
+            this.txtTenLop.Size = new System.Drawing.Size(288, 28);
+            this.txtTenLop.TabIndex = 4;
             // 
             // txtMALOP
             // 
             this.txtMALOP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MALOP", true));
-            this.txtMALOP.Location = new System.Drawing.Point(282, 63);
+            this.txtMALOP.Location = new System.Drawing.Point(285, 109);
             this.txtMALOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMALOP.MenuManager = this.barManager1;
             this.txtMALOP.Name = "txtMALOP";
@@ -517,22 +523,23 @@ namespace QLDSV_TC.views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(74, 2);
+            this.label2.Location = new System.Drawing.Point(73, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(221, 24);
             this.label2.TabIndex = 1;
             this.label2.Text = "THÔNG TIN LỚP HỌC";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // panelControl3
+            // panelFormSV
             // 
-            this.panelControl3.Controls.Add(this.gridControlsv);
-            this.panelControl3.Controls.Add(this.panelbarSV);
-            this.panelControl3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelControl3.Location = new System.Drawing.Point(873, 421);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(676, 264);
-            this.panelControl3.TabIndex = 61;
+            this.panelFormSV.Controls.Add(this.gridControlsv);
+            this.panelFormSV.Controls.Add(this.panelbarSV);
+            this.panelFormSV.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFormSV.Enabled = false;
+            this.panelFormSV.Location = new System.Drawing.Point(873, 421);
+            this.panelFormSV.Name = "panelFormSV";
+            this.panelFormSV.Size = new System.Drawing.Size(676, 264);
+            this.panelFormSV.TabIndex = 61;
             // 
             // gridControlsv
             // 
@@ -564,6 +571,7 @@ namespace QLDSV_TC.views
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.ShowingEditor += new System.ComponentModel.CancelEventHandler(this.gridView2_ShowingEditor);
             this.gridView2.ValidatingEditor += new DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventHandler(this.gridView2_ValidatingEditor);
+            this.gridView2.RowCountChanged += new System.EventHandler(this.gridView2_RowCountChanged);
             // 
             // colMASV
             // 
@@ -650,8 +658,20 @@ namespace QLDSV_TC.views
             this.panelbarSV.Size = new System.Drawing.Size(672, 64);
             this.panelbarSV.TabIndex = 0;
             // 
+            // btnEditSV
+            // 
+            this.btnEditSV.Enabled = false;
+            this.btnEditSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnEditSV.ImageOptions.Image")));
+            this.btnEditSV.Location = new System.Drawing.Point(183, 10);
+            this.btnEditSV.Name = "btnEditSV";
+            this.btnEditSV.Size = new System.Drawing.Size(94, 43);
+            this.btnEditSV.TabIndex = 64;
+            this.btnEditSV.Text = "Sửa";
+            this.btnEditSV.Click += new System.EventHandler(this.btnEditSV_Click);
+            // 
             // btnUndoSV
             // 
+            this.btnUndoSV.Enabled = false;
             this.btnUndoSV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnUndoSV.ImageOptions.SvgImage")));
             this.btnUndoSV.Location = new System.Drawing.Point(430, 12);
             this.btnUndoSV.Name = "btnUndoSV";
@@ -662,7 +682,8 @@ namespace QLDSV_TC.views
             // 
             // btnSaveSV
             // 
-            this.btnSaveSV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("bntSaveSV.ImageOptions.SvgImage")));
+            this.btnSaveSV.Enabled = false;
+            this.btnSaveSV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSaveSV.ImageOptions.SvgImage")));
             this.btnSaveSV.Location = new System.Drawing.Point(551, 10);
             this.btnSaveSV.Name = "btnSaveSV";
             this.btnSaveSV.Size = new System.Drawing.Size(94, 43);
@@ -672,6 +693,7 @@ namespace QLDSV_TC.views
             // 
             // btnDeleteSV
             // 
+            this.btnDeleteSV.Enabled = false;
             this.btnDeleteSV.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDeleteSV.ImageOptions.SvgImage")));
             this.btnDeleteSV.Location = new System.Drawing.Point(306, 12);
             this.btnDeleteSV.Name = "btnDeleteSV";
@@ -723,16 +745,6 @@ namespace QLDSV_TC.views
             // 
             this.dANGKYTableAdapter.ClearBeforeFill = true;
             // 
-            // btnEditSV
-            // 
-            this.btnEditSV.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.btnEditSV.Location = new System.Drawing.Point(183, 10);
-            this.btnEditSV.Name = "btnEditSV";
-            this.btnEditSV.Size = new System.Drawing.Size(94, 43);
-            this.btnEditSV.TabIndex = 64;
-            this.btnEditSV.Text = "Sửa";
-            this.btnEditSV.Click += new System.EventHandler(this.btnEditSV_Click);
-            // 
             // frmClass
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -743,7 +755,7 @@ namespace QLDSV_TC.views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1549, 685);
-            this.Controls.Add(this.panelControl3);
+            this.Controls.Add(this.panelFormSV);
             this.Controls.Add(this.panelNhapLieu);
             this.Controls.Add(this.lOPGridControl);
             this.Controls.Add(this.panelChonKhoa);
@@ -768,12 +780,12 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.panelNhapLieu)).EndInit();
             this.panelNhapLieu.ResumeLayout(false);
             this.panelNhapLieu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teMAKHOA.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tekHOAHOC.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teTENLOP.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKhoa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtKhoaHoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMALOP.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelFormSV)).EndInit();
+            this.panelFormSV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlsv)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.panelbarSV.ResumeLayout(false);
@@ -812,12 +824,12 @@ namespace QLDSV_TC.views
         private DevExpress.XtraGrid.Columns.GridColumn colKHOAHOC;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHOA;
         private DevExpress.XtraEditors.PanelControl panelNhapLieu;
-        private DevExpress.XtraEditors.TextEdit teMAKHOA;
-        private DevExpress.XtraEditors.TextEdit tekHOAHOC;
-        private DevExpress.XtraEditors.TextEdit teTENLOP;
+        private DevExpress.XtraEditors.TextEdit txtKhoa;
+        private DevExpress.XtraEditors.TextEdit txtKhoaHoc;
+        private DevExpress.XtraEditors.TextEdit txtTenLop;
         private DevExpress.XtraEditors.TextEdit txtMALOP;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.PanelControl panelControl3;
+        private DevExpress.XtraEditors.PanelControl panelFormSV;
         private DevExpress.XtraGrid.GridControl gridControlsv;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colMASV;

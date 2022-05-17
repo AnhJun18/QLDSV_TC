@@ -35,6 +35,7 @@ namespace QLDSV_TC
         public static String mHoten = "";
         public static int mPhongBan = 0;//khoa cntt hay vt
 
+        public static String passDefaultSV = "1";
 
         public static BindingSource bdsDSPM = new BindingSource();//dùng để giữ ds phân mảnh khi login
         public static views.frmLogin frmLogin;
@@ -42,7 +43,6 @@ namespace QLDSV_TC
         public static views.frmClass frmClass;
         public static views.frmMH frmMH;
         public static views.frmLTC frmLTC;
-        public static views.frmStudent frmSinhVien;
         public static views.frmNhapDiem frmNhapDiem;
        
         /* public static formClassRegistration frmRegister;

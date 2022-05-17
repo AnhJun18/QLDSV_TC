@@ -187,7 +187,6 @@ C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QL
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmMain.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmMH.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmNhapDiem.resources
-C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmStudent.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmXemDiem.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.csproj.GenerateResource.cache
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.exe.licenses
