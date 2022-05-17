@@ -395,7 +395,7 @@ namespace QLDSV_TC.views
             this.colMALOP.AppearanceCell.BorderColor = System.Drawing.Color.White;
             this.colMALOP.AppearanceCell.Options.UseBackColor = true;
             this.colMALOP.AppearanceCell.Options.UseBorderColor = true;
-            this.colMALOP.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colMALOP.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colMALOP.AppearanceHeader.Options.UseBackColor = true;
             this.colMALOP.Caption = "Mã Lớp";
             this.colMALOP.FieldName = "MALOP";
@@ -409,7 +409,7 @@ namespace QLDSV_TC.views
             // 
             // colTENLOP
             // 
-            this.colTENLOP.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colTENLOP.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colTENLOP.AppearanceHeader.Options.UseBackColor = true;
             this.colTENLOP.Caption = "Tên Lớp";
             this.colTENLOP.FieldName = "TENLOP";
@@ -423,7 +423,7 @@ namespace QLDSV_TC.views
             // 
             // colKHOAHOC
             // 
-            this.colKHOAHOC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colKHOAHOC.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colKHOAHOC.AppearanceHeader.Options.UseBackColor = true;
             this.colKHOAHOC.Caption = "Khóa Học";
             this.colKHOAHOC.FieldName = "KHOAHOC";
@@ -437,7 +437,7 @@ namespace QLDSV_TC.views
             // 
             // colMAKHOA
             // 
-            this.colMAKHOA.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colMAKHOA.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colMAKHOA.AppearanceHeader.Options.UseBackColor = true;
             this.colMAKHOA.Caption = "Khoa";
             this.colMAKHOA.FieldName = "MAKHOA";
@@ -575,6 +575,8 @@ namespace QLDSV_TC.views
             // 
             // colMASV
             // 
+            this.colMASV.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colMASV.AppearanceHeader.Options.UseBackColor = true;
             this.colMASV.FieldName = "MASV";
             this.colMASV.MinWidth = 25;
             this.colMASV.Name = "colMASV";
@@ -584,6 +586,8 @@ namespace QLDSV_TC.views
             // 
             // colHO
             // 
+            this.colHO.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colHO.AppearanceHeader.Options.UseBackColor = true;
             this.colHO.FieldName = "HO";
             this.colHO.MinWidth = 25;
             this.colHO.Name = "colHO";
@@ -593,6 +597,8 @@ namespace QLDSV_TC.views
             // 
             // colTEN
             // 
+            this.colTEN.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colTEN.AppearanceHeader.Options.UseBackColor = true;
             this.colTEN.FieldName = "TEN";
             this.colTEN.MinWidth = 25;
             this.colTEN.Name = "colTEN";
@@ -602,6 +608,8 @@ namespace QLDSV_TC.views
             // 
             // colPHAI
             // 
+            this.colPHAI.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colPHAI.AppearanceHeader.Options.UseBackColor = true;
             this.colPHAI.FieldName = "PHAI";
             this.colPHAI.MinWidth = 25;
             this.colPHAI.Name = "colPHAI";
@@ -611,6 +619,8 @@ namespace QLDSV_TC.views
             // 
             // colDIACHI
             // 
+            this.colDIACHI.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colDIACHI.AppearanceHeader.Options.UseBackColor = true;
             this.colDIACHI.FieldName = "DIACHI";
             this.colDIACHI.MinWidth = 25;
             this.colDIACHI.Name = "colDIACHI";
@@ -620,6 +630,8 @@ namespace QLDSV_TC.views
             // 
             // colNGAYSINH
             // 
+            this.colNGAYSINH.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colNGAYSINH.AppearanceHeader.Options.UseBackColor = true;
             this.colNGAYSINH.FieldName = "NGAYSINH";
             this.colNGAYSINH.MinWidth = 25;
             this.colNGAYSINH.Name = "colNGAYSINH";
@@ -629,6 +641,8 @@ namespace QLDSV_TC.views
             // 
             // colMALOP1
             // 
+            this.colMALOP1.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colMALOP1.AppearanceHeader.Options.UseBackColor = true;
             this.colMALOP1.FieldName = "MALOP";
             this.colMALOP1.MinWidth = 25;
             this.colMALOP1.Name = "colMALOP1";
@@ -638,6 +652,8 @@ namespace QLDSV_TC.views
             // 
             // colDANGHIHOC
             // 
+            this.colDANGHIHOC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.colDANGHIHOC.AppearanceHeader.Options.UseBackColor = true;
             this.colDANGHIHOC.FieldName = "DANGHIHOC";
             this.colDANGHIHOC.MinWidth = 25;
             this.colDANGHIHOC.Name = "colDANGHIHOC";
