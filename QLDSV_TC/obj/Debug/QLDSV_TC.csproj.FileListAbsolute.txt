@@ -408,7 +408,6 @@ D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmNhapDiem.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportBangDiem.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportDSLTC.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportHocPhi.resources
-D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmStudent.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmXemDiem.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.XfrmBangDiemLopTinChi.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.XfrmDanhSachSinhVienDangKyLTC.resources
