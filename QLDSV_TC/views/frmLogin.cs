@@ -167,6 +167,7 @@ namespace QLDSV_TC.views
             Program.servername = cmbKhoa.SelectedValue.ToString();
             txtUserName.Text = null;
             txtPass.Text = null;
+            txtUserName.Focus();
         }
     }
 }

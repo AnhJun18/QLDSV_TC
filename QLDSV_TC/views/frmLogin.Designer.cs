@@ -48,7 +48,7 @@ namespace QLDSV_TC.views
             this.hideshowpass.Location = new System.Drawing.Point(537, 215);
             this.hideshowpass.Name = "hideshowpass";
             this.hideshowpass.Size = new System.Drawing.Size(117, 21);
-            this.hideshowpass.TabIndex = 22;
+            this.hideshowpass.TabIndex = 3;
             this.hideshowpass.Text = "Hiện Mật Khẩu";
             this.hideshowpass.UseVisualStyleBackColor = true;
             this.hideshowpass.CheckedChanged += new System.EventHandler(this.hideshowpass_CheckedChanged);
@@ -58,7 +58,7 @@ namespace QLDSV_TC.views
             this.btnThoat.Location = new System.Drawing.Point(422, 294);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(81, 46);
-            this.btnThoat.TabIndex = 24;
+            this.btnThoat.TabIndex = 5;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
             // 
@@ -67,7 +67,7 @@ namespace QLDSV_TC.views
             this.btnDangNhap.Location = new System.Drawing.Point(246, 294);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(98, 46);
-            this.btnDangNhap.TabIndex = 23;
+            this.btnDangNhap.TabIndex = 4;
             this.btnDangNhap.Text = "Đăng Nhập";
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
@@ -80,7 +80,7 @@ namespace QLDSV_TC.views
             this.txtPass.Properties.Appearance.Options.UseFont = true;
             this.txtPass.Properties.UseSystemPasswordChar = true;
             this.txtPass.Size = new System.Drawing.Size(236, 30);
-            this.txtPass.TabIndex = 21;
+            this.txtPass.TabIndex = 2;
             // 
             // txtUserName
             // 
@@ -89,7 +89,7 @@ namespace QLDSV_TC.views
             this.txtUserName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUserName.Properties.Appearance.Options.UseFont = true;
             this.txtUserName.Size = new System.Drawing.Size(236, 30);
-            this.txtUserName.TabIndex = 20;
+            this.txtUserName.TabIndex = 1;
             // 
             // label3
             // 
@@ -119,18 +119,19 @@ namespace QLDSV_TC.views
             this.cmbKhoa.Location = new System.Drawing.Point(267, 66);
             this.cmbKhoa.Name = "cmbKhoa";
             this.cmbKhoa.Size = new System.Drawing.Size(236, 32);
-            this.cmbKhoa.TabIndex = 17;
+            this.cmbKhoa.TabIndex = 0;
+            this.cmbKhoa.TabStop = false;
             this.cmbKhoa.SelectedIndexChanged += new System.EventHandler(this.cmbKhoa_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(129, 74);
+            this.label1.Location = new System.Drawing.Point(142, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 18);
+            this.label1.Size = new System.Drawing.Size(90, 18);
             this.label1.TabIndex = 16;
-            this.label1.Text = "Chọn Khoa";
+            this.label1.Text = "Phòng Ban";
             // 
             // frmLogin
             // 

@@ -48,6 +48,7 @@ namespace QLDSV_TC.views
             this.DIEM_CC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DIEM_GK = new DevExpress.XtraGrid.Columns.GridColumn();
             this.DIEM_CK = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.DIEMTK = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -182,10 +183,15 @@ namespace QLDSV_TC.views
             this.TENMH,
             this.DIEM_CC,
             this.DIEM_GK,
-            this.DIEM_CK});
+            this.DIEM_CK,
+            this.DIEMTK});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.NKHK, DevExpress.Data.ColumnSortOrder.Ascending)});
             // 
@@ -202,53 +208,91 @@ namespace QLDSV_TC.views
             // 
             // MALTC
             // 
+            this.MALTC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.MALTC.AppearanceHeader.Options.UseBackColor = true;
             this.MALTC.Caption = "Mã LTC";
             this.MALTC.FieldName = "MALTC";
             this.MALTC.MinWidth = 25;
             this.MALTC.Name = "MALTC";
+            this.MALTC.OptionsColumn.AllowEdit = false;
+            this.MALTC.OptionsColumn.AllowFocus = false;
+            this.MALTC.OptionsFilter.AllowFilter = false;
             this.MALTC.Visible = true;
             this.MALTC.VisibleIndex = 0;
-            this.MALTC.Width = 94;
+            this.MALTC.Width = 136;
             // 
             // TENMH
             // 
+            this.TENMH.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.TENMH.AppearanceHeader.Options.UseBackColor = true;
             this.TENMH.Caption = "Tên Môn Học";
             this.TENMH.FieldName = "TENMH";
             this.TENMH.MinWidth = 25;
             this.TENMH.Name = "TENMH";
+            this.TENMH.OptionsColumn.AllowEdit = false;
+            this.TENMH.OptionsColumn.AllowFocus = false;
             this.TENMH.Visible = true;
             this.TENMH.VisibleIndex = 1;
-            this.TENMH.Width = 94;
+            this.TENMH.Width = 195;
             // 
             // DIEM_CC
             // 
+            this.DIEM_CC.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DIEM_CC.AppearanceHeader.Options.UseBackColor = true;
             this.DIEM_CC.Caption = "Điểm CC";
             this.DIEM_CC.FieldName = "DIEM_CC";
             this.DIEM_CC.MinWidth = 25;
             this.DIEM_CC.Name = "DIEM_CC";
+            this.DIEM_CC.OptionsColumn.AllowEdit = false;
+            this.DIEM_CC.OptionsColumn.AllowFocus = false;
+            this.DIEM_CC.OptionsFilter.AllowFilter = false;
             this.DIEM_CC.Visible = true;
             this.DIEM_CC.VisibleIndex = 2;
-            this.DIEM_CC.Width = 94;
+            this.DIEM_CC.Width = 195;
             // 
             // DIEM_GK
             // 
+            this.DIEM_GK.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DIEM_GK.AppearanceHeader.Options.UseBackColor = true;
             this.DIEM_GK.Caption = "Điểm GK";
             this.DIEM_GK.FieldName = "DIEM_GK";
             this.DIEM_GK.MinWidth = 25;
             this.DIEM_GK.Name = "DIEM_GK";
+            this.DIEM_GK.OptionsColumn.AllowEdit = false;
+            this.DIEM_GK.OptionsColumn.AllowFocus = false;
             this.DIEM_GK.Visible = true;
             this.DIEM_GK.VisibleIndex = 3;
-            this.DIEM_GK.Width = 94;
+            this.DIEM_GK.Width = 195;
             // 
             // DIEM_CK
             // 
+            this.DIEM_CK.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DIEM_CK.AppearanceHeader.Options.UseBackColor = true;
             this.DIEM_CK.Caption = "Điểm CK";
             this.DIEM_CK.FieldName = "DIEM_CK";
             this.DIEM_CK.MinWidth = 25;
             this.DIEM_CK.Name = "DIEM_CK";
+            this.DIEM_CK.OptionsColumn.AllowEdit = false;
+            this.DIEM_CK.OptionsColumn.AllowFocus = false;
             this.DIEM_CK.Visible = true;
             this.DIEM_CK.VisibleIndex = 4;
-            this.DIEM_CK.Width = 94;
+            this.DIEM_CK.Width = 195;
+            // 
+            // DIEMTK
+            // 
+            this.DIEMTK.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.DIEMTK.AppearanceHeader.Options.UseBackColor = true;
+            this.DIEMTK.Caption = "Điểm TK";
+            this.DIEMTK.FieldName = "DIEMTK";
+            this.DIEMTK.MinWidth = 25;
+            this.DIEMTK.Name = "DIEMTK";
+            this.DIEMTK.OptionsColumn.AllowEdit = false;
+            this.DIEMTK.OptionsColumn.AllowFocus = false;
+            this.DIEMTK.UnboundExpression = "Round([DIEM_CC] * 0.1 + [DIEM_GK] * 0.3 + [DIEM_CK] * 0.6, 1)";
+            this.DIEMTK.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.DIEMTK.Visible = true;
+            this.DIEMTK.VisibleIndex = 5;
+            this.DIEMTK.Width = 202;
             // 
             // frmXemDiem
             // 
@@ -290,5 +334,6 @@ namespace QLDSV_TC.views
         private System.Windows.Forms.Label lbLop;
         private System.Windows.Forms.Label lbHoTen;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraGrid.Columns.GridColumn DIEMTK;
     }
 }

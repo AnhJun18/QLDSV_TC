@@ -128,7 +128,6 @@ namespace QLDSV_TC.views
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             Report_DS_SV_DangKy_LTC rpt = new Report_DS_SV_DangKy_LTC(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text), cbMAMH.SelectedValue.ToString(), int.Parse(cbNHOM.Text));
-
             rpt.labelTieuDe.Text = "DANH SÁCH SINH VIÊN ĐĂNG KÝ LỚP TÍN CHỈ \n KHOA " + cbKhoa.Text.ToUpper();
             rpt.lbNienKhoa.Text = cbNIENKHOA.Text;
             rpt.lbHocKy.Text = cbHOCKY.Text;

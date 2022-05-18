@@ -72,7 +72,7 @@ namespace QLDSV_TC.views
             try
             {
 
-                Report_BangDiem_TongKet_Lop rpt = new Report_BangDiem_TongKet_Lop(cbMaLop.SelectedValue.ToString());
+                Report_BangDiem_TongKet_Lop rpt = new Report_BangDiem_TongKet_Lop(cbMaLop.Text.ToString());
                 rpt.lbLop.Text = "Lớp: " + cbMaLop.Text + " - Niên Khóa: " + ((DataRowView)bdsLop[bdsLop.Position])["KHOAHOC"].ToString();
 
                 rpt.lbKhoa.Text = "Khoa " + cbKhoa.Text;

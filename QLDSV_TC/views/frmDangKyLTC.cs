@@ -55,7 +55,6 @@ namespace QLDSV_TC.views
             cbNienKhoa.DataSource = dt;
             cbNienKhoa.DisplayMember = "NIENKHOA";
             cbNienKhoa.ValueMember = "NIENKHOA";
-            cbHocKy.Enabled = false;
         }
 
         private  void loadcbHocKi(string nienkhoa)
@@ -72,15 +71,13 @@ namespace QLDSV_TC.views
         private void frmDangKyLTC_Load(object sender, EventArgs e)
         {
             loadcbNienkhoa();
-            cbNienKhoa.SelectedIndex = -1;
-
         }
 
         private void cbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadcbHocKi(cbNienKhoa.Text);
-            if (cbNienKhoa.SelectedIndex != -1)
-                cbHocKy.Enabled = true;
+      
+
         }
 
         private void loadData()
@@ -94,8 +91,15 @@ namespace QLDSV_TC.views
             DataTable tableLopTCDaDKy = Program.ExecSqlDataTable(cmd2);
             this.bdsLopTinchiDaDKy.DataSource = tableLopTCDaDKy;
             this.gridControlDaDKy.DataSource = this.bdsLopTinchiDaDKy;
-        
-    }
+
+            panelDKHUYDK.Enabled = false;
+            this.btnDK.BackColor = System.Drawing.Color.LightGray;
+            this.btnHuyDK.BackColor = System.Drawing.Color.LightGray;
+            txtMaLTC.Text = null;
+            txtMH.Text = null;
+            txtMaGV.Text = null;
+
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -110,9 +114,13 @@ namespace QLDSV_TC.views
             {
                 txtMaLTC.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["MALTC"].ToString();
                 txtMH.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["TENMH"].ToString();
+                txtMaGV.Text = ((DataRowView)bdsLopTinchi[bdsLopTinchi.Position])["GIANGVIEN"].ToString();
             }
+            panelDKHUYDK.Enabled = true;
             btnDK.Enabled = true;
             btnHuyDK.Enabled = false;
+            this.btnDK.BackColor = System.Drawing.Color.LightGreen;
+            this.btnHuyDK.BackColor = System.Drawing.Color.LightGray;
         }
 
         private void gridView2_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
@@ -121,9 +129,15 @@ namespace QLDSV_TC.views
             {
                 txtMaLTC.Text  = ((DataRowView)bdsLopTinchiDaDKy[bdsLopTinchiDaDKy.Position])["MALTC"].ToString();
                 txtMH.Text = ((DataRowView)bdsLopTinchiDaDKy[bdsLopTinchiDaDKy.Position])["TENMH"].ToString();
+                txtMaGV.Text = ((DataRowView)bdsLopTinchiDaDKy[bdsLopTinchiDaDKy.Position])["GIANGVIEN"].ToString();
+
             }
+            panelDKHUYDK.Enabled = true;
             btnDK.Enabled = false;
             btnHuyDK.Enabled = true;
+            this.btnDK.BackColor = System.Drawing.Color.LightGray;
+            this.btnHuyDK.BackColor = System.Drawing.Color.LightPink;
+
         }
 
         private void btnDK_Click(object sender, EventArgs e)
@@ -135,7 +149,7 @@ namespace QLDSV_TC.views
                 {
                     MessageBox.Show("Đăng kí thành công!");
                     loadData();
-                  
+                    
                 }
                 else
                 {

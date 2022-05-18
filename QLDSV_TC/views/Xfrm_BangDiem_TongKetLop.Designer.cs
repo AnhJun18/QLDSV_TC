@@ -38,7 +38,7 @@ namespace QLDSV_TC.views
             this.qLDSV_TCDataSet = new QLDSV_TC.QLDSV_TCDataSet();
             this.lOPTableAdapter = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.LOPTableAdapter();
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnPreview = new DevExpress.XtraEditors.SimpleButton();
             this.label2 = new System.Windows.Forms.Label();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,10 +51,10 @@ namespace QLDSV_TC.views
             this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKhoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(161, 89);
+            this.cbKhoa.Location = new System.Drawing.Point(261, 107);
             this.cbKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(235, 25);
+            this.cbKhoa.Size = new System.Drawing.Size(273, 29);
             this.cbKhoa.TabIndex = 46;
             this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
             // 
@@ -62,9 +62,9 @@ namespace QLDSV_TC.views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(102, 95);
+            this.label1.Location = new System.Drawing.Point(192, 114);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 17);
+            this.label1.Size = new System.Drawing.Size(54, 21);
             this.label1.TabIndex = 45;
             this.label1.Text = "Khoa";
             // 
@@ -75,10 +75,10 @@ namespace QLDSV_TC.views
             this.cbMaLop.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaLop.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbMaLop.FormattingEnabled = true;
-            this.cbMaLop.Location = new System.Drawing.Point(161, 137);
+            this.cbMaLop.Location = new System.Drawing.Point(261, 166);
             this.cbMaLop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMaLop.Name = "cbMaLop";
-            this.cbMaLop.Size = new System.Drawing.Size(235, 25);
+            this.cbMaLop.Size = new System.Drawing.Size(273, 29);
             this.cbMaLop.TabIndex = 47;
             this.cbMaLop.ValueMember = "MALOP";
             // 
@@ -108,34 +108,34 @@ namespace QLDSV_TC.views
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.QLDSV_TCDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // simpleButton1
+            // btnPreview
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Turquoise;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.AppearanceDisabled.BackColor = System.Drawing.Color.White;
-            this.simpleButton1.AppearanceDisabled.Options.UseBackColor = true;
-            this.simpleButton1.AppearancePressed.BackColor = System.Drawing.Color.White;
-            this.simpleButton1.AppearancePressed.Options.UseBackColor = true;
-            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
-            this.simpleButton1.Location = new System.Drawing.Point(215, 204);
-            this.simpleButton1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(81, 34);
-            this.simpleButton1.TabIndex = 48;
-            this.simpleButton1.Text = "In Ấn";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            this.btnPreview.Appearance.BackColor = System.Drawing.Color.Turquoise;
+            this.btnPreview.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPreview.Appearance.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnPreview.Appearance.Options.UseBackColor = true;
+            this.btnPreview.Appearance.Options.UseFont = true;
+            this.btnPreview.Appearance.Options.UseForeColor = true;
+            this.btnPreview.AppearanceDisabled.BackColor = System.Drawing.Color.White;
+            this.btnPreview.AppearanceDisabled.Options.UseBackColor = true;
+            this.btnPreview.AppearancePressed.BackColor = System.Drawing.Color.White;
+            this.btnPreview.AppearancePressed.Options.UseBackColor = true;
+            this.btnPreview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnPreview.Location = new System.Drawing.Point(251, 251);
+            this.btnPreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPreview.Name = "btnPreview";
+            this.btnPreview.Size = new System.Drawing.Size(94, 42);
+            this.btnPreview.TabIndex = 48;
+            this.btnPreview.Text = "In Ấn";
+            this.btnPreview.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(102, 140);
+            this.label2.Location = new System.Drawing.Point(192, 169);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 17);
+            this.label2.Size = new System.Drawing.Size(42, 21);
             this.label2.TabIndex = 49;
             this.label2.Text = "Lớp";
             // 
@@ -148,10 +148,10 @@ namespace QLDSV_TC.views
             this.simpleButton2.AppearancePressed.BackColor = System.Drawing.Color.White;
             this.simpleButton2.AppearancePressed.Options.UseBackColor = true;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(338, 204);
+            this.simpleButton2.Location = new System.Drawing.Point(394, 251);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(81, 34);
+            this.simpleButton2.Size = new System.Drawing.Size(94, 42);
             this.simpleButton2.TabIndex = 50;
             this.simpleButton2.Text = "Thoát";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -160,21 +160,22 @@ namespace QLDSV_TC.views
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(195, 37);
+            this.label3.Location = new System.Drawing.Point(227, 46);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(309, 21);
+            this.label3.Size = new System.Drawing.Size(390, 27);
             this.label3.TabIndex = 51;
             this.label3.Text = "BẢNG ĐIỂM TỔNG KẾT THEO LỚP";
             // 
             // Xfrm_BangDiem_TongKetLop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.btnPreview;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 339);
+            this.ClientSize = new System.Drawing.Size(965, 417);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.simpleButton2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnPreview);
             this.Controls.Add(this.cbMaLop);
             this.Controls.Add(this.cbKhoa);
             this.Controls.Add(this.label1);
@@ -198,7 +199,7 @@ namespace QLDSV_TC.views
         private System.Windows.Forms.BindingSource bdsLop;
         private QLDSV_TCDataSetTableAdapters.LOPTableAdapter lOPTableAdapter;
         private QLDSV_TCDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnPreview;
         private System.Windows.Forms.Label label2;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private System.Windows.Forms.Label label3;
