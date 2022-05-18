@@ -50,13 +50,7 @@ namespace QLDSV_TC.views
             {
                 panelControl1.Enabled = true;
             }
-
-            DataTable dt = Program.ExecSqlDataTable("EXEC SP_GetMaKhoa");
-            makhoa = dt.Rows[0][0].ToString();
-            if(bdslOPTINCHI.Count > 0)
-            {
-                btnXoa.Enabled = btnSua.Enabled = true;
-            }
+            
         }
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -83,32 +77,62 @@ namespace QLDSV_TC.views
             {
                 this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
                 this.lOPTINCHITableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
+                if (bdslOPTINCHI.Count == 0)
+                {
+                    btnXoa.Enabled = btnSua.Enabled = false;
+                }
 
             }
         }
 
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
         {
+
             vitri = bdslOPTINCHI.Position;
             bdslOPTINCHI.AddNew();
+            try
+            {
+                DataTable dt = Program.ExecSqlDataTable("EXEC SP_GetMaKhoa");
+                String makhoa = dt.Rows[0][0].ToString();
+                ltcMAKHOA.Text = makhoa;
+            }
+            catch
 
+            {
+                bdslOPTINCHI.CancelEdit();
+                MessageBox.Show("Lỗi kết nối server!");
+                return;
+            }
             panelControl2.Enabled = true;
             ltcHUYLOP.Checked = false;
             cbKhoa.Enabled = false;
-            ltcMAKHOA.Text = makhoa;
             ltcHUYLOP.Enabled = false;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = cbKhoa.Enabled = false;
+            ltcMaMH.SelectedIndex = -1;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = cbKhoa.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
             lOPTINCHIGridControl.Enabled = false;
-           
+          
         }
 
         private void btnGhi_ItemClick(object sender, ItemClickEventArgs e)
         {
+            if (ltcNIENKHOA.Text.Trim() == "")
+            {
+                MessageBox.Show("vui lòng điền niên khóa!", "", MessageBoxButtons.OK);
+                ltcNIENKHOA.Focus();
+                return;
+            }
             if (ltcHOCKY.Text.Trim() == "")
             {
                 MessageBox.Show("vui lòng chọn học kỳ!", "", MessageBoxButtons.OK);
                 ltcHOCKY.Focus();
+                return;
+            }
+            
+            if (ltcMaMH.Text.Trim() == "")
+            {
+                MessageBox.Show("vui lòng chọn môn học!", "", MessageBoxButtons.OK);
+                ltcMaMH.Focus();
                 return;
             }
             if (ltcMAGV.Text.Trim() == "")
@@ -117,24 +141,13 @@ namespace QLDSV_TC.views
                 ltcMAGV.Focus();
                 return;
             }
-            if (ltcMaMH.Text.Trim() == "")
-            {
-                MessageBox.Show("vui lòng chọn môn học!", "", MessageBoxButtons.OK);
-                ltcMaMH.Focus();
-                return;
-            }
             if (ltcNHOM.Text.Trim() == "")
             {
                 MessageBox.Show("vui lòng chọn nhóm!", "", MessageBoxButtons.OK);
                 ltcNHOM.Focus();
                 return;
             }
-            if (ltcNIENKHOA.Text.Trim() == "")
-            {
-                MessageBox.Show("vui lòng điền niên khóa!", "", MessageBoxButtons.OK);
-                ltcNIENKHOA.Focus();
-                return;
-            }
+            
             if (ltcSOSVTOITHIEU.Text.Trim() == "")
             {
                 MessageBox.Show("vui lòng nhập số sinh viên tối thiểu!", "", MessageBoxButtons.OK);
@@ -166,7 +179,7 @@ namespace QLDSV_TC.views
         {
             vitri = bdslOPTINCHI.Position;
             panelControl2.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = cbKhoa.Enabled= false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = cbKhoa.Enabled= false;
             btnGhi.Enabled = btnPH.Enabled = true;
             cbKhoa.Enabled = false;
             ltcHUYLOP.Enabled = true;
@@ -187,6 +200,10 @@ namespace QLDSV_TC.views
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = cbKhoa.Enabled = true;
             btnGhi.Enabled = btnPH.Enabled = false;
             cbKhoa.Enabled = true;
+            if (bdslOPTINCHI.Count == 0)
+            {
+                btnXoa.Enabled = btnSua.Enabled = false;
+            }
         }
 
         private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)
@@ -223,7 +240,11 @@ namespace QLDSV_TC.views
         
         private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Close();
+            if(MessageBox.Show("Bạn chắc chắn muốn thoát", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                this.Close();
+            }
+            
         }
         private void ltcMaMH_SelectedIndexChanged(object sender, EventArgs e)
         {

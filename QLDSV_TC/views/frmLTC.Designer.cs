@@ -249,7 +249,6 @@ namespace QLDSV_TC.views
             // 
             this.btnXoa.Caption = "Xóa";
             this.btnXoa.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
-            this.btnXoa.Enabled = false;
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
@@ -259,7 +258,6 @@ namespace QLDSV_TC.views
             // 
             this.btnSua.Caption = "Sửa";
             this.btnSua.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
-            this.btnSua.Enabled = false;
             this.btnSua.Id = 2;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
@@ -683,6 +681,7 @@ namespace QLDSV_TC.views
             this.colMALTC.AppearanceCell.Options.UseBackColor = true;
             this.colMALTC.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colMALTC.AppearanceHeader.Options.UseBackColor = true;
+            this.colMALTC.Caption = "Mã LTC";
             this.colMALTC.FieldName = "MALTC";
             this.colMALTC.Name = "colMALTC";
             this.colMALTC.OptionsColumn.AllowEdit = false;
@@ -694,6 +693,7 @@ namespace QLDSV_TC.views
             // 
             this.colNIENKHOA.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colNIENKHOA.AppearanceHeader.Options.UseBackColor = true;
+            this.colNIENKHOA.Caption = "Niên Khóa";
             this.colNIENKHOA.FieldName = "NIENKHOA";
             this.colNIENKHOA.Name = "colNIENKHOA";
             this.colNIENKHOA.OptionsColumn.AllowEdit = false;
@@ -705,6 +705,7 @@ namespace QLDSV_TC.views
             // 
             this.colHOCKY.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colHOCKY.AppearanceHeader.Options.UseBackColor = true;
+            this.colHOCKY.Caption = "Học Kỳ";
             this.colHOCKY.FieldName = "HOCKY";
             this.colHOCKY.Name = "colHOCKY";
             this.colHOCKY.OptionsColumn.AllowEdit = false;
@@ -716,6 +717,7 @@ namespace QLDSV_TC.views
             // 
             this.colMAMH.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colMAMH.AppearanceHeader.Options.UseBackColor = true;
+            this.colMAMH.Caption = "Mã Môn Học";
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.Name = "colMAMH";
             this.colMAMH.OptionsColumn.AllowEdit = false;
@@ -727,6 +729,7 @@ namespace QLDSV_TC.views
             // 
             this.colNHOM.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colNHOM.AppearanceHeader.Options.UseBackColor = true;
+            this.colNHOM.Caption = "Nhóm";
             this.colNHOM.FieldName = "NHOM";
             this.colNHOM.Name = "colNHOM";
             this.colNHOM.OptionsColumn.AllowEdit = false;
@@ -738,6 +741,7 @@ namespace QLDSV_TC.views
             // 
             this.colMAGV.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colMAGV.AppearanceHeader.Options.UseBackColor = true;
+            this.colMAGV.Caption = "Mã Giảng Viên";
             this.colMAGV.FieldName = "MAGV";
             this.colMAGV.Name = "colMAGV";
             this.colMAGV.OptionsColumn.AllowEdit = false;
@@ -749,6 +753,7 @@ namespace QLDSV_TC.views
             // 
             this.colMAKHOA.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colMAKHOA.AppearanceHeader.Options.UseBackColor = true;
+            this.colMAKHOA.Caption = "Mã Khoa";
             this.colMAKHOA.FieldName = "MAKHOA";
             this.colMAKHOA.Name = "colMAKHOA";
             this.colMAKHOA.OptionsColumn.AllowEdit = false;
@@ -760,6 +765,7 @@ namespace QLDSV_TC.views
             // 
             this.colSOSVTOITHIEU.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colSOSVTOITHIEU.AppearanceHeader.Options.UseBackColor = true;
+            this.colSOSVTOITHIEU.Caption = "Số SV Tối Thiểu";
             this.colSOSVTOITHIEU.FieldName = "SOSVTOITHIEU";
             this.colSOSVTOITHIEU.Name = "colSOSVTOITHIEU";
             this.colSOSVTOITHIEU.OptionsColumn.AllowEdit = false;
@@ -771,6 +777,7 @@ namespace QLDSV_TC.views
             // 
             this.colHUYLOP.AppearanceHeader.BackColor = System.Drawing.Color.MediumTurquoise;
             this.colHUYLOP.AppearanceHeader.Options.UseBackColor = true;
+            this.colHUYLOP.Caption = "Hủy Lớp";
             this.colHUYLOP.FieldName = "HUYLOP";
             this.colHUYLOP.Name = "colHUYLOP";
             this.colHUYLOP.OptionsColumn.AllowEdit = false;
