@@ -47,7 +47,8 @@ namespace QLDSV_TC.views
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.btnXoa = new DevExpress.XtraBars.BarLargeButtonItem();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.panelSearchSV = new DevExpress.XtraEditors.PanelControl();
+            this.label5 = new System.Windows.Forms.Label();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.txtMaSv = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -91,8 +92,8 @@ namespace QLDSV_TC.views
             hOCKYLabel = new System.Windows.Forms.Label();
             hOCPHILabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
-            this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelSearchSV)).BeginInit();
+            this.panelSearchSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_SP_GET_HOCPHI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_SP_GET_CTDONG_HOCPHI)).BeginInit();
@@ -217,6 +218,7 @@ namespace QLDSV_TC.views
             this.btnPH.Id = 3;
             this.btnPH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPH.ImageOptions.SvgImage")));
             this.btnPH.Name = "btnPH";
+            this.btnPH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPH_ItemClick);
             // 
             // btnGhi
             // 
@@ -236,6 +238,7 @@ namespace QLDSV_TC.views
             this.btnThoat.Id = 5;
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -282,45 +285,57 @@ namespace QLDSV_TC.views
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
             // 
-            // panelControl1
+            // panelSearchSV
             // 
-            this.panelControl1.Controls.Add(this.simpleButton1);
-            this.panelControl1.Controls.Add(this.txtMaSv);
-            this.panelControl1.Controls.Add(this.label2);
-            this.panelControl1.Controls.Add(this.label1);
-            this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelControl1.Location = new System.Drawing.Point(0, 50);
-            this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1001, 90);
-            this.panelControl1.TabIndex = 4;
+            this.panelSearchSV.Controls.Add(this.label5);
+            this.panelSearchSV.Controls.Add(this.simpleButton1);
+            this.panelSearchSV.Controls.Add(this.txtMaSv);
+            this.panelSearchSV.Controls.Add(this.label2);
+            this.panelSearchSV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelSearchSV.Location = new System.Drawing.Point(0, 50);
+            this.panelSearchSV.Name = "panelSearchSV";
+            this.panelSearchSV.Size = new System.Drawing.Size(1001, 90);
+            this.panelSearchSV.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(325, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 21);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Tra cứu học phí";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // simpleButton1
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(538, 42);
+            this.simpleButton1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.simpleButton1.Location = new System.Drawing.Point(814, 22);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(94, 29);
+            this.simpleButton1.Size = new System.Drawing.Size(124, 50);
             this.simpleButton1.TabIndex = 7;
             this.simpleButton1.Text = "Tra cứu";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // txtMaSv
             // 
-            this.txtMaSv.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaSv.Location = new System.Drawing.Point(373, 45);
+            this.txtMaSv.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaSv.Location = new System.Drawing.Point(597, 33);
             this.txtMaSv.Name = "txtMaSv";
-            this.txtMaSv.Size = new System.Drawing.Size(138, 26);
+            this.txtMaSv.Size = new System.Drawing.Size(187, 29);
             this.txtMaSv.TabIndex = 4;
             this.txtMaSv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMaSv_KeyPress);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(283, 49);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 7.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(495, 38);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 18);
+            this.label2.Size = new System.Drawing.Size(96, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mã Sinh Viên";
             // 
@@ -328,7 +343,7 @@ namespace QLDSV_TC.views
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(112, 4);
+            this.label1.Location = new System.Drawing.Point(66, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 21);
             this.label1.TabIndex = 0;
@@ -342,7 +357,8 @@ namespace QLDSV_TC.views
             this.txtLop.Name = "txtLop";
             this.txtLop.ReadOnly = true;
             this.txtLop.Size = new System.Drawing.Size(159, 28);
-            this.txtLop.TabIndex = 6;
+            this.txtLop.TabIndex = 0;
+            this.txtLop.TabStop = false;
             // 
             // txtHoTen
             // 
@@ -351,7 +367,8 @@ namespace QLDSV_TC.views
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.ReadOnly = true;
             this.txtHoTen.Size = new System.Drawing.Size(185, 28);
-            this.txtHoTen.TabIndex = 5;
+            this.txtHoTen.TabIndex = 0;
+            this.txtHoTen.TabStop = false;
             // 
             // label4
             // 
@@ -452,6 +469,7 @@ namespace QLDSV_TC.views
             // 
             // thoatDongHP
             // 
+            this.thoatDongHP.Enabled = false;
             this.thoatDongHP.Name = "thoatDongHP";
             this.thoatDongHP.Size = new System.Drawing.Size(170, 24);
             this.thoatDongHP.Text = "Thoát";
@@ -503,6 +521,7 @@ namespace QLDSV_TC.views
             this.panelNhapHocPhi.Controls.Add(this.labelDaDong);
             this.panelNhapHocPhi.Controls.Add(this.txtLop);
             this.panelNhapHocPhi.Controls.Add(this.txtHoTen);
+            this.panelNhapHocPhi.Controls.Add(this.label1);
             this.panelNhapHocPhi.Controls.Add(this.txtDaDong);
             this.panelNhapHocPhi.Controls.Add(hOCPHILabel);
             this.panelNhapHocPhi.Controls.Add(this.label4);
@@ -537,7 +556,8 @@ namespace QLDSV_TC.views
             0,
             0,
             0});
-            this.txtDaDong.Location = new System.Drawing.Point(455, 219);
+            this.txtDaDong.Enabled = false;
+            this.txtDaDong.Location = new System.Drawing.Point(447, 219);
             this.txtDaDong.MenuManager = this.barManager1;
             this.txtDaDong.Name = "txtDaDong";
             this.txtDaDong.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -545,13 +565,13 @@ namespace QLDSV_TC.views
             this.txtDaDong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDaDong.Size = new System.Drawing.Size(159, 28);
-            this.txtDaDong.TabIndex = 7;
+            this.txtDaDong.TabIndex = 4;
             // 
             // txtHocPhi
             // 
             this.txtHocPhi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_SP_GET_HOCPHI, "HOCPHI", true));
             this.txtHocPhi.EditValue = new decimal(new int[] {
-            0,
+            10,
             0,
             0,
             0});
@@ -562,14 +582,26 @@ namespace QLDSV_TC.views
             this.txtHocPhi.Properties.Appearance.Options.UseFont = true;
             this.txtHocPhi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtHocPhi.Properties.IsFloatValue = false;
+            this.txtHocPhi.Properties.Mask.EditMask = "N00";
+            this.txtHocPhi.Properties.MaxValue = new decimal(new int[] {
+            2000000000,
+            0,
+            0,
+            0});
+            this.txtHocPhi.Properties.MinValue = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
             this.txtHocPhi.Size = new System.Drawing.Size(185, 28);
-            this.txtHocPhi.TabIndex = 5;
+            this.txtHocPhi.TabIndex = 3;
             // 
             // txtHocKy
             // 
             this.txtHocKy.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_SP_GET_HOCPHI, "HOCKY", true));
             this.txtHocKy.EditValue = new decimal(new int[] {
-            0,
+            1,
             0,
             0,
             0});
@@ -580,8 +612,22 @@ namespace QLDSV_TC.views
             this.txtHocKy.Properties.Appearance.Options.UseFont = true;
             this.txtHocKy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtHocKy.Properties.IsFloatValue = false;
+            this.txtHocKy.Properties.Mask.BeepOnError = true;
+            this.txtHocKy.Properties.Mask.EditMask = "N00";
+            this.txtHocKy.Properties.MaxValue = new decimal(new int[] {
+            4,
+            0,
+            0,
+            0});
+            this.txtHocKy.Properties.MinValue = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtHocKy.Properties.ValidateOnEnterKey = true;
             this.txtHocKy.Size = new System.Drawing.Size(89, 28);
-            this.txtHocKy.TabIndex = 3;
+            this.txtHocKy.TabIndex = 2;
             // 
             // txtNienKhoa
             // 
@@ -628,6 +674,8 @@ namespace QLDSV_TC.views
             this.colNIENKHOA.FieldName = "NIENKHOA";
             this.colNIENKHOA.MinWidth = 25;
             this.colNIENKHOA.Name = "colNIENKHOA";
+            this.colNIENKHOA.OptionsColumn.AllowEdit = false;
+            this.colNIENKHOA.OptionsColumn.AllowFocus = false;
             this.colNIENKHOA.Visible = true;
             this.colNIENKHOA.VisibleIndex = 0;
             this.colNIENKHOA.Width = 94;
@@ -638,6 +686,8 @@ namespace QLDSV_TC.views
             this.colHOCKY.FieldName = "HOCKY";
             this.colHOCKY.MinWidth = 25;
             this.colHOCKY.Name = "colHOCKY";
+            this.colHOCKY.OptionsColumn.AllowEdit = false;
+            this.colHOCKY.OptionsColumn.AllowFocus = false;
             this.colHOCKY.Visible = true;
             this.colHOCKY.VisibleIndex = 1;
             this.colHOCKY.Width = 94;
@@ -648,6 +698,8 @@ namespace QLDSV_TC.views
             this.colHOCPHI.FieldName = "HOCPHI";
             this.colHOCPHI.MinWidth = 25;
             this.colHOCPHI.Name = "colHOCPHI";
+            this.colHOCPHI.OptionsColumn.AllowEdit = false;
+            this.colHOCPHI.OptionsColumn.AllowFocus = false;
             this.colHOCPHI.Visible = true;
             this.colHOCPHI.VisibleIndex = 2;
             this.colHOCPHI.Width = 94;
@@ -658,6 +710,8 @@ namespace QLDSV_TC.views
             this.colDADONG.FieldName = "DADONG";
             this.colDADONG.MinWidth = 25;
             this.colDADONG.Name = "colDADONG";
+            this.colDADONG.OptionsColumn.AllowEdit = false;
+            this.colDADONG.OptionsColumn.AllowFocus = false;
             this.colDADONG.Visible = true;
             this.colDADONG.VisibleIndex = 3;
             this.colDADONG.Width = 94;
@@ -668,6 +722,8 @@ namespace QLDSV_TC.views
             this.CanDong.FieldName = "CanDong";
             this.CanDong.MinWidth = 25;
             this.CanDong.Name = "CanDong";
+            this.CanDong.OptionsColumn.AllowEdit = false;
+            this.CanDong.OptionsColumn.AllowFocus = false;
             this.CanDong.UnboundExpression = "[HOCPHI] - [DADONG]";
             this.CanDong.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
             this.CanDong.Visible = true;
@@ -712,7 +768,7 @@ namespace QLDSV_TC.views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1001, 743);
             this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.panelControl1);
+            this.Controls.Add(this.panelSearchSV);
             this.Controls.Add(this.barDockControlLeft);
             this.Controls.Add(this.barDockControlRight);
             this.Controls.Add(this.barDockControlBottom);
@@ -721,9 +777,9 @@ namespace QLDSV_TC.views
             this.Text = "Học Phí";
             this.Load += new System.EventHandler(this.frmHocPhi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
-            this.panelControl1.ResumeLayout(false);
-            this.panelControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelSearchSV)).EndInit();
+            this.panelSearchSV.ResumeLayout(false);
+            this.panelSearchSV.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.qLDSV_TCDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_SP_GET_HOCPHI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bds_SP_GET_CTDONG_HOCPHI)).EndInit();
@@ -759,7 +815,7 @@ namespace QLDSV_TC.views
         private DevExpress.XtraBars.BarDockControl barDockControlBottom;
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraEditors.PanelControl panelControl1;
+        private DevExpress.XtraEditors.PanelControl panelSearchSV;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private System.Windows.Forms.TextBox txtLop;
         private System.Windows.Forms.TextBox txtHoTen;
@@ -787,7 +843,6 @@ namespace QLDSV_TC.views
         private DevExpress.XtraGrid.Columns.GridColumn SOTIENDONG;
         private System.Windows.Forms.Panel panelNhapHocPhi;
         private DevExpress.XtraEditors.SpinEdit txtDaDong;
-        private DevExpress.XtraEditors.SpinEdit txtHocPhi;
         private DevExpress.XtraEditors.SpinEdit txtHocKy;
         private DevExpress.XtraEditors.TextEdit txtNienKhoa;
         private System.Windows.Forms.Label labelDaDong;
@@ -800,5 +855,7 @@ namespace QLDSV_TC.views
         private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem2;
         private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem3;
         private DevExpress.XtraBars.BarLargeButtonItem barLargeButtonItem4;
+        private System.Windows.Forms.Label label5;
+        private DevExpress.XtraEditors.SpinEdit txtHocPhi;
     }
 }

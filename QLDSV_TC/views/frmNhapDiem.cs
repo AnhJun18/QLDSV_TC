@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.Skins;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
 using System.Collections.Generic;
@@ -169,6 +170,10 @@ namespace QLDSV_TC.views
             this.DIEM_CK.OptionsColumn.ReadOnly = false; 
             this.DIEM_GK.OptionsColumn.ReadOnly = false; 
             this.DIEM_CC.OptionsColumn.ReadOnly = false;
+            gridControl1.Enabled = true;
+            this.btnCN.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnBD.BackColor = System.Drawing.SystemColors.ControlDark; ;
+           
         }
 
         private void btnCN_Click(object sender, EventArgs e)
@@ -205,6 +210,10 @@ namespace QLDSV_TC.views
                 this.DIEM_CK.OptionsColumn.ReadOnly = true;
                 this.DIEM_GK.OptionsColumn.ReadOnly = true;
                 this.DIEM_CC.OptionsColumn.ReadOnly = true;
+           
+                this.btnCN.BackColor = System.Drawing.SystemColors.ControlDark;
+                this.btnBD.BackColor = System.Drawing.Color.SkyBlue;
+
             }
             catch (Exception ex)
             {
@@ -218,14 +227,27 @@ namespace QLDSV_TC.views
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("bạn chắc chắn muốn thoát? ", "THÔNG BÁO", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if(btnCN.Enabled == true)
             {
-                panelControl1.Enabled = btnBD.Enabled = true;
-                btnCN.Enabled = false;
-                cbKhoa.Enabled = true;
-                this.gridControl1.DataSource = null;
-                this.gridControl2.DataSource = null;
-            } 
+                if (MessageBox.Show("Dữ liệu chưa được cập nhật! Bạn có muốn thoát không? ", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    panelControl1.Enabled = btnBD.Enabled = true;
+                    btnCN.Enabled = false;
+                    cbKhoa.Enabled = true;
+                    this.gridControl1.DataSource = null;
+                    this.gridControl2.DataSource = null;
+                    gridControl1.Enabled = false;
+                  
+                    this.btnCN.BackColor = System.Drawing.SystemColors.ControlDark;
+                    this.btnBD.BackColor = System.Drawing.Color.SkyBlue;
+                }
+
+            }
+            else
+            {
+                this.Close();
+            }
+           
             
 
         }

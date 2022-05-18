@@ -520,8 +520,6 @@ namespace QLDSV_TC.views
             else
                 btnDeleteSV.Enabled = btnEditSV.Enabled = false;
         }
-
-        
     }
     
 }

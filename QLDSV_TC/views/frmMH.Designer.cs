@@ -184,6 +184,8 @@ namespace QLDSV_TC.views
             this.STThucHanh.Properties.Appearance.Options.UseFont = true;
             this.STThucHanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.STThucHanh.Properties.IsFloatValue = false;
+            this.STThucHanh.Properties.Mask.EditMask = "N00";
             this.STThucHanh.Properties.MaxValue = new decimal(new int[] {
             50,
             0,
@@ -206,6 +208,8 @@ namespace QLDSV_TC.views
             this.STLyThuyet.Properties.Appearance.Options.UseFont = true;
             this.STLyThuyet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.STLyThuyet.Properties.IsFloatValue = false;
+            this.STLyThuyet.Properties.Mask.EditMask = "N00";
             this.STLyThuyet.Properties.MaxValue = new decimal(new int[] {
             50,
             0,
