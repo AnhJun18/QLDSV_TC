@@ -126,22 +126,6 @@ namespace QLDSV_TC.views
             this.gridControl1.DataSource = dkTable;
         }
 
-       
-        private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
-            try
-            {
-                int value = Convert.ToInt32(e.Value);
-                if (value > 10 || value < 0)
-                {
-                    e.Valid = false;
-                    e.ErrorText="Điểm Không Hợp lệ: 0 < Điểm < 10";
-                }
-
-            }
-            catch { }
-            
-        }
 
         private void cbNIENKHOA_SelectedIndexChanged_1(object sender, EventArgs e)
         {
@@ -167,9 +151,12 @@ namespace QLDSV_TC.views
             cbKhoa.Enabled = false;
             loatBtnBD();
             panelControl1.Enabled = btnBD.Enabled = false;
-            this.DIEM_CK.OptionsColumn.ReadOnly = false; 
+            /*this.DIEM_CK.OptionsColumn.ReadOnly = false; 
             this.DIEM_GK.OptionsColumn.ReadOnly = false; 
-            this.DIEM_CC.OptionsColumn.ReadOnly = false;
+            this.DIEM_CC.OptionsColumn.ReadOnly = false;*/
+            this.DIEM_CC.OptionsColumn.AllowFocus = true;
+            this.DIEM_GK.OptionsColumn.AllowFocus = true;
+            this.DIEM_CK.OptionsColumn.AllowFocus = true;
             gridControl1.Enabled = true;
             this.btnCN.BackColor = System.Drawing.Color.SkyBlue;
             this.btnBD.BackColor = System.Drawing.SystemColors.ControlDark; ;
@@ -207,10 +194,12 @@ namespace QLDSV_TC.views
                 panelControl1.Enabled = btnBD.Enabled = true;
                 btnCN.Enabled = false;
                 cbKhoa.Enabled = true;
-                this.DIEM_CK.OptionsColumn.ReadOnly = true;
+                /*this.DIEM_CK.OptionsColumn.ReadOnly = true;
                 this.DIEM_GK.OptionsColumn.ReadOnly = true;
-                this.DIEM_CC.OptionsColumn.ReadOnly = true;
-           
+                this.DIEM_CC.OptionsColumn.ReadOnly = true;*/
+                this.DIEM_CC.OptionsColumn.AllowFocus = false;
+                this.DIEM_GK.OptionsColumn.AllowFocus = false;
+                this.DIEM_CK.OptionsColumn.AllowFocus = false;
                 this.btnCN.BackColor = System.Drawing.SystemColors.ControlDark;
                 this.btnBD.BackColor = System.Drawing.Color.SkyBlue;
 
@@ -250,6 +239,21 @@ namespace QLDSV_TC.views
            
             
 
+        }
+
+        private void gridView1_ValidatingEditor_1(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+            try
+            {
+                int value = Convert.ToInt32(e.Value);
+                if (value > 10 || value < 0)
+                {
+                    e.Valid = false;
+                    e.ErrorText = "Điểm Không Hợp lệ: 0 < Điểm < 10";
+                }
+
+            }
+            catch { }
         }
     }
       
