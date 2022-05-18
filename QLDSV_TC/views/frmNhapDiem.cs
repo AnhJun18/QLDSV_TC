@@ -116,20 +116,7 @@ namespace QLDSV_TC.views
             cbNHOM.ValueMember = "NHOM";
         }
 
-        private void cbNIENKHOA_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadcbHocKi(cbNIENKHOA.Text);
-        }
 
-        private void cbMAMH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.Text);
-        }
-
-        private void cbHOCKY_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadMH(cbNIENKHOA.Text, cbHOCKY.Text);
-        }
         DataTable dkTable = new DataTable();
         private void loatBtnBD()
         {
@@ -137,13 +124,51 @@ namespace QLDSV_TC.views
             dkTable = Program.ExecSqlDataTable(cmd);
             this.gridControl1.DataSource = dkTable;
         }
+
+       
+        private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
+        {
+            try
+            {
+                int value = Convert.ToInt32(e.Value);
+                if (value > 10 || value < 0)
+                {
+                    e.Valid = false;
+                    e.ErrorText="Điểm Không Hợp lệ: 0 < Điểm < 10";
+                }
+
+            }
+            catch { }
+            
+        }
+
+        private void cbNIENKHOA_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            loadcbHocKi(cbNIENKHOA.Text);
+        }
+
+        private void cbHOCKY_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadMH(cbNIENKHOA.Text, cbHOCKY.Text);
+        }
+
+        private void cbMAMH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.Text);
+        }
+
         private void btnBD_Click(object sender, EventArgs e)
         {
             string cmdd = "EXEC SP_SEARCH_LTC'" + cbNIENKHOA.Text + "', " + cbHOCKY.Text + ", " + cbNHOM.Text + ", '" + cbMAMH.Text + "'";
             DataTable ltcTable = Program.ExecSqlDataTable(cmdd);
             this.gridControl2.DataSource = ltcTable;
             btnCN.Enabled = true;
+            cbKhoa.Enabled = false;
             loatBtnBD();
+            panelControl1.Enabled = btnBD.Enabled = false;
+            this.DIEM_CK.OptionsColumn.ReadOnly = false; 
+            this.DIEM_GK.OptionsColumn.ReadOnly = false; 
+            this.DIEM_CC.OptionsColumn.ReadOnly = false;
         }
 
         private void btnCN_Click(object sender, EventArgs e)
@@ -174,39 +199,36 @@ namespace QLDSV_TC.views
                 sqlcmd.Parameters.Add(para);
                 sqlcmd.ExecuteNonQuery();
                 loatBtnBD();
-
+                panelControl1.Enabled = btnBD.Enabled = true;
+                btnCN.Enabled = false;
+                cbKhoa.Enabled = true;
+                this.DIEM_CK.OptionsColumn.ReadOnly = true;
+                this.DIEM_GK.OptionsColumn.ReadOnly = true;
+                this.DIEM_CC.OptionsColumn.ReadOnly = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Ghi điểm thất bại\n" + ex.Message, "", MessageBoxButtons.OK);
                 loatBtnBD();
             }
+            
+            
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-       
-        private void gridView1_ValidatingEditor(object sender, DevExpress.XtraEditors.Controls.BaseContainerValidateEditorEventArgs e)
-        {
-            try
+            if (MessageBox.Show("bạn chắc chắn muốn thoát? ", "THÔNG BÁO", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                int value = Convert.ToInt32(e.Value);
-                if (value > 10 || value < 0)
-                {
-                    e.Valid = false;
-                    e.ErrorText="Điểm Không Hợp lệ: 0 < Điểm < 10";
-                }
-
-            }
-            catch { }
+                panelControl1.Enabled = btnBD.Enabled = true;
+                btnCN.Enabled = false;
+                cbKhoa.Enabled = true;
+                this.gridControl1.DataSource = null;
+                this.gridControl2.DataSource = null;
+            } 
             
-        }
 
-        
+        }
     }
       
 

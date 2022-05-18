@@ -46,14 +46,17 @@ namespace QLDSV_TC.views
             cbKhoa.ValueMember = "TENSERVER";
 
             cbKhoa.SelectedIndex = Program.mPhongBan;
-            if (Program.mGroup == "KHOA")
+            if (Program.mGroup == "PGV")
             {
-                panelControl1.Enabled = false;
+                panelControl1.Enabled = true;
             }
 
             DataTable dt = Program.ExecSqlDataTable("EXEC SP_GetMaKhoa");
             makhoa = dt.Rows[0][0].ToString();
-
+            if(bdslOPTINCHI.Count > 0)
+            {
+                btnXoa.Enabled = btnSua.Enabled = true;
+            }
         }
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -94,7 +97,7 @@ namespace QLDSV_TC.views
             cbKhoa.Enabled = false;
             ltcMAKHOA.Text = makhoa;
             ltcHUYLOP.Enabled = false;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = cbKhoa.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
             lOPTINCHIGridControl.Enabled = false;
            
@@ -153,7 +156,7 @@ namespace QLDSV_TC.views
                 return;
             }
 
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = cbKhoa.Enabled= true;
             btnGhi.Enabled = btnPH.Enabled = false;
             panelControl2.Enabled = false;
             cbKhoa.Enabled = true;
@@ -163,7 +166,7 @@ namespace QLDSV_TC.views
         {
             vitri = bdslOPTINCHI.Position;
             panelControl2.Enabled = true;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = false;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = cbKhoa.Enabled= false;
             btnGhi.Enabled = btnPH.Enabled = true;
             cbKhoa.Enabled = false;
             ltcHUYLOP.Enabled = true;
@@ -181,7 +184,7 @@ namespace QLDSV_TC.views
             if (btnThem.Enabled == false) bdslOPTINCHI.Position = vitri;
             lOPTINCHIGridControl.Enabled = true;
             panelControl2.Enabled = false;
-            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = true;
+            btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = btnThoat.Enabled = cbKhoa.Enabled = true;
             btnGhi.Enabled = btnPH.Enabled = false;
             cbKhoa.Enabled = true;
         }
