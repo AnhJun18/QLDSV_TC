@@ -120,6 +120,7 @@ namespace QLDSV_TC.views
             this.cbNHOM.Name = "cbNHOM";
             this.cbNHOM.Size = new System.Drawing.Size(233, 29);
             this.cbNHOM.TabIndex = 41;
+            this.cbNHOM.SelectedValueChanged += new System.EventHandler(this.cbNHOM_SelectedValueChanged);
             // 
             // cbHOCKY
             // 
@@ -131,7 +132,7 @@ namespace QLDSV_TC.views
             this.cbHOCKY.Name = "cbHOCKY";
             this.cbHOCKY.Size = new System.Drawing.Size(233, 29);
             this.cbHOCKY.TabIndex = 40;
-            this.cbHOCKY.SelectedIndexChanged += new System.EventHandler(this.cbHOCKY_SelectedIndexChanged);
+            this.cbHOCKY.SelectedValueChanged += new System.EventHandler(this.cbHOCKY_SelectedValueChanged);
             // 
             // cbNIENKHOA
             // 
@@ -143,7 +144,7 @@ namespace QLDSV_TC.views
             this.cbNIENKHOA.Name = "cbNIENKHOA";
             this.cbNIENKHOA.Size = new System.Drawing.Size(233, 29);
             this.cbNIENKHOA.TabIndex = 38;
-            this.cbNIENKHOA.SelectedIndexChanged += new System.EventHandler(this.cbNIENKHOA_SelectedIndexChanged);
+            this.cbNIENKHOA.SelectedValueChanged += new System.EventHandler(this.cbNIENKHOA_SelectedValueChanged);
             // 
             // cbMAMH
             // 
@@ -155,7 +156,7 @@ namespace QLDSV_TC.views
             this.cbMAMH.Name = "cbMAMH";
             this.cbMAMH.Size = new System.Drawing.Size(233, 29);
             this.cbMAMH.TabIndex = 36;
-            this.cbMAMH.SelectedIndexChanged += new System.EventHandler(this.cbMAMH_SelectedIndexChanged);
+            this.cbMAMH.SelectedValueChanged += new System.EventHandler(this.cbMAMH_SelectedValueChanged);
             // 
             // simpleButton4
             // 

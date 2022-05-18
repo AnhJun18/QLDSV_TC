@@ -84,6 +84,7 @@ namespace QLDSV_TC.views
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+           
             if (txtUserName.Text.Trim() == "" || txtPass.Text.Trim() == "")
             {
                 MessageBox.Show("Tài khoản và mật khẩu không hợp lệ", "", MessageBoxButtons.OK);

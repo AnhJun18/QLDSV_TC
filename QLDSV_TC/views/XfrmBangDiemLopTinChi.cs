@@ -44,8 +44,8 @@ namespace QLDSV_TC.views
         }
         void loadMH(string nienkhoa, string hocki)
         {
-
             string cmd = "EXEC dbo.SP_GET_MONHOC '" + nienkhoa + "', " + hocki;
+          
             DataTable dt = Program.ExecSqlDataTable(cmd);
 
             cbMAMH.DataSource = dt;
@@ -55,9 +55,10 @@ namespace QLDSV_TC.views
         void loadNhom(string nienkhoa, string hocki, string mamonhoc)
         {
 
-            string cmd = "EXEC dbo.SP_GET_NHOM '" + nienkhoa + "', " + hocki + ", '" + mamonhoc + "'";
-            DataTable dt = Program.ExecSqlDataTable(cmd);
+            string cmd = "EXEC dbo.SP_GET_NHOM '" + nienkhoa + "', " + hocki + ", N'" + mamonhoc + "'";
 
+            DataTable dt = Program.ExecSqlDataTable(cmd);
+          
             cbNHOM.DataSource = dt;
             cbNHOM.DisplayMember = "NHOM";
             cbNHOM.ValueMember = "NHOM";
@@ -99,32 +100,38 @@ namespace QLDSV_TC.views
             }
             else
             {
+                cbNIENKHOA.DataSource = null;
+                cbHOCKY.DataSource = null;
+                cbMAMH.DataSource = null;
+                cbNHOM.DataSource = null;
                 loadcbNienkhoa();
-                if (cbNIENKHOA.Text == "")
-                {
-                    loadcbHocKi(cbNIENKHOA.Text);
-                    loadMH(cbNIENKHOA.Text, "0");
-                    loadNhom(cbNIENKHOA.Text, "0", "");
-                }
+                
 
             }
         }
-
-        private void cbNIENKHOA_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbNIENKHOA_SelectedValueChanged(object sender, EventArgs e)
         {
-            loadcbHocKi(cbNIENKHOA.Text);
+          
+            if(cbNIENKHOA.Text !=  "System.Data.DataRowView")
+                loadcbHocKi(cbNIENKHOA.Text);
         }
 
-        private void cbHOCKY_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbHOCKY_SelectedValueChanged(object sender, EventArgs e)
         {
-            loadMH(cbNIENKHOA.Text, cbHOCKY.Text);
+       
+            if (cbHOCKY.Text != "System.Data.DataRowView")
+                loadMH(cbNIENKHOA.Text, cbHOCKY.Text);
+        }
+        private void cbMAMH_SelectedValueChanged(object sender, EventArgs e)
+        {
+           
+            if (cbHOCKY.Text != "System.Data.DataRowView" && cbMAMH.SelectedValue != null)
+                loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.SelectedValue.ToString());
         }
 
-        private void cbMAMH_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbNHOM_SelectedValueChanged(object sender, EventArgs e)
         {
-            
-            loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.SelectedValue.ToString());
-            
+
         }
 
 
@@ -136,12 +143,9 @@ namespace QLDSV_TC.views
         private void simpleButton4_Click(object sender, EventArgs e)
         {
             if (cbNIENKHOA.Text == "" || cbHOCKY.Text == "" || cbMAMH.Text == "" || cbNHOM.Text == "")
-            {
-                MessageBox.Show("Không có thông tin lớp tín chỉ", "THÔNG BÁO", MessageBoxButtons.OK);
-            }
+                MessageBox.Show("Không có thông tin lớp tín chỉ bạn cần tìm", "THÔNG BÁO", MessageBoxButtons.OK);
             else
             {
-                MessageBox.Show(cbNIENKHOA.Text + "|" + int.Parse(cbHOCKY.Text) + "|" + cbNHOM.Text + "|" + cbMAMH.Text);
                 Report_BangDiemLTC rpt = new Report_BangDiemLTC(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text), cbMAMH.SelectedValue.ToString(), int.Parse(cbNHOM.Text));
 
                 rpt.labelTieuDe.Text = "BẢNG ĐIỂM HẾT MÔN \n KHOA " + cbKhoa.Text.ToUpper();
@@ -155,5 +159,6 @@ namespace QLDSV_TC.views
             }
             
         }
+
     }
 }
