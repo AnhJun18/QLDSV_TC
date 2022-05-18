@@ -62,7 +62,7 @@ namespace QLDSV_TC.views
             else
             {
                 loadcbNienkhoa();
-
+                loadcbHocKi(cbNIENKHOA.Text);
             }
         }
 
@@ -107,14 +107,22 @@ namespace QLDSV_TC.views
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            Report_DS_LopTinChi rpt = new Report_DS_LopTinChi(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text));
+            if (cbNIENKHOA.Text == "" || cbHOCKY.Text == "")
+            {
+                MessageBox.Show("Không có thông tin lớp tín chỉ", "THÔNG BÁO", MessageBoxButtons.OK);
+            }
+            else
+            {
+                Report_DS_LopTinChi rpt = new Report_DS_LopTinChi(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text));
 
-            rpt.lbTD.Text = "KHOA " + cbKhoa.Text.ToUpper();
-            rpt.lbNK.Text = cbNIENKHOA.Text;
-            rpt.lbHK.Text = cbHOCKY.Text;
+                rpt.lbTD.Text = "KHOA " + cbKhoa.Text.ToUpper();
+                rpt.lbNK.Text = cbNIENKHOA.Text;
+                rpt.lbHK.Text = cbHOCKY.Text;
 
-            ReportPrintTool print = new ReportPrintTool(rpt);
-            print.ShowPreviewDialog();
+                ReportPrintTool print = new ReportPrintTool(rpt);
+                print.ShowPreviewDialog();
+            }
+            
         }
     }
 }

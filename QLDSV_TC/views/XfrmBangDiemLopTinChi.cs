@@ -100,6 +100,12 @@ namespace QLDSV_TC.views
             else
             {
                 loadcbNienkhoa();
+                if (cbNIENKHOA.Text == "")
+                {
+                    loadcbHocKi(cbNIENKHOA.Text);
+                    loadMH(cbNIENKHOA.Text, "0");
+                    loadNhom(cbNIENKHOA.Text, "0", "");
+                }
 
             }
         }
@@ -116,7 +122,9 @@ namespace QLDSV_TC.views
 
         private void cbMAMH_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
             loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.SelectedValue.ToString());
+            
         }
 
 
@@ -127,17 +135,25 @@ namespace QLDSV_TC.views
 
         private void simpleButton4_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(cbNIENKHOA.Text + "|" + int.Parse(cbHOCKY.Text) + "|" + cbNHOM.Text + "|" + cbMAMH.Text);
-            Report_BangDiemLTC rpt = new Report_BangDiemLTC(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text), cbMAMH.SelectedValue.ToString(), int.Parse(cbNHOM.Text));
+            if (cbNIENKHOA.Text == "" || cbHOCKY.Text == "" || cbMAMH.Text == "" || cbNHOM.Text == "")
+            {
+                MessageBox.Show("Không có thông tin lớp tín chỉ", "THÔNG BÁO", MessageBoxButtons.OK);
+            }
+            else
+            {
+                MessageBox.Show(cbNIENKHOA.Text + "|" + int.Parse(cbHOCKY.Text) + "|" + cbNHOM.Text + "|" + cbMAMH.Text);
+                Report_BangDiemLTC rpt = new Report_BangDiemLTC(cbNIENKHOA.Text, int.Parse(cbHOCKY.Text), cbMAMH.SelectedValue.ToString(), int.Parse(cbNHOM.Text));
 
-            rpt.labelTieuDe.Text = "BẢNG ĐIỂM HẾT MÔN \n KHOA " + cbKhoa.Text.ToUpper();
-            rpt.lbNienKhoa.Text = cbNIENKHOA.Text;
-            rpt.lbHocKy.Text = cbHOCKY.Text;
-            rpt.lbMonHoc.Text = cbMAMH.Text;
-            rpt.lbNhom.Text = cbNHOM.Text;
+                rpt.labelTieuDe.Text = "BẢNG ĐIỂM HẾT MÔN \n KHOA " + cbKhoa.Text.ToUpper();
+                rpt.lbNienKhoa.Text = cbNIENKHOA.Text;
+                rpt.lbHocKy.Text = cbHOCKY.Text;
+                rpt.lbMonHoc.Text = cbMAMH.Text;
+                rpt.lbNhom.Text = cbNHOM.Text;
 
-            ReportPrintTool print = new ReportPrintTool(rpt);
-            print.ShowPreviewDialog();
+                ReportPrintTool print = new ReportPrintTool(rpt);
+                print.ShowPreviewDialog();
+            }
+            
         }
     }
 }
