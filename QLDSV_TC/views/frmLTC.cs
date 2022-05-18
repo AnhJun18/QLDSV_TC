@@ -50,7 +50,11 @@ namespace QLDSV_TC.views
             {
                 panelControl1.Enabled = true;
             }
-            
+            if (bdslOPTINCHI.Count == 0)
+                btnXoa.Enabled = btnSua.Enabled = false;
+            else
+                btnXoa.Enabled = btnSua.Enabled = true;
+
         }
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -77,12 +81,12 @@ namespace QLDSV_TC.views
             {
                 this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
                 this.lOPTINCHITableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
-                if (bdslOPTINCHI.Count == 0)
-                {
-                    btnXoa.Enabled = btnSua.Enabled = false;
-                }
 
             }
+            if (bdslOPTINCHI.Count == 0)
+                btnXoa.Enabled = btnSua.Enabled = false;
+            else
+                btnXoa.Enabled = btnSua.Enabled = true;
         }
 
         private void btnThem_ItemClick(object sender, ItemClickEventArgs e)
@@ -189,8 +193,7 @@ namespace QLDSV_TC.views
         {
             bdslOPTINCHI.CancelEdit();
 
-            this.mONHOCTableAdapter.Connection.ConnectionString = Program.connstr;
-            this.mONHOCTableAdapter.Fill(this.qLDSV_TCDataSet.MONHOC);
+       
 
             this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTINCHITableAdapter.Fill(this.qLDSV_TCDataSet.LOPTINCHI);
@@ -222,6 +225,9 @@ namespace QLDSV_TC.views
                     bdslOPTINCHI.RemoveCurrent();
                     this.lOPTINCHITableAdapter.Connection.ConnectionString = Program.connstr;
                     this.lOPTINCHITableAdapter.Update(this.qLDSV_TCDataSet.LOPTINCHI);
+                    if (bdslOPTINCHI.Count == 0)
+                        btnXoa.Enabled = btnSua.Enabled = false;
+                  
                 }
                 catch (Exception ex)
                 {

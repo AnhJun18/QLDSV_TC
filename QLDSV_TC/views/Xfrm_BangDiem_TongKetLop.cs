@@ -69,16 +69,24 @@ namespace QLDSV_TC.views
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            Report_BangDiem_TongKet_Lop rpt = new Report_BangDiem_TongKet_Lop(cbMaLop.SelectedValue.ToString());
-
-                rpt.lbLop.Text = "Lớp: "+ cbMaLop.Text+" - Niên Khóa: "+((DataRowView)bdsLop[bdsLop.Position])["KHOAHOC"].ToString() ;
+                Report_BangDiem_TongKet_Lop rpt = new Report_BangDiem_TongKet_Lop(cbMaLop.SelectedValue.ToString());
+                rpt.lbLop.Text = "Lớp: " + cbMaLop.Text + " - Niên Khóa: " + ((DataRowView)bdsLop[bdsLop.Position])["KHOAHOC"].ToString();
 
                 rpt.lbKhoa.Text = "Khoa " + cbKhoa.Text;
-       
 
-            ReportPrintTool print = new ReportPrintTool(rpt);
-            print.ShowPreviewDialog();
+
+                ReportPrintTool print = new ReportPrintTool(rpt);
+                print.ShowPreviewDialog();
+            }
+            catch
+            {
+                MessageBox.Show("Không thể tìm thấy thông tin cần in", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+               
         
     }
 
