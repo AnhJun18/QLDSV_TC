@@ -15,10 +15,35 @@ namespace QLDSV_TC.views
     {
         private BindingSource bdsLopTinchi = new BindingSource();
         private BindingSource bdsLopTinchiDaDKy = new BindingSource();
+        private String masv = Program.username.ToUpper();
         public frmDangKyLTC()
         {
             InitializeComponent();
+            getThongTinSV();
             
+        }
+
+        private void getThongTinSV()
+        {
+            try
+            {
+                     DataTable dt = new DataTable();
+                    string cmd = "EXEC dbo.SP_GET_THONGTINSINHVIEN '" + masv + "'";
+                    dt = Program.ExecSqlDataTable(cmd);
+
+                    lbMaSv.Text = masv;
+                    lbHoTen.Text=   dt.Rows[0]["HOTEN"].ToString();
+                
+                   /* lbPhai.Text = dt.Rows[0]["PHAI"].ToString();
+                    lbNgaySinh.Text = dt.Rows[0]["NGAYSINH"].ToString();*/
+                    lbLop.Text = dt.Rows[0]["MALOP"].ToString()+"("+ dt.Rows[0]["TENLOP"].ToString()+")";
+                    lbKhoa.Text = dt.Rows[0]["TENKHOA"].ToString();
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Không thể load thông tin của bạn trong sever" +e.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
         }
 
         private void loadcbNienkhoa()
@@ -60,12 +85,12 @@ namespace QLDSV_TC.views
 
         private void loadData()
         {
-            string cmd = "EXEC [dbo].[SP_GET_LISTLOPTINCHI_DKI] '" + cbNienKhoa.Text + "', '" + cbHocKy.Text + "', '" + Program.username + "'";
+            string cmd = "EXEC [dbo].[SP_GET_LISTLOPTINCHI_DKI] '" + cbNienKhoa.Text + "', '" + cbHocKy.Text + "', '" + masv + "'";
             DataTable tableLopTC = Program.ExecSqlDataTable(cmd);
             this.bdsLopTinchi.DataSource = tableLopTC;
             this.gridControlLTC.DataSource = this.bdsLopTinchi;
 
-            string cmd2 = "EXEC [dbo].[SP_GET_LISTLOPTINCHI_DADKI] '" + cbNienKhoa.Text + "', '" + cbHocKy.Text + "', '" + Program.username + "'";
+            string cmd2 = "EXEC [dbo].[SP_GET_LISTLOPTINCHI_DADKI] '" + cbNienKhoa.Text + "', '" + cbHocKy.Text + "', '" + masv + "'";
             DataTable tableLopTCDaDKy = Program.ExecSqlDataTable(cmd2);
             this.bdsLopTinchiDaDKy.DataSource = tableLopTCDaDKy;
             this.gridControlDaDKy.DataSource = this.bdsLopTinchiDaDKy;
@@ -105,7 +130,7 @@ namespace QLDSV_TC.views
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string cmd = "EXEC [dbo].[SP_DKY_LTC] '" + txtMaLTC.Text + "' , '" + Program.username + "' ";
+                string cmd = "EXEC [dbo].[SP_DKY_LTC] '" + txtMaLTC.Text + "' , '" + masv + "' ";
                 if (Program.ExecSqlNonQuery(cmd) == 0)
                 {
                     MessageBox.Show("Đăng kí thành công!");
@@ -123,7 +148,7 @@ namespace QLDSV_TC.views
         {
             if (MessageBox.Show("Bạn có chắc chắn muốn hủy đăng kí lớp học này ?", "", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string cmd = "EXEC [dbo].[SP_HUY_DKY_LTC] '" +txtMaLTC.Text + "' , '" + Program.username + "' ";
+                string cmd = "EXEC [dbo].[SP_HUY_DKY_LTC] '" +txtMaLTC.Text + "' , '" + masv + "' ";
                 if (Program.ExecSqlNonQuery(cmd) == 0)
                 {
                     MessageBox.Show("Hủy đăng kí thành công!");

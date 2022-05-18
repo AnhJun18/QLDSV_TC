@@ -309,7 +309,13 @@ namespace QLDSV_TC.views
 
         private void btnThoat_ItemClick(object sender, ItemClickEventArgs e)
         {
-            this.Close();
+            if (btnThem.Enabled == false)
+            {
+                if (MessageBox.Show("Dữ liệu chưa được cập nhật! Bạn có muốn thoát không? ", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                    this.Close();
+            }
+            else
+                this.Close();
         }
 
         private void btnADDSV_Click(object sender, EventArgs e)

@@ -36,6 +36,14 @@ namespace QLDSV_TC.views
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbKhoa = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lbMaSv = new System.Windows.Forms.Label();
+            this.lbLop = new System.Windows.Forms.Label();
+            this.lbHoTen = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.gridControlLTC = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -78,7 +86,7 @@ namespace QLDSV_TC.views
             this.cbNienKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNienKhoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNienKhoa.FormattingEnabled = true;
-            this.cbNienKhoa.Location = new System.Drawing.Point(728, 30);
+            this.cbNienKhoa.Location = new System.Drawing.Point(930, 28);
             this.cbNienKhoa.Name = "cbNienKhoa";
             this.cbNienKhoa.Size = new System.Drawing.Size(220, 29);
             this.cbNienKhoa.TabIndex = 0;
@@ -90,14 +98,14 @@ namespace QLDSV_TC.views
             this.cbHocKy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbHocKy.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHocKy.FormattingEnabled = true;
-            this.cbHocKy.Location = new System.Drawing.Point(728, 74);
+            this.cbHocKy.Location = new System.Drawing.Point(930, 72);
             this.cbHocKy.Name = "cbHocKy";
             this.cbHocKy.Size = new System.Drawing.Size(220, 29);
             this.cbHocKy.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(983, 39);
+            this.button1.Location = new System.Drawing.Point(1185, 37);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(112, 54);
             this.button1.TabIndex = 2;
@@ -116,14 +124,14 @@ namespace QLDSV_TC.views
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1077, 138);
+            this.panelControl1.Size = new System.Drawing.Size(1377, 138);
             this.panelControl1.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(639, 81);
+            this.label3.Location = new System.Drawing.Point(841, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 21);
             this.label3.TabIndex = 5;
@@ -133,7 +141,7 @@ namespace QLDSV_TC.views
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(622, 38);
+            this.label2.Location = new System.Drawing.Point(824, 36);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(85, 21);
             this.label2.TabIndex = 4;
@@ -141,18 +149,98 @@ namespace QLDSV_TC.views
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lbKhoa);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.lbMaSv);
+            this.panel1.Controls.Add(this.lbLop);
+            this.panel1.Controls.Add(this.lbHoTen);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(421, 134);
+            this.panel1.Size = new System.Drawing.Size(614, 134);
             this.panel1.TabIndex = 3;
+            // 
+            // lbKhoa
+            // 
+            this.lbKhoa.AutoSize = true;
+            this.lbKhoa.Location = new System.Drawing.Point(266, 99);
+            this.lbKhoa.Name = "lbKhoa";
+            this.lbKhoa.Size = new System.Drawing.Size(49, 17);
+            this.lbKhoa.TabIndex = 10;
+            this.lbKhoa.Text = "lbKhoa";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(150, 100);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(39, 17);
+            this.label14.TabIndex = 9;
+            this.label14.Text = "Khoa";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(150, 54);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(71, 17);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Họ và Tên";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(150, 35);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(84, 17);
+            this.label10.TabIndex = 5;
+            this.label10.Text = "Mã Sinh Viên";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(150, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 17);
+            this.label9.TabIndex = 4;
+            this.label9.Text = "Lớp";
+            // 
+            // lbMaSv
+            // 
+            this.lbMaSv.AutoSize = true;
+            this.lbMaSv.Location = new System.Drawing.Point(266, 35);
+            this.lbMaSv.Name = "lbMaSv";
+            this.lbMaSv.Size = new System.Drawing.Size(51, 17);
+            this.lbMaSv.TabIndex = 3;
+            this.lbMaSv.Text = "lbMaSV";
+            // 
+            // lbLop
+            // 
+            this.lbLop.AutoSize = true;
+            this.lbLop.Location = new System.Drawing.Point(266, 77);
+            this.lbLop.Name = "lbLop";
+            this.lbLop.Size = new System.Drawing.Size(41, 17);
+            this.lbLop.TabIndex = 2;
+            this.lbLop.Text = "lbLop";
+            // 
+            // lbHoTen
+            // 
+            this.lbHoTen.AutoSize = true;
+            this.lbHoTen.Location = new System.Drawing.Point(266, 54);
+            this.lbHoTen.Name = "lbHoTen";
+            this.lbHoTen.Size = new System.Drawing.Size(58, 17);
+            this.lbHoTen.TabIndex = 1;
+            this.lbHoTen.Text = "lbHoTen";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(96, 17);
+            this.label1.Location = new System.Drawing.Point(94, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(154, 18);
             this.label1.TabIndex = 0;
@@ -164,7 +252,7 @@ namespace QLDSV_TC.views
             this.gridControlLTC.Location = new System.Drawing.Point(0, 138);
             this.gridControlLTC.MainView = this.gridView1;
             this.gridControlLTC.Name = "gridControlLTC";
-            this.gridControlLTC.Size = new System.Drawing.Size(1077, 273);
+            this.gridControlLTC.Size = new System.Drawing.Size(1377, 273);
             this.gridControlLTC.TabIndex = 27;
             this.gridControlLTC.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -275,6 +363,7 @@ namespace QLDSV_TC.views
             this.txtMH.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMH.Location = new System.Drawing.Point(187, 83);
             this.txtMH.Name = "txtMH";
+            this.txtMH.ReadOnly = true;
             this.txtMH.Size = new System.Drawing.Size(172, 28);
             this.txtMH.TabIndex = 6;
             // 
@@ -328,6 +417,7 @@ namespace QLDSV_TC.views
             this.txtMaLTC.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaLTC.Location = new System.Drawing.Point(187, 43);
             this.txtMaLTC.Name = "txtMaLTC";
+            this.txtMaLTC.ReadOnly = true;
             this.txtMaLTC.Size = new System.Drawing.Size(172, 28);
             this.txtMaLTC.TabIndex = 1;
             // 
@@ -336,7 +426,7 @@ namespace QLDSV_TC.views
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(500, 411);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(577, 35);
+            this.panel2.Size = new System.Drawing.Size(877, 35);
             this.panel2.TabIndex = 29;
             // 
             // gridControlDaDKy
@@ -345,7 +435,7 @@ namespace QLDSV_TC.views
             this.gridControlDaDKy.Location = new System.Drawing.Point(500, 446);
             this.gridControlDaDKy.MainView = this.gridView2;
             this.gridControlDaDKy.Name = "gridControlDaDKy";
-            this.gridControlDaDKy.Size = new System.Drawing.Size(577, 145);
+            this.gridControlDaDKy.Size = new System.Drawing.Size(877, 145);
             this.gridControlDaDKy.TabIndex = 30;
             this.gridControlDaDKy.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -433,7 +523,7 @@ namespace QLDSV_TC.views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 591);
+            this.ClientSize = new System.Drawing.Size(1377, 591);
             this.Controls.Add(this.gridControlDaDKy);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panelControl4);
@@ -491,5 +581,13 @@ namespace QLDSV_TC.views
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lbMaSv;
+        private System.Windows.Forms.Label lbLop;
+        private System.Windows.Forms.Label lbHoTen;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lbKhoa;
+        private System.Windows.Forms.Label label14;
     }
 }
