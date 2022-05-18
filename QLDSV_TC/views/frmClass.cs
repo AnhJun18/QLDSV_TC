@@ -19,6 +19,7 @@ namespace QLDSV_TC.views
         private int positionSV = -1;
         private String flagmodeClass = "";
         private String flagmodeSV = "";
+        private String catcheTenLOP = "";  // giữ lại tên lớp lúc ấn edit
         public frmClass()
         {
             InitializeComponent();
@@ -176,33 +177,37 @@ namespace QLDSV_TC.views
                     return false;
                 }
             }
-
-            string query2 = " DECLARE @return_value INT " +
-
-                               " EXEC @return_value = [dbo].[SP_CHECKNAME] " +
-
-                               " @Name = N'" + txtTenLop.Text.Trim() + "',  " +
-
-                               " @Type = N'TENLOP' " +
-
-                               " SELECT  'Return Value' = @return_value ";
-
-            int result2 = Program.CheckDataHelper(query2);
-            if (result2 == -1)
+            if (flagmodeClass == "ADDCLASS" || (flagmodeClass == "EDITCLASS") && catcheTenLOP != txtTenLop.Text.Trim())
             {
-                XtraMessageBox.Show("Lỗi kết nối với database. Vui long thử lại sau!", "", MessageBoxButtons.OK);
-                return false;
+                string query2 = " DECLARE @return_value INT " +
+
+                              " EXEC @return_value = [dbo].[SP_CHECKNAME] " +
+
+                              " @Name = N'" + txtTenLop.Text.Trim() + "',  " +
+
+                              " @Type = N'TENLOP' " +
+
+                              " SELECT  'Return Value' = @return_value ";
+
+                int result2 = Program.CheckDataHelper(query2);
+                if (result2 == -1)
+                {
+                    XtraMessageBox.Show("Lỗi kết nối với database. Vui long thử lại sau!", "", MessageBoxButtons.OK);
+                    return false;
+                }
+                if (result2 == 1)
+                {
+                    XtraMessageBox.Show("Tên Lớp đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+                if (result2 == 2)
+                {
+                    XtraMessageBox.Show("Tên Lớp đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
             }
-            if (result2 == 1)
-            {
-                XtraMessageBox.Show("Tên Lớp đã tồn tại. Mời bạn nhập mã khác !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
-            if (result2 == 2)
-            {
-                XtraMessageBox.Show("Tên Lớp đã tồn tại ở Khoa khác. Mời bạn nhập lại !", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return false;
-            }
+           
 
             return true;
         }
@@ -214,7 +219,7 @@ namespace QLDSV_TC.views
                 {
                     bdsLOP.EndEdit();
                     bdsLOP.ResetCurrentItem();
-                    flagmodeClass = "";
+                    flagmodeClass ="!"+ flagmodeClass;
                     this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.lOPTableAdapter.Update(this.qLDSV_TCDataSet.LOP);
 
@@ -222,17 +227,17 @@ namespace QLDSV_TC.views
                 }
                 catch (Exception ex)
                 {
-                    flagmodeClass = "ADDCLASS";
+                    flagmodeClass = flagmodeClass.Substring(1);
                     MessageBox.Show("Lỗi ghi lớp: " + ex.Message, "", MessageBoxButtons.OK);
                     return;
                 }
-
                 lOPGridControl.Enabled = panelFormSV.Enabled = true;
                 btnThem.Enabled = true;
                 btnGhi.Enabled = btnPH.Enabled = false;
                 panelNhapLieu.Enabled = false;
                 cbKhoa.Enabled = true;
                 btnXoa.Enabled = btnSua.Enabled = panelFormSV.Enabled = true;
+                catcheTenLOP = "";
             }
 
         }
@@ -244,10 +249,15 @@ namespace QLDSV_TC.views
             btnGhi.Enabled = btnPH.Enabled = true;
             cbKhoa.Enabled = false;
             txtMALOP.Enabled = false;
+            flagmodeClass = "EDITCLASS";
+            catcheTenLOP = txtTenLop.Text.Trim();
+
+            lOPGridControl.Enabled = panelFormSV.Enabled = false;
+            txtMALOP.Enabled = true;
 
         }
 
-      
+
 
         private void btnPH_ItemClick(object sender, ItemClickEventArgs e)
         {
@@ -264,6 +274,7 @@ namespace QLDSV_TC.views
             btnThem.Enabled = true;
             btnGhi.Enabled = btnPH.Enabled = false;
             cbKhoa.Enabled = true;
+            catcheTenLOP="";
         }
 
         private void btnXoa_ItemClick(object sender, ItemClickEventArgs e)

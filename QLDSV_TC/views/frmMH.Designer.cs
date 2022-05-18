@@ -184,6 +184,11 @@ namespace QLDSV_TC.views
             this.STThucHanh.Properties.Appearance.Options.UseFont = true;
             this.STThucHanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.STThucHanh.Properties.MaxValue = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.STThucHanh.Size = new System.Drawing.Size(125, 28);
             this.STThucHanh.TabIndex = 20;
             // 
@@ -201,6 +206,11 @@ namespace QLDSV_TC.views
             this.STLyThuyet.Properties.Appearance.Options.UseFont = true;
             this.STLyThuyet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.STLyThuyet.Properties.MaxValue = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
             this.STLyThuyet.Size = new System.Drawing.Size(168, 28);
             this.STLyThuyet.TabIndex = 19;
             // 
@@ -221,6 +231,7 @@ namespace QLDSV_TC.views
             this.txtMaMH.Name = "txtMaMH";
             this.txtMaMH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaMH.Properties.Appearance.Options.UseFont = true;
+            this.txtMaMH.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMaMH.Size = new System.Drawing.Size(168, 28);
             this.txtMaMH.TabIndex = 17;
             // 
@@ -310,6 +321,7 @@ namespace QLDSV_TC.views
             // 
             this.btnXoa.Caption = "Xóa";
             this.btnXoa.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.btnXoa.Enabled = false;
             this.btnXoa.Id = 1;
             this.btnXoa.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXoa.ImageOptions.SvgImage")));
             this.btnXoa.Name = "btnXoa";
@@ -319,6 +331,7 @@ namespace QLDSV_TC.views
             // 
             this.btnSua.Caption = "Sửa";
             this.btnSua.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.btnSua.Enabled = false;
             this.btnSua.Id = 2;
             this.btnSua.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnSua.ImageOptions.SvgImage")));
             this.btnSua.Name = "btnSua";
@@ -328,14 +341,17 @@ namespace QLDSV_TC.views
             // 
             this.btnPH.Caption = "Phục Hồi";
             this.btnPH.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.btnPH.Enabled = false;
             this.btnPH.Id = 3;
             this.btnPH.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnPH.ImageOptions.SvgImage")));
             this.btnPH.Name = "btnPH";
+            this.btnPH.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPH_ItemClick);
             // 
             // btnGhi
             // 
             this.btnGhi.Caption = "Ghi";
             this.btnGhi.CaptionAlignment = DevExpress.XtraBars.BarItemCaptionAlignment.Right;
+            this.btnGhi.Enabled = false;
             this.btnGhi.Id = 4;
             this.btnGhi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.Image")));
             this.btnGhi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGhi.ImageOptions.LargeImage")));
@@ -349,6 +365,7 @@ namespace QLDSV_TC.views
             this.btnThoat.Id = 5;
             this.btnThoat.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnThoat.ImageOptions.SvgImage")));
             this.btnThoat.Name = "btnThoat";
+            this.btnThoat.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnThoat_ItemClick);
             // 
             // barDockControlTop
             // 
@@ -406,14 +423,19 @@ namespace QLDSV_TC.views
             this.colTENMH,
             this.colSOTIET_LT,
             this.colSOTIET_TH});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus;
             this.gridView1.GridControl = this.mONHOCGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
             // 
             // colMAMH
             // 
             this.colMAMH.FieldName = "MAMH";
             this.colMAMH.MinWidth = 25;
             this.colMAMH.Name = "colMAMH";
+            this.colMAMH.OptionsColumn.AllowEdit = false;
+            this.colMAMH.OptionsColumn.AllowFocus = false;
             this.colMAMH.Visible = true;
             this.colMAMH.VisibleIndex = 0;
             this.colMAMH.Width = 94;
@@ -423,6 +445,8 @@ namespace QLDSV_TC.views
             this.colTENMH.FieldName = "TENMH";
             this.colTENMH.MinWidth = 25;
             this.colTENMH.Name = "colTENMH";
+            this.colTENMH.OptionsColumn.AllowEdit = false;
+            this.colTENMH.OptionsColumn.AllowFocus = false;
             this.colTENMH.Visible = true;
             this.colTENMH.VisibleIndex = 1;
             this.colTENMH.Width = 94;
@@ -432,6 +456,8 @@ namespace QLDSV_TC.views
             this.colSOTIET_LT.FieldName = "SOTIET_LT";
             this.colSOTIET_LT.MinWidth = 25;
             this.colSOTIET_LT.Name = "colSOTIET_LT";
+            this.colSOTIET_LT.OptionsColumn.AllowEdit = false;
+            this.colSOTIET_LT.OptionsColumn.AllowFocus = false;
             this.colSOTIET_LT.Visible = true;
             this.colSOTIET_LT.VisibleIndex = 2;
             this.colSOTIET_LT.Width = 94;
@@ -441,6 +467,8 @@ namespace QLDSV_TC.views
             this.colSOTIET_TH.FieldName = "SOTIET_TH";
             this.colSOTIET_TH.MinWidth = 25;
             this.colSOTIET_TH.Name = "colSOTIET_TH";
+            this.colSOTIET_TH.OptionsColumn.AllowEdit = false;
+            this.colSOTIET_TH.OptionsColumn.AllowFocus = false;
             this.colSOTIET_TH.Visible = true;
             this.colSOTIET_TH.VisibleIndex = 3;
             this.colSOTIET_TH.Width = 94;
