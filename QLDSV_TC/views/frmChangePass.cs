@@ -87,5 +87,6 @@ namespace QLDSV_TC.views
             mkMoi.Text = null;
             mkMoi2.Text = null;
         }
+
     }
 }

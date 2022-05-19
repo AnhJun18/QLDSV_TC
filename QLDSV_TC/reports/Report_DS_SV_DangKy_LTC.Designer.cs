@@ -283,7 +283,7 @@ namespace QLDSV_TC.reports
             this.lbMonHoc.Multiline = true;
             this.lbMonHoc.Name = "lbMonHoc";
             this.lbMonHoc.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 5, 0, 100F);
-            this.lbMonHoc.SizeF = new System.Drawing.SizeF(110.8333F, 57.1078F);
+            this.lbMonHoc.SizeF = new System.Drawing.SizeF(110.8333F, 23.00002F);
             this.lbMonHoc.StylePriority.UseFont = false;
             this.lbMonHoc.StylePriority.UsePadding = false;
             this.lbMonHoc.StylePriority.UseTextAlignment = false;
