@@ -99,7 +99,7 @@ namespace QLDSV_TC.views
             // 
             tENMHLabel.AutoSize = true;
             tENMHLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tENMHLabel.Location = new System.Drawing.Point(846, 69);
+            tENMHLabel.Location = new System.Drawing.Point(817, 71);
             tENMHLabel.Name = "tENMHLabel";
             tENMHLabel.Size = new System.Drawing.Size(107, 21);
             tENMHLabel.TabIndex = 17;
@@ -119,7 +119,7 @@ namespace QLDSV_TC.views
             // 
             c.AutoSize = true;
             c.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            c.Location = new System.Drawing.Point(846, 127);
+            c.Location = new System.Drawing.Point(817, 127);
             c.Name = "c";
             c.Size = new System.Drawing.Size(147, 21);
             c.TabIndex = 19;
@@ -167,7 +167,7 @@ namespace QLDSV_TC.views
             this.panelNhapLieu.Location = new System.Drawing.Point(0, 461);
             this.panelNhapLieu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelNhapLieu.Name = "panelNhapLieu";
-            this.panelNhapLieu.Size = new System.Drawing.Size(1152, 236);
+            this.panelNhapLieu.Size = new System.Drawing.Size(1252, 236);
             this.panelNhapLieu.TabIndex = 7;
             // 
             // STThucHanh
@@ -185,13 +185,17 @@ namespace QLDSV_TC.views
             this.STThucHanh.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.STThucHanh.Properties.IsFloatValue = false;
-            this.STThucHanh.Properties.Mask.EditMask = "N00";
+            this.STThucHanh.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.Optimistic;
+            this.STThucHanh.Properties.Mask.EditMask = "[0-9]{0,3}";
+            this.STThucHanh.Properties.Mask.IgnoreMaskBlank = false;
+            this.STThucHanh.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.STThucHanh.Properties.Mask.ShowPlaceHolders = false;
             this.STThucHanh.Properties.MaxValue = new decimal(new int[] {
-            50,
+            9999,
             0,
             0,
             0});
-            this.STThucHanh.Size = new System.Drawing.Size(125, 28);
+            this.STThucHanh.Size = new System.Drawing.Size(174, 28);
             this.STThucHanh.TabIndex = 20;
             // 
             // STLyThuyet
@@ -209,9 +213,13 @@ namespace QLDSV_TC.views
             this.STLyThuyet.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.STLyThuyet.Properties.IsFloatValue = false;
-            this.STLyThuyet.Properties.Mask.EditMask = "N00";
+            this.STLyThuyet.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.STLyThuyet.Properties.Mask.EditMask = "[0-9]{1,3}";
+            this.STLyThuyet.Properties.Mask.IgnoreMaskBlank = false;
+            this.STLyThuyet.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.STLyThuyet.Properties.Mask.ShowPlaceHolders = false;
             this.STLyThuyet.Properties.MaxValue = new decimal(new int[] {
-            50,
+            999,
             0,
             0,
             0});
@@ -221,12 +229,12 @@ namespace QLDSV_TC.views
             // txtTenMH
             // 
             this.txtTenMH.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsMonHoc, "TENMH", true));
-            this.txtTenMH.Location = new System.Drawing.Point(994, 64);
+            this.txtTenMH.Location = new System.Drawing.Point(949, 64);
             this.txtTenMH.Name = "txtTenMH";
             this.txtTenMH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenMH.Properties.Appearance.Options.UseFont = true;
             this.txtTenMH.Properties.MaxLength = 50;
-            this.txtTenMH.Size = new System.Drawing.Size(125, 28);
+            this.txtTenMH.Size = new System.Drawing.Size(219, 28);
             this.txtTenMH.TabIndex = 18;
             // 
             // txtMaMH
@@ -237,8 +245,10 @@ namespace QLDSV_TC.views
             this.txtMaMH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaMH.Properties.Appearance.Options.UseFont = true;
             this.txtMaMH.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMaMH.Properties.Mask.EditMask = "[A-Z 0-9]{1,10}";
+            this.txtMaMH.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtMaMH.Properties.MaxLength = 10;
-            this.txtMaMH.Size = new System.Drawing.Size(168, 28);
+            this.txtMaMH.Size = new System.Drawing.Size(151, 28);
             this.txtMaMH.TabIndex = 17;
             // 
             // label2
@@ -380,7 +390,7 @@ namespace QLDSV_TC.views
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
             this.barDockControlTop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlTop.Size = new System.Drawing.Size(1152, 50);
+            this.barDockControlTop.Size = new System.Drawing.Size(1252, 50);
             // 
             // barDockControlBottom
             // 
@@ -389,7 +399,7 @@ namespace QLDSV_TC.views
             this.barDockControlBottom.Location = new System.Drawing.Point(0, 697);
             this.barDockControlBottom.Manager = this.barManager1;
             this.barDockControlBottom.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.barDockControlBottom.Size = new System.Drawing.Size(1152, 0);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1252, 0);
             // 
             // barDockControlLeft
             // 
@@ -404,7 +414,7 @@ namespace QLDSV_TC.views
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1152, 50);
+            this.barDockControlRight.Location = new System.Drawing.Point(1252, 50);
             this.barDockControlRight.Manager = this.barManager1;
             this.barDockControlRight.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.barDockControlRight.Size = new System.Drawing.Size(0, 647);
@@ -417,7 +427,7 @@ namespace QLDSV_TC.views
             this.mONHOCGridControl.MainView = this.gridView1;
             this.mONHOCGridControl.MenuManager = this.barManager1;
             this.mONHOCGridControl.Name = "mONHOCGridControl";
-            this.mONHOCGridControl.Size = new System.Drawing.Size(1152, 411);
+            this.mONHOCGridControl.Size = new System.Drawing.Size(1252, 411);
             this.mONHOCGridControl.TabIndex = 11;
             this.mONHOCGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -492,7 +502,7 @@ namespace QLDSV_TC.views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1152, 697);
+            this.ClientSize = new System.Drawing.Size(1252, 697);
             this.Controls.Add(this.mONHOCGridControl);
             this.Controls.Add(this.panelNhapLieu);
             this.Controls.Add(this.barDockControlLeft);

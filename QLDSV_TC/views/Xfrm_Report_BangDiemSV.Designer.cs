@@ -111,7 +111,7 @@ namespace QLDSV_TC.views
             // 
             this.tbMaSV.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tbMaSV.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMaSV.Location = new System.Drawing.Point(406, 128);
+            this.tbMaSV.Location = new System.Drawing.Point(402, 128);
             this.tbMaSV.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbMaSV.MaxLength = 10;
             this.tbMaSV.Name = "tbMaSV";

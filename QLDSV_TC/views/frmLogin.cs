@@ -17,7 +17,6 @@ namespace QLDSV_TC.views
     {
         private SqlConnection conn_publisher = new SqlConnection();
         String loginNameSV = "";
-        String passSV = "";
 
 
         private void LayDSPM(String cmd)
@@ -145,7 +144,7 @@ namespace QLDSV_TC.views
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ \n Vui long kiem tra lại \n", "", MessageBoxButtons.OK);
+                MessageBox.Show("Tài khoản hoặc mật khẩu không hợp lệ \n Vui long kiem tra lại \n" +ex.Message, "", MessageBoxButtons.OK);
                 return;
             }
 
@@ -169,6 +168,7 @@ namespace QLDSV_TC.views
             txtUserName.Text = null;
             txtPass.Text = null;
             txtUserName.Focus();
+           
         }
     }
 }

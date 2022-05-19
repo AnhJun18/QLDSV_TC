@@ -14,7 +14,6 @@ namespace QLDSV_TC.views
     public partial class frmLTC : DevExpress.XtraEditors.XtraForm
     {
         private int vitri;
-        private String makhoa = "";
         public frmLTC()
         {
             InitializeComponent();
@@ -44,8 +43,9 @@ namespace QLDSV_TC.views
             cbKhoa.DataSource = Program.bdsDSPM;
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
+            cbKhoa.SelectedValue = Program.servername;
 
-            cbKhoa.SelectedIndex = Program.mPhongBan;
+        //    cbKhoa.SelectedIndex = Program.mPhongBan;
             if (Program.mGroup == "PGV")
             {
                 panelControl1.Enabled = true;

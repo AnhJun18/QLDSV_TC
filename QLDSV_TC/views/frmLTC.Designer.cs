@@ -526,6 +526,7 @@ namespace QLDSV_TC.views
             this.ltcNHOM.Properties.Appearance.Options.UseFont = true;
             this.ltcNHOM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ltcNHOM.Properties.Mask.EditMask = "[0-9]{0,2}";
             this.ltcNHOM.Properties.MaxValue = new decimal(new int[] {
             10,
             0,
@@ -556,8 +557,8 @@ namespace QLDSV_TC.views
             this.ltcHOCKY.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ltcHOCKY.Properties.IsFloatValue = false;
-            this.ltcHOCKY.Properties.Mask.EditMask = "\\d";
-            this.ltcHOCKY.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
+            this.ltcHOCKY.Properties.Mask.EditMask = "[1-4]{1}";
+            this.ltcHOCKY.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.ltcHOCKY.Properties.MaxValue = new decimal(new int[] {
             4,
             0,
@@ -580,6 +581,7 @@ namespace QLDSV_TC.views
             this.ltcNIENKHOA.Name = "ltcNIENKHOA";
             this.ltcNIENKHOA.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ltcNIENKHOA.Properties.Appearance.Options.UseFont = true;
+            this.ltcNIENKHOA.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
             this.ltcNIENKHOA.Properties.Mask.EditMask = "\\d\\d\\d\\d-\\d\\d\\d\\d";
             this.ltcNIENKHOA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.ltcNIENKHOA.Properties.MaxLength = 9;
@@ -616,8 +618,8 @@ namespace QLDSV_TC.views
             this.ltcSOSVTOITHIEU.Properties.Appearance.Options.UseFont = true;
             this.ltcSOSVTOITHIEU.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.ltcSOSVTOITHIEU.Properties.Mask.EditMask = "c";
-            this.ltcSOSVTOITHIEU.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.ltcSOSVTOITHIEU.Properties.Mask.EditMask = "[0-9]{0,3}";
+            this.ltcSOSVTOITHIEU.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.ltcSOSVTOITHIEU.Properties.MaxValue = new decimal(new int[] {
             10000,
             0,

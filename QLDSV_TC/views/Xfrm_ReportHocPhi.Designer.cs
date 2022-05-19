@@ -113,6 +113,9 @@ namespace QLDSV_TC.views
             this.tbMaLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbMaLop.Properties.Appearance.Options.UseFont = true;
             this.tbMaLop.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.tbMaLop.Properties.Mask.EditMask = "[A-Z 0-9 -]{0,10}";
+            this.tbMaLop.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.tbMaLop.Properties.Mask.ShowPlaceHolders = false;
             this.tbMaLop.Size = new System.Drawing.Size(467, 28);
             this.tbMaLop.TabIndex = 41;
             // 
@@ -123,6 +126,10 @@ namespace QLDSV_TC.views
             this.cbNIENKHOA.Name = "cbNIENKHOA";
             this.cbNIENKHOA.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbNIENKHOA.Properties.Appearance.Options.UseFont = true;
+            this.cbNIENKHOA.Properties.Mask.EditMask = "[0-9 -]{9}";
+            this.cbNIENKHOA.Properties.Mask.IgnoreMaskBlank = false;
+            this.cbNIENKHOA.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.cbNIENKHOA.Properties.Mask.ShowPlaceHolders = false;
             this.cbNIENKHOA.Size = new System.Drawing.Size(204, 28);
             this.cbNIENKHOA.TabIndex = 43;
             // 
@@ -133,6 +140,10 @@ namespace QLDSV_TC.views
             this.cbHOCKY.Name = "cbHOCKY";
             this.cbHOCKY.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbHOCKY.Properties.Appearance.Options.UseFont = true;
+            this.cbHOCKY.Properties.Mask.EditMask = "[1-4]";
+            this.cbHOCKY.Properties.Mask.IgnoreMaskBlank = false;
+            this.cbHOCKY.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.cbHOCKY.Properties.Mask.ShowPlaceHolders = false;
             this.cbHOCKY.Size = new System.Drawing.Size(180, 28);
             this.cbHOCKY.TabIndex = 44;
             // 
@@ -174,7 +185,7 @@ namespace QLDSV_TC.views
             this.simpleButton2.Text = "Thoát";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
             // 
-            // frmReportHocPhi
+            // Xfrm_ReportHocPhi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,7 +201,7 @@ namespace QLDSV_TC.views
             this.Controls.Add(this.panelControl1);
             this.Controls.Add(this.label2);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "frmReportHocPhi";
+            this.Name = "Xfrm_ReportHocPhi";
             this.Text = "In Học Phí";
             this.Load += new System.EventHandler(this.frmReportHocPhi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();

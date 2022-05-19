@@ -496,6 +496,8 @@ namespace QLDSV_TC.views
             this.txtKhoaHoc.Name = "txtKhoaHoc";
             this.txtKhoaHoc.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKhoaHoc.Properties.Appearance.Options.UseFont = true;
+            this.txtKhoaHoc.Properties.Mask.EditMask = "[0-9 -]{9}";
+            this.txtKhoaHoc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.txtKhoaHoc.Properties.MaxLength = 9;
             this.txtKhoaHoc.Size = new System.Drawing.Size(288, 28);
             this.txtKhoaHoc.TabIndex = 6;
@@ -516,6 +518,7 @@ namespace QLDSV_TC.views
             // txtMALOP
             // 
             this.txtMALOP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MALOP", true));
+            this.txtMALOP.EditValue = "";
             this.txtMALOP.Location = new System.Drawing.Point(285, 109);
             this.txtMALOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtMALOP.MenuManager = this.barManager1;
@@ -523,6 +526,12 @@ namespace QLDSV_TC.views
             this.txtMALOP.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMALOP.Properties.Appearance.Options.UseFont = true;
             this.txtMALOP.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMALOP.Properties.Mask.AutoComplete = DevExpress.XtraEditors.Mask.AutoCompleteType.None;
+            this.txtMALOP.Properties.Mask.BeepOnError = true;
+            this.txtMALOP.Properties.Mask.EditMask = "[A-Z0-9 -]{1,10}";
+            this.txtMALOP.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtMALOP.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtMALOP.Properties.Mask.ShowPlaceHolders = false;
             this.txtMALOP.Properties.MaxLength = 10;
             this.txtMALOP.Size = new System.Drawing.Size(288, 28);
             this.txtMALOP.TabIndex = 2;

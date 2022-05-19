@@ -584,8 +584,15 @@ namespace QLDSV_TC.views
             this.txtHocPhi.Properties.Appearance.Options.UseFont = true;
             this.txtHocPhi.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtHocPhi.Properties.DisplayFormat.FormatString = "#,#";
+            this.txtHocPhi.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtHocPhi.Properties.EditFormat.FormatString = "#,#";
+            this.txtHocPhi.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.txtHocPhi.Properties.IsFloatValue = false;
-            this.txtHocPhi.Properties.Mask.EditMask = "N00";
+            this.txtHocPhi.Properties.Mask.EditMask = "[1-9][0-9]{0,8}";
+            this.txtHocPhi.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtHocPhi.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtHocPhi.Properties.Mask.ShowPlaceHolders = false;
             this.txtHocPhi.Properties.MaxValue = new decimal(new int[] {
             2000000000,
             0,
@@ -616,7 +623,10 @@ namespace QLDSV_TC.views
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtHocKy.Properties.IsFloatValue = false;
             this.txtHocKy.Properties.Mask.BeepOnError = true;
-            this.txtHocKy.Properties.Mask.EditMask = "N00";
+            this.txtHocKy.Properties.Mask.EditMask = "[1-4]{1}";
+            this.txtHocKy.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtHocKy.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtHocKy.Properties.Mask.ShowPlaceHolders = false;
             this.txtHocKy.Properties.MaxValue = new decimal(new int[] {
             4,
             0,
@@ -639,6 +649,10 @@ namespace QLDSV_TC.views
             this.txtNienKhoa.Name = "txtNienKhoa";
             this.txtNienKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNienKhoa.Properties.Appearance.Options.UseFont = true;
+            this.txtNienKhoa.Properties.Mask.EditMask = "[0-9]{4}[-][0-9]{4}";
+            this.txtNienKhoa.Properties.Mask.IgnoreMaskBlank = false;
+            this.txtNienKhoa.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
+            this.txtNienKhoa.Properties.Mask.ShowPlaceHolders = false;
             this.txtNienKhoa.Properties.MaxLength = 9;
             this.txtNienKhoa.Size = new System.Drawing.Size(185, 28);
             this.txtNienKhoa.TabIndex = 1;

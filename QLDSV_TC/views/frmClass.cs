@@ -46,7 +46,9 @@ namespace QLDSV_TC.views
             cbKhoa.DataSource = Program.bdsDSPM;
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
-            cbKhoa.SelectedIndex = Program.mPhongBan;
+            cbKhoa.SelectedValue = Program.servername;
+
+            //    cbKhoa.SelectedIndex = Program.mPhongBan;
             if (Program.mGroup == "PGV")
             {
                 panelChonKhoa.Enabled = true;
@@ -57,6 +59,8 @@ namespace QLDSV_TC.views
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+      
             if (cbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
             Program.servername = cbKhoa.SelectedValue.ToString();
@@ -123,8 +127,8 @@ namespace QLDSV_TC.views
             btnThem.Enabled = btnSua.Enabled = btnXoa.Enabled = false;
             btnGhi.Enabled = btnPH.Enabled = true;
             lOPGridControl.Enabled = panelFormSV.Enabled = false;
-
             txtMALOP.Enabled = true;
+           
 
         }
 

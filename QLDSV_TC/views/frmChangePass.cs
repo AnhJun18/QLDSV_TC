@@ -69,7 +69,7 @@ namespace QLDSV_TC.views
             }
             catch (Exception EX)
             {
-                MessageBox.Show("không thể thay đổi mật khẩu! Hay kiểm tra mật khẩu của bạn", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("không thể thay đổi mật khẩu! Hay kiểm tra mật khẩu của bạn"+EX.Message, "Thông báo", MessageBoxButtons.OK);
                 mkHT.Text = null;
                 mkMoi.Text = null;
                 mkMoi2.Text = null;

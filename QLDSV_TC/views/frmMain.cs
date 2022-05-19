@@ -156,11 +156,13 @@ namespace QLDSV_TC.views
             DialogResult dialog = XtraMessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo!", MessageBoxButtons.YesNo);
             if (dialog == DialogResult.Yes)
             {
+                foreach (Form frm in this.MdiChildren)
+                    frm.Close();
                 Program.frmChinh.Dispose();
                 Program.frmLogin.Visible = true;
                 Program.bdsDSPM.RemoveFilter();
                 Program.frmLogin.loadAgain();
-
+             
             }
         }
 
