@@ -31,14 +31,9 @@ namespace QLDSV_TC.views
             if(Program.mGroup == "KHOA" || Program.mGroup == "PGV")
             {
 
-                Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Học Phí%'  ";
-                /*cbKhoa.DataSource = Program.bdsDSPM;
-                cbKhoa.DisplayMember = "TENPHONG";
-                cbKhoa.ValueMember = "TENSERVER";
-                cbKhoa.SelectedIndex = Program.mPhongBan;*/
+                
                 if (Program.mGroup == "KHOA")
                 {
-                    panelControl1.Enabled = false;
                     radioGroup1.SelectedIndex = 1;
                     radioGroup1.Properties.Items[0].Enabled = radioGroup1.Properties.Items[2].Enabled = false;
                 }
@@ -50,19 +45,11 @@ namespace QLDSV_TC.views
             }
             else
             {
-                panelControl1.Enabled = false;
                 radioGroup1.SelectedIndex = 2;
                 radioGroup1.Properties.Items[0].Enabled = radioGroup1.Properties.Items[1].Enabled = false;
             }
         }
 
-        private void gIANGVIENBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.gIANGVIENBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.qLDSV_TCDataSet1);
-
-        }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
@@ -112,12 +99,11 @@ namespace QLDSV_TC.views
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Không thể tạo tài khoản "+ ex.Message, "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Không thể tạo tài khoản", "Thông báo", MessageBoxButtons.OK);
                     teUSER.Text = "";
                 }
             }
         }
 
-   
     }
 }

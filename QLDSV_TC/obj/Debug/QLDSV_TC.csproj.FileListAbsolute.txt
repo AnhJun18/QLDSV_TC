@@ -402,9 +402,6 @@ D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmLTC.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmMain.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmMH.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmNhapDiem.resources
-D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportBangDiem.resources
-D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportDSLTC.resources
-D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportHocPhi.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmXemDiem.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.XfrmBangDiemLopTinChi.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.XfrmDanhSachSinhVienDangKyLTC.resources
@@ -418,3 +415,6 @@ D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.pdb
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_Report_BangDiemSV.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_ReportHocPhi.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_ReportDSLTC.resources
+D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_Report_BangDiemSV.resources
+D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_ReportDSLTC.resources
+D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_ReportHocPhi.resources
