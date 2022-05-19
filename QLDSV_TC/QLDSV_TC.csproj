@@ -184,23 +184,23 @@
     <Compile Include="views\frmNhapDiem.Designer.cs">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\frmReportBangDiem.cs">
+    <Compile Include="views\Xfrm_Report_BangDiemSV.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\frmReportBangDiem.Designer.cs">
-      <DependentUpon>frmReportBangDiem.cs</DependentUpon>
+    <Compile Include="views\Xfrm_Report_BangDiemSV.Designer.cs">
+      <DependentUpon>Xfrm_Report_BangDiemSV.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\frmReportDSLTC.cs">
+    <Compile Include="views\Xfrm_ReportDSLTC.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\frmReportDSLTC.Designer.cs">
-      <DependentUpon>frmReportDSLTC.cs</DependentUpon>
+    <Compile Include="views\Xfrm_ReportDSLTC.Designer.cs">
+      <DependentUpon>Xfrm_ReportDSLTC.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\frmReportHocPhi.cs">
+    <Compile Include="views\Xfrm_ReportHocPhi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="views\frmReportHocPhi.Designer.cs">
-      <DependentUpon>frmReportHocPhi.cs</DependentUpon>
+    <Compile Include="views\Xfrm_ReportHocPhi.Designer.cs">
+      <DependentUpon>Xfrm_ReportHocPhi.cs</DependentUpon>
     </Compile>
     <Compile Include="views\frmXemDiem.cs">
       <SubType>Form</SubType>
@@ -284,14 +284,14 @@
     <EmbeddedResource Include="views\frmNhapDiem.resx">
       <DependentUpon>frmNhapDiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\frmReportBangDiem.resx">
-      <DependentUpon>frmReportBangDiem.cs</DependentUpon>
+    <EmbeddedResource Include="views\Xfrm_Report_BangDiemSV.resx">
+      <DependentUpon>Xfrm_Report_BangDiemSV.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\frmReportDSLTC.resx">
-      <DependentUpon>frmReportDSLTC.cs</DependentUpon>
+    <EmbeddedResource Include="views\Xfrm_ReportDSLTC.resx">
+      <DependentUpon>Xfrm_ReportDSLTC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="views\frmReportHocPhi.resx">
-      <DependentUpon>frmReportHocPhi.cs</DependentUpon>
+    <EmbeddedResource Include="views\Xfrm_ReportHocPhi.resx">
+      <DependentUpon>Xfrm_ReportHocPhi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\frmXemDiem.resx">
       <DependentUpon>frmXemDiem.cs</DependentUpon>

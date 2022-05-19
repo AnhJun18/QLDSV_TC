@@ -18,6 +18,8 @@ namespace QLDSV_TC.views
         public Xfrm_BangDiem_TongKetLop()
         {
             InitializeComponent();
+            if (Program.mGroup == "PGV")
+                cbKhoa.Enabled = true;
         }
 
 
@@ -29,10 +31,7 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
-            if (Program.mGroup == "KHOA")
-            {
-                cbKhoa.Enabled = false;
-            }
+           
             qLDSV_TCDataSet.EnforceConstraints = false;
             this.lOPTableAdapter.Connection.ConnectionString = Program.connstr;
             this.lOPTableAdapter.Fill(this.qLDSV_TCDataSet.LOP);

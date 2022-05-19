@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace QLDSV_TC.views
 {
-    public partial class frmReportHocPhi : DevExpress.XtraEditors.XtraForm
+    public partial class Xfrm_ReportHocPhi : DevExpress.XtraEditors.XtraForm
     {
-        public frmReportHocPhi()
+        public Xfrm_ReportHocPhi()
         {
             InitializeComponent();
         }
@@ -40,7 +40,7 @@ namespace QLDSV_TC.views
         {
             if (tbMaLop.Text.Length > 10)
             {
-                MessageBox.Show("Mã sinh viên không hợp lệ.", "Thông Báo", MessageBoxButtons.OK);
+                MessageBox.Show("Mã lớp không hợp lệ.", "Thông Báo", MessageBoxButtons.OK);
                 tbMaLop.Focus();
             }
             else
@@ -48,11 +48,9 @@ namespace QLDSV_TC.views
 
                 try
                 {
-                    string cmd = "exec SP_GETKHOA '" + tbMaLop.Text + "'";
-                    MessageBox.Show(cmd);
+                    string cmd = "exec SP3_GETKHOA_BYLOP '" + tbMaLop.Text.Trim() + "'";
                     DataTable dt = Program.ExecSqlDataTable(cmd);
                     tenkhoa = dt.Rows[0][0].ToString();
-                    MessageBox.Show(tenkhoa);
                     Report_HocPhiTheoLop rpt = new Report_HocPhiTheoLop(tbMaLop.Text, cbNIENKHOA.Text, int.Parse(cbHOCKY.Text));
                     rpt.lbKHOA.Text = "KHOA : " + tenkhoa.ToUpper();
                     rpt.lbMALOP.Text = "Mã Lớp: " + tbMaLop.Text.ToUpper();

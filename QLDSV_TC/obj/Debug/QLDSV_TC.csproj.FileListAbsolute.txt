@@ -205,9 +205,7 @@ C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QL
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.Report_HocPhiTheoLop.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.reports.Report_PhieuDiemTheoSinhVien.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmCreateLogin.resources
-C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportBangDiem.resources
 C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportDSLTC.resources
-C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.frmReportHocPhi.resources
 D:\PhanTan\QLDSV_TC\QLDSV_TC\bin\Debug\QLDSV_TC.exe.config
 D:\PhanTan\QLDSV_TC\QLDSV_TC\bin\Debug\QLDSV_TC.exe
 D:\PhanTan\QLDSV_TC\QLDSV_TC\bin\Debug\QLDSV_TC.pdb
@@ -418,3 +416,6 @@ D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.csproj.CoreCompileInputs.cache
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.csproj.CopyComplete
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.exe
 D:\PhanTan\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.pdb
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_Report_BangDiemSV.resources
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_ReportHocPhi.resources
+C:\Users\PC\Documents\Visual Studio 2019\Projects\QLDSV_TC\QLDSV_TC\obj\Debug\QLDSV_TC.views.Xfrm_ReportDSLTC.resources

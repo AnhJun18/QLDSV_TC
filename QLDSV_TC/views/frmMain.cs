@@ -232,11 +232,11 @@ namespace QLDSV_TC.views
 
         private void barButtonItem4_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = CheckExists(typeof(views.frmReportDSLTC));
+            Form frm = CheckExists(typeof(views.Xfrm_ReportDSLTC));
             if (frm != null) frm.Activate();
             else
             {
-                frmReportDSLTC frmhp = new frmReportDSLTC();
+                Xfrm_ReportDSLTC frmhp = new Xfrm_ReportDSLTC();
                 frmhp.MdiParent = this;
                 frmhp.Show();
 
@@ -246,11 +246,11 @@ namespace QLDSV_TC.views
 
         private void barbtnBangDiemSV_ItemClick(object sender, ItemClickEventArgs e)
         {
-            Form frm = CheckExists(typeof(views.frmReportBangDiem));
+            Form frm = CheckExists(typeof(views.Xfrm_Report_BangDiemSV));
             if (frm != null) frm.Activate();
             else
             {
-                frmReportBangDiem frmbd = new frmReportBangDiem();
+                Xfrm_Report_BangDiemSV frmbd = new Xfrm_Report_BangDiemSV();
                 frmbd.MdiParent = this;
                 frmbd.Show();
 
@@ -280,11 +280,11 @@ namespace QLDSV_TC.views
         private void barDtnReportDongHP_ItemClick(object sender, ItemClickEventArgs e)
         {
 
-            Form frm = CheckExists(typeof(views.frmReportHocPhi));
+            Form frm = CheckExists(typeof(views.Xfrm_ReportHocPhi));
             if (frm != null) frm.Activate();
             else
             {
-                frmReportHocPhi frmbd = new frmReportHocPhi();
+                Xfrm_ReportHocPhi frmbd = new Xfrm_ReportHocPhi();
                 frmbd.MdiParent = this;
                 frmbd.Show();
 

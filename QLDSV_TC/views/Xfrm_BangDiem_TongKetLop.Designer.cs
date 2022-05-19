@@ -49,13 +49,15 @@ namespace QLDSV_TC.views
             // cbKhoa
             // 
             this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbKhoa.Enabled = false;
             this.cbKhoa.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbKhoa.FormattingEnabled = true;
             this.cbKhoa.Location = new System.Drawing.Point(261, 107);
             this.cbKhoa.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbKhoa.Name = "cbKhoa";
             this.cbKhoa.Size = new System.Drawing.Size(273, 29);
-            this.cbKhoa.TabIndex = 46;
+            this.cbKhoa.TabIndex = 0;
+            this.cbKhoa.TabStop = false;
             this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
             // 
             // label1
@@ -79,7 +81,7 @@ namespace QLDSV_TC.views
             this.cbMaLop.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbMaLop.Name = "cbMaLop";
             this.cbMaLop.Size = new System.Drawing.Size(273, 29);
-            this.cbMaLop.TabIndex = 47;
+            this.cbMaLop.TabIndex = 1;
             this.cbMaLop.ValueMember = "MALOP";
             // 
             // bdsLop
@@ -120,7 +122,7 @@ namespace QLDSV_TC.views
             this.btnPreview.AppearanceDisabled.Options.UseBackColor = true;
             this.btnPreview.AppearancePressed.BackColor = System.Drawing.Color.White;
             this.btnPreview.AppearancePressed.Options.UseBackColor = true;
-            this.btnPreview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.ImageOptions.Image")));
+            this.btnPreview.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPreview.ImageOptions.Image")));
             this.btnPreview.Location = new System.Drawing.Point(251, 251);
             this.btnPreview.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnPreview.Name = "btnPreview";
@@ -148,7 +150,7 @@ namespace QLDSV_TC.views
             this.simpleButton2.AppearancePressed.BackColor = System.Drawing.Color.White;
             this.simpleButton2.AppearancePressed.Options.UseBackColor = true;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(394, 251);
+            this.simpleButton2.Location = new System.Drawing.Point(432, 251);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(94, 42);
@@ -159,10 +161,10 @@ namespace QLDSV_TC.views
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(227, 46);
+            this.label3.Font = new System.Drawing.Font("Tahoma", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(109, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(390, 27);
+            this.label3.Size = new System.Drawing.Size(417, 29);
             this.label3.TabIndex = 51;
             this.label3.Text = "BẢNG ĐIỂM TỔNG KẾT THEO LỚP";
             // 

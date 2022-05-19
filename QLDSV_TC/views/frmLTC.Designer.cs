@@ -555,6 +555,7 @@ namespace QLDSV_TC.views
             this.ltcHOCKY.Properties.Appearance.Options.UseFont = true;
             this.ltcHOCKY.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.ltcHOCKY.Properties.IsFloatValue = false;
             this.ltcHOCKY.Properties.Mask.EditMask = "\\d";
             this.ltcHOCKY.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Regular;
             this.ltcHOCKY.Properties.MaxValue = new decimal(new int[] {

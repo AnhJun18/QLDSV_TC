@@ -225,6 +225,7 @@ namespace QLDSV_TC.views
             this.txtTenMH.Name = "txtTenMH";
             this.txtTenMH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenMH.Properties.Appearance.Options.UseFont = true;
+            this.txtTenMH.Properties.MaxLength = 50;
             this.txtTenMH.Size = new System.Drawing.Size(125, 28);
             this.txtTenMH.TabIndex = 18;
             // 
@@ -236,6 +237,7 @@ namespace QLDSV_TC.views
             this.txtMaMH.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaMH.Properties.Appearance.Options.UseFont = true;
             this.txtMaMH.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMaMH.Properties.MaxLength = 10;
             this.txtMaMH.Size = new System.Drawing.Size(168, 28);
             this.txtMaMH.TabIndex = 17;
             // 

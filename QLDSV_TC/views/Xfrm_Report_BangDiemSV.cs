@@ -14,9 +14,9 @@ using System.Windows.Forms;
 
 namespace QLDSV_TC.views
 {
-    public partial class frmReportBangDiem : DevExpress.XtraEditors.XtraForm
+    public partial class Xfrm_Report_BangDiemSV : DevExpress.XtraEditors.XtraForm
     {
-        public frmReportBangDiem()
+        public Xfrm_Report_BangDiemSV()
         {
             InitializeComponent();
         }
@@ -42,10 +42,8 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
-            if (Program.mGroup == "KHOA")
-            {
-                panelControl1.Enabled = false;
-            }
+            if (Program.mGroup == "PGV")
+                cbKhoa.Enabled = true;
         }
 
         private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)

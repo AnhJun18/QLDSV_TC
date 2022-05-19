@@ -63,15 +63,15 @@ namespace QLDSV_TC.views
             this.colKHOAHOC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHOA = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelNhapLieu = new DevExpress.XtraEditors.PanelControl();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.txtKhoa = new DevExpress.XtraEditors.TextEdit();
             this.txtKhoaHoc = new DevExpress.XtraEditors.TextEdit();
             this.txtTenLop = new DevExpress.XtraEditors.TextEdit();
             this.txtMALOP = new DevExpress.XtraEditors.TextEdit();
             this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panelFormSV = new DevExpress.XtraEditors.PanelControl();
             this.gridControlsv = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -108,11 +108,11 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.gridViewLop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelNhapLieu)).BeginInit();
             this.panelNhapLieu.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhoa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhoaHoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMALOP.Properties)).BeginInit();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelFormSV)).BeginInit();
             this.panelFormSV.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControlsv)).BeginInit();
@@ -473,6 +473,71 @@ namespace QLDSV_TC.views
             this.panelNhapLieu.Size = new System.Drawing.Size(873, 264);
             this.panelNhapLieu.TabIndex = 56;
             // 
+            // txtKhoa
+            // 
+            this.txtKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MAKHOA", true));
+            this.txtKhoa.EditValue = "";
+            this.txtKhoa.Enabled = false;
+            this.txtKhoa.Location = new System.Drawing.Point(285, 63);
+            this.txtKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtKhoa.MenuManager = this.barManager1;
+            this.txtKhoa.Name = "txtKhoa";
+            this.txtKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhoa.Properties.Appearance.Options.UseFont = true;
+            this.txtKhoa.Size = new System.Drawing.Size(288, 28);
+            this.txtKhoa.TabIndex = 8;
+            // 
+            // txtKhoaHoc
+            // 
+            this.txtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "KHOAHOC", true));
+            this.txtKhoaHoc.Location = new System.Drawing.Point(285, 209);
+            this.txtKhoaHoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtKhoaHoc.MenuManager = this.barManager1;
+            this.txtKhoaHoc.Name = "txtKhoaHoc";
+            this.txtKhoaHoc.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKhoaHoc.Properties.Appearance.Options.UseFont = true;
+            this.txtKhoaHoc.Properties.MaxLength = 9;
+            this.txtKhoaHoc.Size = new System.Drawing.Size(288, 28);
+            this.txtKhoaHoc.TabIndex = 6;
+            // 
+            // txtTenLop
+            // 
+            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "TENLOP", true));
+            this.txtTenLop.Location = new System.Drawing.Point(285, 162);
+            this.txtTenLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTenLop.MenuManager = this.barManager1;
+            this.txtTenLop.Name = "txtTenLop";
+            this.txtTenLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenLop.Properties.Appearance.Options.UseFont = true;
+            this.txtTenLop.Properties.MaxLength = 50;
+            this.txtTenLop.Size = new System.Drawing.Size(288, 28);
+            this.txtTenLop.TabIndex = 4;
+            // 
+            // txtMALOP
+            // 
+            this.txtMALOP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MALOP", true));
+            this.txtMALOP.Location = new System.Drawing.Point(285, 109);
+            this.txtMALOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMALOP.MenuManager = this.barManager1;
+            this.txtMALOP.Name = "txtMALOP";
+            this.txtMALOP.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMALOP.Properties.Appearance.Options.UseFont = true;
+            this.txtMALOP.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtMALOP.Properties.MaxLength = 10;
+            this.txtMALOP.Size = new System.Drawing.Size(288, 28);
+            this.txtMALOP.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(73, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(221, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "THÔNG TIN LỚP HỌC";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
@@ -518,68 +583,6 @@ namespace QLDSV_TC.views
             this.checkBox1.TabIndex = 10;
             this.checkBox1.Text = "Nữ";
             this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // txtKhoa
-            // 
-            this.txtKhoa.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MAKHOA", true));
-            this.txtKhoa.EditValue = "";
-            this.txtKhoa.Enabled = false;
-            this.txtKhoa.Location = new System.Drawing.Point(285, 63);
-            this.txtKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtKhoa.MenuManager = this.barManager1;
-            this.txtKhoa.Name = "txtKhoa";
-            this.txtKhoa.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhoa.Properties.Appearance.Options.UseFont = true;
-            this.txtKhoa.Size = new System.Drawing.Size(288, 28);
-            this.txtKhoa.TabIndex = 8;
-            // 
-            // txtKhoaHoc
-            // 
-            this.txtKhoaHoc.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "KHOAHOC", true));
-            this.txtKhoaHoc.Location = new System.Drawing.Point(285, 209);
-            this.txtKhoaHoc.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtKhoaHoc.MenuManager = this.barManager1;
-            this.txtKhoaHoc.Name = "txtKhoaHoc";
-            this.txtKhoaHoc.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKhoaHoc.Properties.Appearance.Options.UseFont = true;
-            this.txtKhoaHoc.Size = new System.Drawing.Size(288, 28);
-            this.txtKhoaHoc.TabIndex = 6;
-            // 
-            // txtTenLop
-            // 
-            this.txtTenLop.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "TENLOP", true));
-            this.txtTenLop.Location = new System.Drawing.Point(285, 162);
-            this.txtTenLop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtTenLop.MenuManager = this.barManager1;
-            this.txtTenLop.Name = "txtTenLop";
-            this.txtTenLop.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenLop.Properties.Appearance.Options.UseFont = true;
-            this.txtTenLop.Size = new System.Drawing.Size(288, 28);
-            this.txtTenLop.TabIndex = 4;
-            // 
-            // txtMALOP
-            // 
-            this.txtMALOP.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsLOP, "MALOP", true));
-            this.txtMALOP.Location = new System.Drawing.Point(285, 109);
-            this.txtMALOP.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMALOP.MenuManager = this.barManager1;
-            this.txtMALOP.Name = "txtMALOP";
-            this.txtMALOP.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMALOP.Properties.Appearance.Options.UseFont = true;
-            this.txtMALOP.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtMALOP.Size = new System.Drawing.Size(288, 28);
-            this.txtMALOP.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(73, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "THÔNG TIN LỚP HỌC";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panelFormSV
             // 
@@ -856,12 +859,12 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.panelNhapLieu)).EndInit();
             this.panelNhapLieu.ResumeLayout(false);
             this.panelNhapLieu.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhoa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhoaHoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenLop.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMALOP.Properties)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelFormSV)).EndInit();
             this.panelFormSV.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControlsv)).EndInit();

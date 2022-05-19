@@ -19,27 +19,6 @@ namespace QLDSV_TC.views
             InitializeComponent();
         }
 
-        private void cbKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbKhoa.SelectedValue.ToString() == "System.Data.DataRowView")
-                return;
-            Program.servername = cbKhoa.SelectedValue.ToString();
-
-            if (cbKhoa.SelectedIndex != Program.mPhongBan)
-            {
-                Program.mlogin = Program.remoteLogin;
-                Program.pass = Program.remotePass;
-            }
-            else
-            {
-                Program.mlogin = Program.mloginDN;
-                Program.pass = Program.passDN;
-            }
-            if (Program.KetNoi() == 0)
-            {
-                MessageBox.Show("Lỗi kết nối về chi nhánh mới", "", MessageBoxButtons.OK);
-            }
-        }
 
         private void frmCreateLogin_Load(object sender, EventArgs e)
         {
@@ -51,7 +30,7 @@ namespace QLDSV_TC.views
             
             if(Program.mGroup == "KHOA" || Program.mGroup == "PGV")
             {
-                
+
                 Program.bdsDSPM.Filter = "TENPHONG not LIKE 'Học Phí%'  ";
                 cbKhoa.DataSource = Program.bdsDSPM;
                 cbKhoa.DisplayMember = "TENPHONG";

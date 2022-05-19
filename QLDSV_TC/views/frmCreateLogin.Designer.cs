@@ -30,8 +30,6 @@ namespace QLDSV_TC.views
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.cbKhoa = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +43,7 @@ namespace QLDSV_TC.views
             this.radioGroup1 = new DevExpress.XtraEditors.RadioGroup();
             this.gIANGVIENTableAdapter = new QLDSV_TC.QLDSV_TCDataSet1TableAdapters.GIANGVIENTableAdapter();
             this.tableAdapterManager = new QLDSV_TC.QLDSV_TCDataSet1TableAdapters.TableAdapterManager();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.teUSER.Properties)).BeginInit();
@@ -53,38 +52,14 @@ namespace QLDSV_TC.views
             ((System.ComponentModel.ISupportInitialize)(this.radioGroup1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
-            // cbKhoa
-            // 
-            this.cbKhoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKhoa.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(304, 11);
-            this.cbKhoa.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(392, 29);
-            this.cbKhoa.TabIndex = 1;
-            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbKhoa_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(236, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "KHOA";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // panelControl1
             // 
-            this.panelControl1.Controls.Add(this.cbKhoa);
             this.panelControl1.Controls.Add(this.label1);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl1.Location = new System.Drawing.Point(0, 0);
             this.panelControl1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1062, 49);
+            this.panelControl1.Size = new System.Drawing.Size(1062, 65);
             this.panelControl1.TabIndex = 26;
             // 
             // label2
@@ -111,7 +86,7 @@ namespace QLDSV_TC.views
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(182, 206);
+            this.label4.Location = new System.Drawing.Point(182, 205);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(56, 21);
             this.label4.TabIndex = 29;
@@ -155,7 +130,7 @@ namespace QLDSV_TC.views
             // 
             this.btnTaoTK.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnTaoTK.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaoTK.Location = new System.Drawing.Point(283, 283);
+            this.btnTaoTK.Location = new System.Drawing.Point(304, 283);
             this.btnTaoTK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnTaoTK.Name = "btnTaoTK";
             this.btnTaoTK.Size = new System.Drawing.Size(147, 39);
@@ -168,7 +143,7 @@ namespace QLDSV_TC.views
             // 
             this.btnThoat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btnThoat.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThoat.Location = new System.Drawing.Point(469, 283);
+            this.btnThoat.Location = new System.Drawing.Point(549, 283);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(147, 39);
@@ -189,10 +164,10 @@ namespace QLDSV_TC.views
             this.radioGroup1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.radioGroup1.Properties.Columns = 3;
             this.radioGroup1.Properties.Items.AddRange(new DevExpress.XtraEditors.Controls.RadioGroupItem[] {
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("PGV", "Phòng giáo vụ"),
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("PGV", "PGV"),
             new DevExpress.XtraEditors.Controls.RadioGroupItem("KHOA", "Khoa"),
-            new DevExpress.XtraEditors.Controls.RadioGroupItem("PKT", "Phòng Kế Toán")});
-            this.radioGroup1.Size = new System.Drawing.Size(421, 58);
+            new DevExpress.XtraEditors.Controls.RadioGroupItem("PKT", "PKT")});
+            this.radioGroup1.Size = new System.Drawing.Size(346, 58);
             this.radioGroup1.TabIndex = 32;
             // 
             // gIANGVIENTableAdapter
@@ -209,6 +184,16 @@ namespace QLDSV_TC.views
             this.tableAdapterManager.LOPTableAdapter = null;
             this.tableAdapterManager.SINHVIENTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = QLDSV_TC.QLDSV_TCDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(92, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 23);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tạo Tài Khoản";
             // 
             // frmCreateLogin
             // 
@@ -241,9 +226,6 @@ namespace QLDSV_TC.views
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbKhoa;
-        private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -257,5 +239,6 @@ namespace QLDSV_TC.views
         private System.Windows.Forms.BindingSource gIANGVIENBindingSource;
         private QLDSV_TCDataSet1TableAdapters.GIANGVIENTableAdapter gIANGVIENTableAdapter;
         private QLDSV_TCDataSet1TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.Label label1;
     }
 }

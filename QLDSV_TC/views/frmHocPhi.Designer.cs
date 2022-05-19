@@ -322,8 +322,10 @@ namespace QLDSV_TC.views
             // 
             // txtMaSv
             // 
+            this.txtMaSv.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtMaSv.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaSv.Location = new System.Drawing.Point(597, 33);
+            this.txtMaSv.MaxLength = 10;
             this.txtMaSv.Name = "txtMaSv";
             this.txtMaSv.Size = new System.Drawing.Size(187, 29);
             this.txtMaSv.TabIndex = 4;
@@ -571,7 +573,7 @@ namespace QLDSV_TC.views
             // 
             this.txtHocPhi.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bds_SP_GET_HOCPHI, "HOCPHI", true));
             this.txtHocPhi.EditValue = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -590,7 +592,7 @@ namespace QLDSV_TC.views
             0,
             0});
             this.txtHocPhi.Properties.MinValue = new decimal(new int[] {
-            10,
+            1,
             0,
             0,
             0});
@@ -637,6 +639,7 @@ namespace QLDSV_TC.views
             this.txtNienKhoa.Name = "txtNienKhoa";
             this.txtNienKhoa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNienKhoa.Properties.Appearance.Options.UseFont = true;
+            this.txtNienKhoa.Properties.MaxLength = 9;
             this.txtNienKhoa.Size = new System.Drawing.Size(185, 28);
             this.txtNienKhoa.TabIndex = 1;
             // 

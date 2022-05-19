@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace QLDSV_TC.views
 {
-    public partial class frmReportDSLTC : DevExpress.XtraEditors.XtraForm
+    public partial class Xfrm_ReportDSLTC : DevExpress.XtraEditors.XtraForm
     {
-        public frmReportDSLTC()
+        public Xfrm_ReportDSLTC()
         {
             InitializeComponent();
         }

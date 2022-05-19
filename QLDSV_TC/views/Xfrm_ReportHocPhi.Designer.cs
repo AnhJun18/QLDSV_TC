@@ -1,7 +1,7 @@
 ﻿
 namespace QLDSV_TC.views
 {
-    partial class frmReportHocPhi
+    partial class Xfrm_ReportHocPhi
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace QLDSV_TC.views
             System.Windows.Forms.Label nIENKHOALabel;
             System.Windows.Forms.Label mALOPLabel;
             System.Windows.Forms.Label hOCKYLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReportHocPhi));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Xfrm_ReportHocPhi));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label2 = new System.Windows.Forms.Label();
             this.qLDSV_TCDataSet1 = new QLDSV_TC.QLDSV_TCDataSet1();
@@ -93,10 +93,10 @@ namespace QLDSV_TC.views
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(167, 84);
+            this.label2.Font = new System.Drawing.Font("Tahoma", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(126, 85);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(266, 27);
+            this.label2.Size = new System.Drawing.Size(315, 29);
             this.label2.TabIndex = 37;
             this.label2.Text = "Nhập Thông Tin Lớp Học:";
             // 
@@ -149,7 +149,7 @@ namespace QLDSV_TC.views
             this.simpleButton4.AppearancePressed.BackColor = System.Drawing.Color.White;
             this.simpleButton4.AppearancePressed.Options.UseBackColor = true;
             this.simpleButton4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.ImageOptions.Image")));
-            this.simpleButton4.Location = new System.Drawing.Point(406, 268);
+            this.simpleButton4.Location = new System.Drawing.Point(391, 268);
             this.simpleButton4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton4.Name = "simpleButton4";
             this.simpleButton4.Size = new System.Drawing.Size(94, 42);
@@ -166,7 +166,7 @@ namespace QLDSV_TC.views
             this.simpleButton2.AppearancePressed.BackColor = System.Drawing.Color.White;
             this.simpleButton2.AppearancePressed.Options.UseBackColor = true;
             this.simpleButton2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton2.ImageOptions.SvgImage")));
-            this.simpleButton2.Location = new System.Drawing.Point(533, 268);
+            this.simpleButton2.Location = new System.Drawing.Point(568, 268);
             this.simpleButton2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.simpleButton2.Name = "simpleButton2";
             this.simpleButton2.Size = new System.Drawing.Size(94, 42);

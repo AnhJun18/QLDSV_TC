@@ -210,7 +210,7 @@ namespace QLDSV_TC
             // 
             // xrLabel2
             // 
-            this.xrLabel2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(375.1387F, 46.79171F);
             this.xrLabel2.Multiline = true;
             this.xrLabel2.Name = "xrLabel2";
@@ -221,7 +221,7 @@ namespace QLDSV_TC
             // 
             // lbNienKhoa
             // 
-            this.lbNienKhoa.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNienKhoa.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNienKhoa.LocationFloat = new DevExpress.Utils.PointFloat(148.9583F, 46.79171F);
             this.lbNienKhoa.Multiline = true;
             this.lbNienKhoa.Name = "lbNienKhoa";
@@ -232,10 +232,12 @@ namespace QLDSV_TC
             // 
             // lbTD
             // 
+            this.lbTD.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTD.LocationFloat = new DevExpress.Utils.PointFloat(25F, 10.00001F);
             this.lbTD.Name = "lbTD";
             this.lbTD.SizeF = new System.Drawing.SizeF(574.2917F, 24.19433F);
             this.lbTD.StyleName = "Title";
+            this.lbTD.StylePriority.UseFont = false;
             this.lbTD.StylePriority.UseTextAlignment = false;
             this.lbTD.Text = "KHOA";
             this.lbTD.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;

@@ -18,6 +18,10 @@ namespace QLDSV_TC.views
         public XfrmDanhSachSinhVienDangKyLTC()
         {
             InitializeComponent();
+            if (Program.mGroup == "PGV")
+            {
+                cbKhoa.Enabled = true;
+            }
         }
 
 
@@ -70,29 +74,29 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
-            if (Program.mGroup == "KHOA")
-            {
-                cbKhoa.Enabled = false;
-            }
+          
             loadcbNienkhoa();
 
         }
-
-        private void cbNIENKHOA_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadcbHocKi(cbNIENKHOA.Text);
-        }
-
-        private void cbHOCKY_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadMH(cbNIENKHOA.Text, cbHOCKY.Text);
-        }
-        private void cbMAMH_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.SelectedValue.ToString());
-        }
-
        
+        private void cbNIENKHOA_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbNIENKHOA.Text != "System.Data.DataRowView")
+                loadcbHocKi(cbNIENKHOA.Text);
+        }
+      
+        private void cbHOCKY_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbHOCKY.Text != "System.Data.DataRowView")
+                loadMH(cbNIENKHOA.Text, cbHOCKY.Text);
+        }
+      
+        private void cbMAMH_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cbMAMH.Text != "System.Data.DataRowView" && cbMAMH.SelectedValue != null)
+                loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.SelectedValue.ToString());
+        }
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -115,13 +119,13 @@ namespace QLDSV_TC.views
             }
             else
             {
+                cbNIENKHOA.DataSource = null;
+                cbHOCKY.DataSource = null;
+                cbMAMH.DataSource = null;
+                cbNHOM.DataSource = null;
                 loadcbNienkhoa();
-                if(cbNIENKHOA.Text == "")
-                {
-                    loadcbHocKi(cbNIENKHOA.Text);
-                    loadMH(cbNIENKHOA.Text, "0");
-                    loadNhom(cbNIENKHOA.Text, "0", "");
-                }
+                loadcbNienkhoa();
+              
                 
             }
         }
@@ -151,5 +155,7 @@ namespace QLDSV_TC.views
             }
             
         }
+
+      
     }
 }

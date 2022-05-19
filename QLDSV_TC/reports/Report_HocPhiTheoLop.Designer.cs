@@ -93,7 +93,7 @@ namespace QLDSV_TC.reports
             queryParameter1.ValueInfo = "D15CQCP01 ";
             queryParameter2.Name = "@nienkhoa";
             queryParameter2.Type = typeof(string);
-            queryParameter2.ValueInfo = "2022";
+            queryParameter2.ValueInfo = "2021-2022";
             queryParameter3.Name = "@hocky";
             queryParameter3.Type = typeof(int);
             queryParameter3.ValueInfo = "1";
@@ -196,7 +196,7 @@ namespace QLDSV_TC.reports
             // 
             // lbMALOP
             // 
-            this.lbMALOP.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMALOP.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMALOP.LocationFloat = new DevExpress.Utils.PointFloat(0F, 74.91668F);
             this.lbMALOP.Multiline = true;
             this.lbMALOP.Name = "lbMALOP";
@@ -209,7 +209,7 @@ namespace QLDSV_TC.reports
             // 
             // lbKHOA
             // 
-            this.lbKHOA.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbKHOA.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbKHOA.LocationFloat = new DevExpress.Utils.PointFloat(0F, 42.69435F);
             this.lbKHOA.Multiline = true;
             this.lbKHOA.Name = "lbKHOA";
@@ -222,10 +222,12 @@ namespace QLDSV_TC.reports
             // 
             // label1
             // 
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.LocationFloat = new DevExpress.Utils.PointFloat(6F, 6F);
             this.label1.Name = "label1";
             this.label1.SizeF = new System.Drawing.SizeF(615F, 24.19433F);
             this.label1.StyleName = "Title";
+            this.label1.StylePriority.UseFont = false;
             this.label1.StylePriority.UseTextAlignment = false;
             this.label1.Text = "DANH SÁCH SINH VIÊN ĐÓNG HỌC PHÍ";
             this.label1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -440,8 +442,10 @@ namespace QLDSV_TC.reports
             // 
             // xrTableCell3
             // 
+            this.xrTableCell3.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell3.Multiline = true;
             this.xrTableCell3.Name = "xrTableCell3";
+            this.xrTableCell3.StylePriority.UseFont = false;
             this.xrTableCell3.StylePriority.UseTextAlignment = false;
             this.xrTableCell3.Text = "Tổng số sinh viên:";
             this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -470,8 +474,10 @@ namespace QLDSV_TC.reports
             // 
             // xrTableCell2
             // 
+            this.xrTableCell2.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell2.Multiline = true;
             this.xrTableCell2.Name = "xrTableCell2";
+            this.xrTableCell2.StylePriority.UseFont = false;
             this.xrTableCell2.StylePriority.UseTextAlignment = false;
             this.xrTableCell2.Text = "Tổng số tiền đã đóng:";
             this.xrTableCell2.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
@@ -501,8 +507,10 @@ namespace QLDSV_TC.reports
             // 
             // xrTableCell6
             // 
+            this.xrTableCell6.Font = new System.Drawing.Font("Arial Narrow", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.xrTableCell6.Multiline = true;
             this.xrTableCell6.Name = "xrTableCell6";
+            this.xrTableCell6.StylePriority.UseFont = false;
             this.xrTableCell6.StylePriority.UseTextAlignment = false;
             this.xrTableCell6.Text = "Tổng tiền bằng chữ";
             this.xrTableCell6.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;

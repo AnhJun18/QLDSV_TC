@@ -18,6 +18,8 @@ namespace QLDSV_TC.views
         public XfrmBangDiemLopTinChi()
         {
             InitializeComponent();
+            if (Program.mGroup == "PGV")
+                cbKhoa.Enabled = true;
         }
 
 
@@ -70,10 +72,7 @@ namespace QLDSV_TC.views
             cbKhoa.DisplayMember = "TENPHONG";
             cbKhoa.ValueMember = "TENSERVER";
             cbKhoa.SelectedIndex = Program.mPhongBan;
-            if (Program.mGroup == "KHOA")
-            {
-                cbKhoa.Enabled = false;
-            }
+           
             loadcbNienkhoa();
 
         }
@@ -125,7 +124,7 @@ namespace QLDSV_TC.views
         private void cbMAMH_SelectedValueChanged(object sender, EventArgs e)
         {
            
-            if (cbHOCKY.Text != "System.Data.DataRowView" && cbMAMH.SelectedValue != null)
+            if (cbMAMH.Text != "System.Data.DataRowView" && cbMAMH.SelectedValue != null)
                 loadNhom(cbNIENKHOA.Text, cbHOCKY.Text, cbMAMH.SelectedValue.ToString());
         }
 
