@@ -14,14 +14,16 @@
 ![](https://user-images.githubusercontent.com/81857289/171661037-aba6c165-d35d-49e7-b75b-b97a056dea5d.png)
 ![](https://user-images.githubusercontent.com/81857289/171661085-6fb2a4ff-8847-4444-816a-5bb9f7f89d56.png)
 
-<img src="https://user-images.githubusercontent.com/81857289/171661139-acebfeba-2495-4a4c-9fe1-0d81c3e89a3b.png" alt="Your image title" width="310"/>
-<img src="https://user-images.githubusercontent.com/81857289/171661247-d10493eb-c8e6-4967-ba50-38865f178352.png" alt="Your image title" width="310"/>
-<img src="https://user-images.githubusercontent.com/81857289/171661442-a10aa488-fbb4-4499-98b7-76b31621fc3c.png" alt="Your image title" width="310"/>
-<img src="https://user-images.githubusercontent.com/81857289/171661488-ce5081aa-2355-45b4-ab69-fd1b4a156d20.png" alt="Your image title" width="310"/>
-<img src="https://user-images.githubusercontent.com/81857289/171661654-4d7ef1fe-3f06-40d6-a928-38e75401f8e5.png" alt="Your image title" width="310"/>
-<img src="https://user-images.githubusercontent.com/81857289/171661939-e29cfba4-66e9-4596-87f1-4b18e4021442.png" alt="Your image title" width="310"/>
+![](https://user-images.githubusercontent.com/81857289/171661139-acebfeba-2495-4a4c-9fe1-0d81c3e89a3b.png)
+![](https://user-images.githubusercontent.com/81857289/171661247-d10493eb-c8e6-4967-ba50-38865f178352.png)
+![](https://user-images.githubusercontent.com/81857289/171661442-a10aa488-fbb4-4499-98b7-76b31621fc3c.png)
+![](https://user-images.githubusercontent.com/81857289/171661488-ce5081aa-2355-45b4-ab69-fd1b4a156d20.png)
+![](https://user-images.githubusercontent.com/81857289/171661654-4d7ef1fe-3f06-40d6-a928-38e75401f8e5.png)
+![](https://user-images.githubusercontent.com/81857289/171661939-e29cfba4-66e9-4596-87f1-4b18e4021442.png)
 
 ![](https://user-images.githubusercontent.com/81857289/171662046-cfd00ceb-7fc9-4dbf-a34d-ae72a5505ed5.png)
+
+
 
 ~~~~
 ĐỀ TÀI MÔN  CƠ SỞ DỮ LIỆU PHÂN TÁN
