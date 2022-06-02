@@ -527,6 +527,7 @@ namespace QLDSV_TC.views
             this.ltcNHOM.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ltcNHOM.Properties.Mask.EditMask = "[0-9]{0,2}";
+            this.ltcNHOM.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
             this.ltcNHOM.Properties.MaxValue = new decimal(new int[] {
             10,
             0,
